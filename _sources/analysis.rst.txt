@@ -1,0 +1,11 @@
+Analysis
+============
+
+Core data structures for representing structural graphs, including
+nodes, edges, connectivity, and loads.
+
+.. automodule:: Analysis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :exclude-members: ValidityChecks, Mechanism

@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search &mdash; Graph Structural Design v.0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+    
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3573b5f5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Graph Structural Design
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="graph.html#Graph.Graph"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Adjacency"><code class="docutils literal notranslate"><span class="pre">Graph.Adjacency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AdjacencyList"><code class="docutils literal notranslate"><span class="pre">Graph.AdjacencyList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.ClosenessCentrality"><code class="docutils literal notranslate"><span class="pre">Graph.ClosenessCentrality</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Coords2D"><code class="docutils literal notranslate"><span class="pre">Graph.Coords2D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DegreeCentrality"><code class="docutils literal notranslate"><span class="pre">Graph.DegreeCentrality</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Density"><code class="docutils literal notranslate"><span class="pre">Graph.Density</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Diameter"><code class="docutils literal notranslate"><span class="pre">Graph.Diameter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeNodePairs"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeNodePairs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeObjs"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EigVecAdjacencyMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.EigVecAdjacencyMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EigVecLaplacian"><code class="docutils literal notranslate"><span class="pre">Graph.EigVecLaplacian</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Faces"><code class="docutils literal notranslate"><span class="pre">Graph.Faces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.FiedlerVec"><code class="docutils literal notranslate"><span class="pre">Graph.FiedlerVec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.GlobalClusteringCoefficient"><code class="docutils literal notranslate"><span class="pre">Graph.GlobalClusteringCoefficient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Incidence"><code class="docutils literal notranslate"><span class="pre">Graph.Incidence</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.IsGeometricallyPlanar"><code class="docutils literal notranslate"><span class="pre">Graph.IsGeometricallyPlanar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Lengths"><code class="docutils literal notranslate"><span class="pre">Graph.Lengths</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MaxLength"><code class="docutils literal notranslate"><span class="pre">Graph.MaxLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MeanLength"><code class="docutils literal notranslate"><span class="pre">Graph.MeanLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MinLength"><code class="docutils literal notranslate"><span class="pre">Graph.MinLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.NetworkXGraph"><code class="docutils literal notranslate"><span class="pre">Graph.NetworkXGraph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Order"><code class="docutils literal notranslate"><span class="pre">Graph.Order</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.PlanarityDegree"><code class="docutils literal notranslate"><span class="pre">Graph.PlanarityDegree</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Size"><code class="docutils literal notranslate"><span class="pre">Graph.Size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.StandardDeviationLength"><code class="docutils literal notranslate"><span class="pre">Graph.StandardDeviationLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VarianceLengths"><code class="docutils literal notranslate"><span class="pre">Graph.VarianceLengths</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VertexCoords"><code class="docutils literal notranslate"><span class="pre">Graph.VertexCoords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VertexObjs"><code class="docutils literal notranslate"><span class="pre">Graph.VertexObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Vertices"><code class="docutils literal notranslate"><span class="pre">Graph.Vertices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Weights"><code class="docutils literal notranslate"><span class="pre">Graph.Weights</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AddEdge"><code class="docutils literal notranslate"><span class="pre">Graph.AddEdge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AdjacencyMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.AdjacencyMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BetweennessCentralityEdges"><code class="docutils literal notranslate"><span class="pre">Graph.BetweennessCentralityEdges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BetweennessCentralityNodes"><code class="docutils literal notranslate"><span class="pre">Graph.BetweennessCentralityNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BFS"><code class="docutils literal notranslate"><span class="pre">Graph.BFS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BracedVariants"><code class="docutils literal notranslate"><span class="pre">Graph.BracedVariants()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Cycles"><code class="docutils literal notranslate"><span class="pre">Graph.Cycles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DegreeMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.DegreeMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DFS"><code class="docutils literal notranslate"><span class="pre">Graph.DFS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeByEndIds"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeByEndIds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeById"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.FaceAngles"><code class="docutils literal notranslate"><span class="pre">Graph.FaceAngles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.GlobalAngleUniformity"><code class="docutils literal notranslate"><span class="pre">Graph.GlobalAngleUniformity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.IncidenceMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.IncidenceMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.LaplacianMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.LaplacianMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MergeNodesById"><code class="docutils literal notranslate"><span class="pre">Graph.MergeNodesById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MirrorGraph"><code class="docutils literal notranslate"><span class="pre">Graph.MirrorGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.NodeById"><code class="docutils literal notranslate"><span class="pre">Graph.NodeById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.PageRank"><code class="docutils literal notranslate"><span class="pre">Graph.PageRank()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.RemoveEdgeById"><code class="docutils literal notranslate"><span class="pre">Graph.RemoveEdgeById()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="face.html">Face</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="face.html#Face.Face"><code class="docutils literal notranslate"><span class="pre">Face</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Coords2D"><code class="docutils literal notranslate"><span class="pre">Face.Coords2D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Coords3D"><code class="docutils literal notranslate"><span class="pre">Face.Coords3D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Edges"><code class="docutils literal notranslate"><span class="pre">Face.Edges</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.EdgeObjs"><code class="docutils literal notranslate"><span class="pre">Face.EdgeObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Id"><code class="docutils literal notranslate"><span class="pre">Face.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Vertices"><code class="docutils literal notranslate"><span class="pre">Face.Vertices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.VertexObjs"><code class="docutils literal notranslate"><span class="pre">Face.VertexObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.TriangulationScenarios"><code class="docutils literal notranslate"><span class="pre">Face.TriangulationScenarios()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edge.html#Edge.Edge"><code class="docutils literal notranslate"><span class="pre">Edge</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EndNode"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.Id"><code class="docutils literal notranslate"><span class="pre">Edge.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.Length"><code class="docutils literal notranslate"><span class="pre">Edge.Length</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.MidPoint"><code class="docutils literal notranslate"><span class="pre">Edge.MidPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StartNode"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">Edge.StiffnessMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.BucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.BucklingLimit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.ForceMagnitude"><code class="docutils literal notranslate"><span class="pre">Edge.ForceMagnitude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EndNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode_AdjEdges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EulerCriticalBucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.EulerCriticalBucklingLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StartNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode_AdjEdges()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vertex.html">Vertex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vertex.html#Vertex.Vertex"><code class="docutils literal notranslate"><span class="pre">Vertex</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Coords"><code class="docutils literal notranslate"><span class="pre">Vertex.Coords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Id"><code class="docutils literal notranslate"><span class="pre">Vertex.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Label"><code class="docutils literal notranslate"><span class="pre">Vertex.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Valency"><code class="docutils literal notranslate"><span class="pre">Vertex.Valency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.X"><code class="docutils literal notranslate"><span class="pre">Vertex.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Y"><code class="docutils literal notranslate"><span class="pre">Vertex.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Z"><code class="docutils literal notranslate"><span class="pre">Vertex.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.AdjacentNodes"><code class="docutils literal notranslate"><span class="pre">Vertex.AdjacentNodes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.IncidentEdges"><code class="docutils literal notranslate"><span class="pre">Vertex.IncidentEdges</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Ux"><code class="docutils literal notranslate"><span class="pre">Vertex.Ux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Uy"><code class="docutils literal notranslate"><span class="pre">Vertex.Uy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Uz"><code class="docutils literal notranslate"><span class="pre">Vertex.Uz</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.AngleUniformity"><code class="docutils literal notranslate"><span class="pre">Vertex.AngleUniformity()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">Load</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="load.html#Load.Load"><code class="docutils literal notranslate"><span class="pre">Load</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Id"><code class="docutils literal notranslate"><span class="pre">Load.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Label"><code class="docutils literal notranslate"><span class="pre">Load.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.NodeId"><code class="docutils literal notranslate"><span class="pre">Load.NodeId</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Vec"><code class="docutils literal notranslate"><span class="pre">Load.Vec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.X"><code class="docutils literal notranslate"><span class="pre">Load.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Y"><code class="docutils literal notranslate"><span class="pre">Load.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Z"><code class="docutils literal notranslate"><span class="pre">Load.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.AnchorNode"><code class="docutils literal notranslate"><span class="pre">Load.AnchorNode()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="truss.html">Truss</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="truss.html#Truss.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.BasicMetrics"><code class="docutils literal notranslate"><span class="pre">Truss.BasicMetrics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtLoads"><code class="docutils literal notranslate"><span class="pre">Truss.ExtLoads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtLoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.ExtLoadIds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.ExtNodeIds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.LoadObjs"><code class="docutils literal notranslate"><span class="pre">Truss.LoadObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxCompressionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxTensionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MeanForce"><code class="docutils literal notranslate"><span class="pre">Truss.MeanForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinCompressionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinTensionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.StandardDeviationForce"><code class="docutils literal notranslate"><span class="pre">Truss.StandardDeviationForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.StaticAction"><code class="docutils literal notranslate"><span class="pre">Truss.StaticAction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.VarianceForces"><code class="docutils literal notranslate"><span class="pre">Truss.VarianceForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.AxialForces"><code class="docutils literal notranslate"><span class="pre">Truss.AxialForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.EulerCriticalBucklingLimits"><code class="docutils literal notranslate"><span class="pre">Truss.EulerCriticalBucklingLimits()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ForceDirectionality"><code class="docutils literal notranslate"><span class="pre">Truss.ForceDirectionality()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxGlobalDisplacement"><code class="docutils literal notranslate"><span class="pre">Truss.MaxGlobalDisplacement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MaxGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Mass"><code class="docutils literal notranslate"><span class="pre">Truss.Mass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MeanGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MeanGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MinGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.UnconstrainedNodes"><code class="docutils literal notranslate"><span class="pre">Truss.UnconstrainedNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.UpdateAnalyzedGraph"><code class="docutils literal notranslate"><span class="pre">Truss.UpdateAnalyzedGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Utilizations"><code class="docutils literal notranslate"><span class="pre">Truss.Utilizations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Volume"><code class="docutils literal notranslate"><span class="pre">Truss.Volume()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#Analysis.EquilibriumSolver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.EquilibriumSolver.AxialForcesSolver_wo_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_wo_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.EquilibriumSolver.AxialForcesSolver_w_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_w_reactions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#Analysis.FE"><code class="docutils literal notranslate"><span class="pre">FE</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.Analysis"><code class="docutils literal notranslate"><span class="pre">FE.Analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.GlobalForceVector"><code class="docutils literal notranslate"><span class="pre">FE.GlobalForceVector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.GlobalStiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">FE.GlobalStiffnessMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.RecoverGlobalDisplacement"><code class="docutils literal notranslate"><span class="pre">FE.RecoverGlobalDisplacement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ReduceForceSupports"><code class="docutils literal notranslate"><span class="pre">FE.ReduceForceSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ReduceStiffnessSupports"><code class="docutils literal notranslate"><span class="pre">FE.ReduceStiffnessSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.RedundancyMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RedundancyMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.RigidityMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RigidityMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.SolveDisplacements"><code class="docutils literal notranslate"><span class="pre">FE.SolveDisplacements()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.SolveMemberForces"><code class="docutils literal notranslate"><span class="pre">FE.SolveMemberForces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ApplyCrossSectionCalcVolume"><code class="docutils literal notranslate"><span class="pre">FE.ApplyCrossSectionCalcVolume()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ReduceDimensionsDOF"><code class="docutils literal notranslate"><span class="pre">FE.ReduceDimensionsDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.TributaryForces"><code class="docutils literal notranslate"><span class="pre">FE.TributaryForces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.TributarySupports"><code class="docutils literal notranslate"><span class="pre">FE.TributarySupports()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="formfinding.html">FormFinding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.FDM"><code class="docutils literal notranslate"><span class="pre">FDM</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.FDM.Solver"><code class="docutils literal notranslate"><span class="pre">FDM.Solver()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.Grid.Edges"><code class="docutils literal notranslate"><span class="pre">Grid.Edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.Grid.Nodes"><code class="docutils literal notranslate"><span class="pre">Grid.Nodes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.GroundStructure"><code class="docutils literal notranslate"><span class="pre">GroundStructure</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helperfunctions.html">HelperFunctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry"><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.EuclideanDistance"><code class="docutils literal notranslate"><span class="pre">Geometry.EuclideanDistance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.PointPlaneDistance"><code class="docutils literal notranslate"><span class="pre">Geometry.PointPlaneDistance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.MirrorPoint"><code class="docutils literal notranslate"><span class="pre">Geometry.MirrorPoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.MidPoint"><code class="docutils literal notranslate"><span class="pre">Geometry.MidPoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.PlaneAsEquation"><code class="docutils literal notranslate"><span class="pre">Geometry.PlaneAsEquation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.IsPointOnPlane"><code class="docutils literal notranslate"><span class="pre">Geometry.IsPointOnPlane()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.SegSegIntersection"><code class="docutils literal notranslate"><span class="pre">Geometry.SegSegIntersection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.LineLineIntersection"><code class="docutils literal notranslate"><span class="pre">Geometry.LineLineIntersection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector"><code class="docutils literal notranslate"><span class="pre">Vector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAngle2D"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngle2D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAngleBetween"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngleBetween()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAngleBetween_np"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngleBetween_np()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAdd"><code class="docutils literal notranslate"><span class="pre">Vector.VecAdd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecCrossProd"><code class="docutils literal notranslate"><span class="pre">Vector.VecCrossProd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecDotProd"><code class="docutils literal notranslate"><span class="pre">Vector.VecDotProd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecNorm"><code class="docutils literal notranslate"><span class="pre">Vector.VecNorm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecScale"><code class="docutils literal notranslate"><span class="pre">Vector.VecScale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecSubtract"><code class="docutils literal notranslate"><span class="pre">Vector.VecSubtract()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#IO.Import"><code class="docutils literal notranslate"><span class="pre">Import</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByCSVpath"><code class="docutils literal notranslate"><span class="pre">Import.ByCSVpath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSON"><code class="docutils literal notranslate"><span class="pre">Import.ByJSON()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSONpath"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONpath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSONstring"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONstring()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#IO.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToCSV"><code class="docutils literal notranslate"><span class="pre">Export.ToCSV()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToJSONadv"><code class="docutils literal notranslate"><span class="pre">Export.ToJSONadv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToJSON"><code class="docutils literal notranslate"><span class="pre">Export.ToJSON()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="viz.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="viz.html#Viz.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph3D"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.EdgePerformanceDonut"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.EdgePerformanceDonut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.GraphPerformanceSpider"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.GraphPerformanceSpider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph2Compare"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph2Compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="viz.html#Viz.Plot.PlotGroundStructure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotGroundStructure.NodeGrid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.NodeGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Graph Structural Design</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Search</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Dr. Ioannis Mirtsopoulos.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <script>
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script id="searchindexloader"></script>
+   
+
+
+</body>
+</html>

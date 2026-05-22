@@ -1,0 +1,10 @@
+Truss
+=====
+
+Core data structures for representing structural graphs, including
+nodes, edges, connectivity, and loads.
+
+.. autoclass:: Truss.Truss
+   :members:
+   :undoc-members:
+   :show-inheritance:

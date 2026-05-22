@@ -1,0 +1,10 @@
+Visualization
+=============
+
+Core data structures for representing structural graphs, including
+nodes, edges, connectivity, and loads.
+
+.. automodule:: Viz
+   :members:
+   :undoc-members:
+   :show-inheritance:

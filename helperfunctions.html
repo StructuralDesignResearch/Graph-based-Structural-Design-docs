@@ -1,0 +1,893 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelperFunctions &mdash; Graph Structural Design v.0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3573b5f5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="IO" href="io.html" />
+    <link rel="prev" title="FormFinding" href="formfinding.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Graph Structural Design
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="graph.html#Graph.Graph"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Adjacency"><code class="docutils literal notranslate"><span class="pre">Graph.Adjacency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AdjacencyList"><code class="docutils literal notranslate"><span class="pre">Graph.AdjacencyList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.ClosenessCentrality"><code class="docutils literal notranslate"><span class="pre">Graph.ClosenessCentrality</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Coords2D"><code class="docutils literal notranslate"><span class="pre">Graph.Coords2D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DegreeCentrality"><code class="docutils literal notranslate"><span class="pre">Graph.DegreeCentrality</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Density"><code class="docutils literal notranslate"><span class="pre">Graph.Density</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Diameter"><code class="docutils literal notranslate"><span class="pre">Graph.Diameter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeNodePairs"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeNodePairs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeObjs"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EigVecAdjacencyMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.EigVecAdjacencyMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EigVecLaplacian"><code class="docutils literal notranslate"><span class="pre">Graph.EigVecLaplacian</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Faces"><code class="docutils literal notranslate"><span class="pre">Graph.Faces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.FiedlerVec"><code class="docutils literal notranslate"><span class="pre">Graph.FiedlerVec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.GlobalClusteringCoefficient"><code class="docutils literal notranslate"><span class="pre">Graph.GlobalClusteringCoefficient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Incidence"><code class="docutils literal notranslate"><span class="pre">Graph.Incidence</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.IsGeometricallyPlanar"><code class="docutils literal notranslate"><span class="pre">Graph.IsGeometricallyPlanar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Lengths"><code class="docutils literal notranslate"><span class="pre">Graph.Lengths</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MaxLength"><code class="docutils literal notranslate"><span class="pre">Graph.MaxLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MeanLength"><code class="docutils literal notranslate"><span class="pre">Graph.MeanLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MinLength"><code class="docutils literal notranslate"><span class="pre">Graph.MinLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.NetworkXGraph"><code class="docutils literal notranslate"><span class="pre">Graph.NetworkXGraph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Order"><code class="docutils literal notranslate"><span class="pre">Graph.Order</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.PlanarityDegree"><code class="docutils literal notranslate"><span class="pre">Graph.PlanarityDegree</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Size"><code class="docutils literal notranslate"><span class="pre">Graph.Size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.StandardDeviationLength"><code class="docutils literal notranslate"><span class="pre">Graph.StandardDeviationLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VarianceLengths"><code class="docutils literal notranslate"><span class="pre">Graph.VarianceLengths</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VertexCoords"><code class="docutils literal notranslate"><span class="pre">Graph.VertexCoords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VertexObjs"><code class="docutils literal notranslate"><span class="pre">Graph.VertexObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Vertices"><code class="docutils literal notranslate"><span class="pre">Graph.Vertices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Weights"><code class="docutils literal notranslate"><span class="pre">Graph.Weights</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AddEdge"><code class="docutils literal notranslate"><span class="pre">Graph.AddEdge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AdjacencyMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.AdjacencyMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BetweennessCentralityEdges"><code class="docutils literal notranslate"><span class="pre">Graph.BetweennessCentralityEdges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BetweennessCentralityNodes"><code class="docutils literal notranslate"><span class="pre">Graph.BetweennessCentralityNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BFS"><code class="docutils literal notranslate"><span class="pre">Graph.BFS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BracedVariants"><code class="docutils literal notranslate"><span class="pre">Graph.BracedVariants()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Cycles"><code class="docutils literal notranslate"><span class="pre">Graph.Cycles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DegreeMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.DegreeMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DFS"><code class="docutils literal notranslate"><span class="pre">Graph.DFS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeByEndIds"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeByEndIds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeById"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.FaceAngles"><code class="docutils literal notranslate"><span class="pre">Graph.FaceAngles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.GlobalAngleUniformity"><code class="docutils literal notranslate"><span class="pre">Graph.GlobalAngleUniformity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.IncidenceMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.IncidenceMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.LaplacianMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.LaplacianMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MergeNodesById"><code class="docutils literal notranslate"><span class="pre">Graph.MergeNodesById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MirrorGraph"><code class="docutils literal notranslate"><span class="pre">Graph.MirrorGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.NodeById"><code class="docutils literal notranslate"><span class="pre">Graph.NodeById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.PageRank"><code class="docutils literal notranslate"><span class="pre">Graph.PageRank()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.RemoveEdgeById"><code class="docutils literal notranslate"><span class="pre">Graph.RemoveEdgeById()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="face.html">Face</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="face.html#Face.Face"><code class="docutils literal notranslate"><span class="pre">Face</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Coords2D"><code class="docutils literal notranslate"><span class="pre">Face.Coords2D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Coords3D"><code class="docutils literal notranslate"><span class="pre">Face.Coords3D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Edges"><code class="docutils literal notranslate"><span class="pre">Face.Edges</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.EdgeObjs"><code class="docutils literal notranslate"><span class="pre">Face.EdgeObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Id"><code class="docutils literal notranslate"><span class="pre">Face.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Vertices"><code class="docutils literal notranslate"><span class="pre">Face.Vertices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.VertexObjs"><code class="docutils literal notranslate"><span class="pre">Face.VertexObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.TriangulationScenarios"><code class="docutils literal notranslate"><span class="pre">Face.TriangulationScenarios()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edge.html#Edge.Edge"><code class="docutils literal notranslate"><span class="pre">Edge</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EndNode"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.Id"><code class="docutils literal notranslate"><span class="pre">Edge.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.Length"><code class="docutils literal notranslate"><span class="pre">Edge.Length</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.MidPoint"><code class="docutils literal notranslate"><span class="pre">Edge.MidPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StartNode"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">Edge.StiffnessMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.BucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.BucklingLimit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.ForceMagnitude"><code class="docutils literal notranslate"><span class="pre">Edge.ForceMagnitude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EndNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode_AdjEdges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EulerCriticalBucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.EulerCriticalBucklingLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StartNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode_AdjEdges()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vertex.html">Vertex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vertex.html#Vertex.Vertex"><code class="docutils literal notranslate"><span class="pre">Vertex</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Coords"><code class="docutils literal notranslate"><span class="pre">Vertex.Coords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Id"><code class="docutils literal notranslate"><span class="pre">Vertex.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Label"><code class="docutils literal notranslate"><span class="pre">Vertex.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Valency"><code class="docutils literal notranslate"><span class="pre">Vertex.Valency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.X"><code class="docutils literal notranslate"><span class="pre">Vertex.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Y"><code class="docutils literal notranslate"><span class="pre">Vertex.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Z"><code class="docutils literal notranslate"><span class="pre">Vertex.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.AdjacentNodes"><code class="docutils literal notranslate"><span class="pre">Vertex.AdjacentNodes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.IncidentEdges"><code class="docutils literal notranslate"><span class="pre">Vertex.IncidentEdges</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Ux"><code class="docutils literal notranslate"><span class="pre">Vertex.Ux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Uy"><code class="docutils literal notranslate"><span class="pre">Vertex.Uy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Uz"><code class="docutils literal notranslate"><span class="pre">Vertex.Uz</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.AngleUniformity"><code class="docutils literal notranslate"><span class="pre">Vertex.AngleUniformity()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">Load</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="load.html#Load.Load"><code class="docutils literal notranslate"><span class="pre">Load</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Id"><code class="docutils literal notranslate"><span class="pre">Load.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Label"><code class="docutils literal notranslate"><span class="pre">Load.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.NodeId"><code class="docutils literal notranslate"><span class="pre">Load.NodeId</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Vec"><code class="docutils literal notranslate"><span class="pre">Load.Vec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.X"><code class="docutils literal notranslate"><span class="pre">Load.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Y"><code class="docutils literal notranslate"><span class="pre">Load.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Z"><code class="docutils literal notranslate"><span class="pre">Load.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.AnchorNode"><code class="docutils literal notranslate"><span class="pre">Load.AnchorNode()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="truss.html">Truss</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="truss.html#Truss.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.BasicMetrics"><code class="docutils literal notranslate"><span class="pre">Truss.BasicMetrics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtLoads"><code class="docutils literal notranslate"><span class="pre">Truss.ExtLoads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtLoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.ExtLoadIds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.ExtNodeIds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.LoadObjs"><code class="docutils literal notranslate"><span class="pre">Truss.LoadObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxCompressionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxTensionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MeanForce"><code class="docutils literal notranslate"><span class="pre">Truss.MeanForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinCompressionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinTensionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.StandardDeviationForce"><code class="docutils literal notranslate"><span class="pre">Truss.StandardDeviationForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.StaticAction"><code class="docutils literal notranslate"><span class="pre">Truss.StaticAction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.VarianceForces"><code class="docutils literal notranslate"><span class="pre">Truss.VarianceForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.AxialForces"><code class="docutils literal notranslate"><span class="pre">Truss.AxialForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.EulerCriticalBucklingLimits"><code class="docutils literal notranslate"><span class="pre">Truss.EulerCriticalBucklingLimits()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ForceDirectionality"><code class="docutils literal notranslate"><span class="pre">Truss.ForceDirectionality()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxGlobalDisplacement"><code class="docutils literal notranslate"><span class="pre">Truss.MaxGlobalDisplacement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MaxGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Mass"><code class="docutils literal notranslate"><span class="pre">Truss.Mass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MeanGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MeanGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MinGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.UnconstrainedNodes"><code class="docutils literal notranslate"><span class="pre">Truss.UnconstrainedNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.UpdateAnalyzedGraph"><code class="docutils literal notranslate"><span class="pre">Truss.UpdateAnalyzedGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Utilizations"><code class="docutils literal notranslate"><span class="pre">Truss.Utilizations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Volume"><code class="docutils literal notranslate"><span class="pre">Truss.Volume()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#Analysis.EquilibriumSolver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.EquilibriumSolver.AxialForcesSolver_wo_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_wo_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.EquilibriumSolver.AxialForcesSolver_w_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_w_reactions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#Analysis.FE"><code class="docutils literal notranslate"><span class="pre">FE</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.Analysis"><code class="docutils literal notranslate"><span class="pre">FE.Analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.GlobalForceVector"><code class="docutils literal notranslate"><span class="pre">FE.GlobalForceVector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.GlobalStiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">FE.GlobalStiffnessMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.RecoverGlobalDisplacement"><code class="docutils literal notranslate"><span class="pre">FE.RecoverGlobalDisplacement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ReduceForceSupports"><code class="docutils literal notranslate"><span class="pre">FE.ReduceForceSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ReduceStiffnessSupports"><code class="docutils literal notranslate"><span class="pre">FE.ReduceStiffnessSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.RedundancyMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RedundancyMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.RigidityMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RigidityMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.SolveDisplacements"><code class="docutils literal notranslate"><span class="pre">FE.SolveDisplacements()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.SolveMemberForces"><code class="docutils literal notranslate"><span class="pre">FE.SolveMemberForces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ApplyCrossSectionCalcVolume"><code class="docutils literal notranslate"><span class="pre">FE.ApplyCrossSectionCalcVolume()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.ReduceDimensionsDOF"><code class="docutils literal notranslate"><span class="pre">FE.ReduceDimensionsDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.TributaryForces"><code class="docutils literal notranslate"><span class="pre">FE.TributaryForces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#Analysis.FE.TributarySupports"><code class="docutils literal notranslate"><span class="pre">FE.TributarySupports()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="formfinding.html">FormFinding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.FDM"><code class="docutils literal notranslate"><span class="pre">FDM</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.FDM.Solver"><code class="docutils literal notranslate"><span class="pre">FDM.Solver()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.Grid.Edges"><code class="docutils literal notranslate"><span class="pre">Grid.Edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.Grid.Nodes"><code class="docutils literal notranslate"><span class="pre">Grid.Nodes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.GroundStructure"><code class="docutils literal notranslate"><span class="pre">GroundStructure</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HelperFunctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#HelperFunctions.Geometry"><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.EuclideanDistance"><code class="docutils literal notranslate"><span class="pre">Geometry.EuclideanDistance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.PointPlaneDistance"><code class="docutils literal notranslate"><span class="pre">Geometry.PointPlaneDistance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.MirrorPoint"><code class="docutils literal notranslate"><span class="pre">Geometry.MirrorPoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.MidPoint"><code class="docutils literal notranslate"><span class="pre">Geometry.MidPoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.PlaneAsEquation"><code class="docutils literal notranslate"><span class="pre">Geometry.PlaneAsEquation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.IsPointOnPlane"><code class="docutils literal notranslate"><span class="pre">Geometry.IsPointOnPlane()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.SegSegIntersection"><code class="docutils literal notranslate"><span class="pre">Geometry.SegSegIntersection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Geometry.LineLineIntersection"><code class="docutils literal notranslate"><span class="pre">Geometry.LineLineIntersection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#HelperFunctions.Vector"><code class="docutils literal notranslate"><span class="pre">Vector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecAngle2D"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngle2D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecAngleBetween"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngleBetween()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecAngleBetween_np"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngleBetween_np()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecAdd"><code class="docutils literal notranslate"><span class="pre">Vector.VecAdd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecCrossProd"><code class="docutils literal notranslate"><span class="pre">Vector.VecCrossProd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecDotProd"><code class="docutils literal notranslate"><span class="pre">Vector.VecDotProd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecNorm"><code class="docutils literal notranslate"><span class="pre">Vector.VecNorm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecScale"><code class="docutils literal notranslate"><span class="pre">Vector.VecScale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HelperFunctions.Vector.VecSubtract"><code class="docutils literal notranslate"><span class="pre">Vector.VecSubtract()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#IO.Import"><code class="docutils literal notranslate"><span class="pre">Import</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByCSVpath"><code class="docutils literal notranslate"><span class="pre">Import.ByCSVpath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSON"><code class="docutils literal notranslate"><span class="pre">Import.ByJSON()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSONpath"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONpath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSONstring"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONstring()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#IO.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToCSV"><code class="docutils literal notranslate"><span class="pre">Export.ToCSV()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToJSONadv"><code class="docutils literal notranslate"><span class="pre">Export.ToJSONadv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToJSON"><code class="docutils literal notranslate"><span class="pre">Export.ToJSON()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="viz.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="viz.html#Viz.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph3D"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.EdgePerformanceDonut"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.EdgePerformanceDonut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.GraphPerformanceSpider"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.GraphPerformanceSpider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph2Compare"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph2Compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="viz.html#Viz.Plot.PlotGroundStructure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotGroundStructure.NodeGrid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.NodeGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Graph Structural Design</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">HelperFunctions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/helperfunctions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="helperfunctions">
+<h1>HelperFunctions<a class="headerlink" href="#helperfunctions" title="Link to this heading"></a></h1>
+<p>Core data structures for representing structural graphs, including
+nodes, edges, connectivity, and loads.</p>
+<dl class="py class" id="module-HelperFunctions">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">HelperFunctions.</span></span><span class="sig-name descname"><span class="pre">Geometry</span></span><a class="headerlink" href="#HelperFunctions.Geometry" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.EuclideanDistance">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">EuclideanDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.EuclideanDistance" title="Link to this definition"></a></dt>
+<dd><p>Compute the Euclidean distance between two vectors.</p>
+<p>The Euclidean distance is the straight-line distance between two
+points in n-dimensional space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector1</strong> (<em>array-like</em><em> of </em><em>float</em>) – First point coordinates.</p></li>
+<li><p><strong>vector2</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second point coordinates. Must have the same dimension as vector1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Euclidean distance between the two input vectors.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the input vectors do not have the same dimension.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.PointPlaneDistance">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PointPlaneDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.PointPlaneDistance" title="Link to this definition"></a></dt>
+<dd><p>Compute the shortest distance from a point to a plane.</p>
+<p>The distance is calculated as the perpendicular (orthogonal)
+distance from a point in 3D space to a plane defined by a point
+on the plane and its normal vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pt</strong> (<em>array-like</em><em> of </em><em>float</em>) – Coordinates of the point (x, y, z).</p></li>
+<li><p><strong>plane_origin</strong> (<em>array-like</em><em> of </em><em>float</em>) – A point lying on the plane (x0, y0, z0).</p></li>
+<li><p><strong>plane_normal</strong> (<em>array-like</em><em> of </em><em>float</em>) – Normal vector of the plane (nx, ny, nz).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Perpendicular distance from the point to the plane.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The distance is computed as:</p>
+<blockquote>
+<div><p>d = |(P - P0) cdot n| / ||n||</p>
+</div></blockquote>
+<p>where:
+- P is the point
+- P0 is a point on the plane
+- n is the plane normal vector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.MirrorPoint">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MirrorPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_equation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.MirrorPoint" title="Link to this definition"></a></dt>
+<dd><p>Compute the mirror (reflection) of a point across a plane.</p>
+<p>The function reflects a 3D point across a plane defined in
+general form: ax + by + cz + d = 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> (<em>array-like</em><em> of </em><em>float</em>) – Coordinates of the point to be reflected (x, y, z).</p></li>
+<li><p><strong>plane_equation</strong> (<em>tuple</em><em> of </em><em>float</em>) – Coefficients of the plane equation (a, b, c, d).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Coordinates of the reflected point (x’, y’, z’).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The reflection is computed by projecting the point onto the plane
+and then reflecting it symmetrically across that projection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.MidPoint">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MidPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.MidPoint" title="Link to this definition"></a></dt>
+<dd><p>Compute the midpoint between two points in 3D space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point1</strong> (<em>array-like</em><em> of </em><em>float</em>) – Coordinates of the first point (x, y, z).</p></li>
+<li><p><strong>point2</strong> (<em>array-like</em><em> of </em><em>float</em>) – Coordinates of the second point (x, y, z).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Midpoint coordinates [x, y, z] between the two input points.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.PlaneAsEquation">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PlaneAsEquation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.PlaneAsEquation" title="Link to this definition"></a></dt>
+<dd><p>Convert a plane defined by a point and a normal vector into
+the standard plane equation form: ax + by + cz + d = 0.</p>
+<p>The plane is defined using a point on the plane A(x1, y1, z1)
+and a normal vector N(a, b, c):</p>
+<blockquote>
+<div><p>a(x - x1) + b(y - y1) + c(z - z1) = 0</p>
+</div></blockquote>
+<p>Expanding gives:</p>
+<blockquote>
+<div><p>ax + by + cz + d = 0
+where d = -a*x1 - b*y1 - c*z1</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plane_origin</strong> (<em>array-like</em><em> of </em><em>float</em>) – A point on the plane (x1, y1, z1).</p></li>
+<li><p><strong>plane_normal</strong> (<em>array-like</em><em> of </em><em>float</em>) – Normal vector of the plane (a, b, c).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Coefficients [a, b, c, d] of the plane equation
+ax + by + cz + d = 0.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plane_origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plane_normal</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The plane equation is:</p>
+<blockquote>
+<div><p>-1(x - 5) + 3(y - 6) - 7(z - 2) = 0</p>
+</div></blockquote>
+<p>Expanding:</p>
+<blockquote>
+<div><p>-x + 5 + 3y - 18 - 7z + 14 = 0
+-x + 3y - 7z + 1 = 0</p>
+</div></blockquote>
+<p>So the returned coefficients are:</p>
+<blockquote>
+<div><p>[-1, 3, -7, 1]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.IsPointOnPlane">
+<span class="sig-name descname"><span class="pre">IsPointOnPlane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.IsPointOnPlane" title="Link to this definition"></a></dt>
+<dd><p>Check whether a point lies on a given plane within a numerical tolerance.</p>
+<p>The function evaluates the perpendicular distance from the point to the
+plane and compares it against a predefined tolerance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> (<em>array-like</em><em> of </em><em>float</em>) – Coordinates of the point to test (x, y, z).</p></li>
+<li><p><strong>plane_origin</strong> (<em>array-like</em><em> of </em><em>float</em>) – A point on the plane (x0, y0, z0).</p></li>
+<li><p><strong>plane_normal</strong> (<em>array-like</em><em> of </em><em>float</em>) – Normal vector of the plane (a, b, c).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the point lies on the plane within tolerance,
+False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>A point is considered to lie on the plane if:</p>
+<blockquote>
+<div><p>abs(distance) ≤ tolerance</p>
+<p>where the distance is computed using the point-to-plane distance formula.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.SegSegIntersection">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SegSegIntersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.SegSegIntersection" title="Link to this definition"></a></dt>
+<dd><p>Check intersection between two 3D line segments (or infinite lines).</p>
+<p>This function determines whether two segments (or lines) in 3D space
+intersect, and optionally restricts the intersection point to lie
+within the finite segment bounds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<em>array-like</em><em> of </em><em>float</em>) – Endpoints of the first segment.</p></li>
+<li><p><strong>p2</strong> (<em>array-like</em><em> of </em><em>float</em>) – Endpoints of the first segment.</p></li>
+<li><p><strong>q1</strong> (<em>array-like</em><em> of </em><em>float</em>) – Endpoints of the second segment.</p></li>
+<li><p><strong>q2</strong> (<em>array-like</em><em> of </em><em>float</em>) – Endpoints of the second segment.</p></li>
+<li><p><strong>strict</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, only intersections within both segments are considered
+(segment-segment intersection).
+If False, intersections on the infinite lines are considered
+(line-line intersection). Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>status<span class="classifier">bool</span></dt><dd><p>True if a valid intersection exists, False otherwise.</p>
+</dd>
+<dt>point<span class="classifier">array-like of float or None</span></dt><dd><p>Coordinates of the intersection point if it exists,
+otherwise None.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (status, point)</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The method uses a cross-product-based formulation to avoid solving
+linear systems explicitly. Numerical tolerance is controlled via
+<cite>Utilities.Tolerance</cite>.</p>
+<p>Cases handled:
+- Parallel (no intersection)
+- Coincident (overlapping lines)
+- Skew (non-intersecting in 3D)
+- Proper intersection (unique point)</p>
+<p class="rubric">Examples</p>
+<p>Two intersecting segments:</p>
+<blockquote>
+<div><p>p1 = (0,0,0), p2 = (1,1,1)
+q1 = (0,1,0), q2 = (1,0,1)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(True, [intersection_point])</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Non-intersecting segments:</dt><dd><p>returns (False, None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Geometry.LineLineIntersection">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">LineLineIntersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Geometry.LineLineIntersection" title="Link to this definition"></a></dt>
+<dd><p>Compute the intersection between two infinite 3D lines.</p>
+<p>This is a convenience wrapper around <cite>SegSegIntersection</cite> with
+segment constraints disabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<em>array-like</em><em> of </em><em>float</em>) – Points defining the first infinite line.</p></li>
+<li><p><strong>p2</strong> (<em>array-like</em><em> of </em><em>float</em>) – Points defining the first infinite line.</p></li>
+<li><p><strong>q1</strong> (<em>array-like</em><em> of </em><em>float</em>) – Points defining the second infinite line.</p></li>
+<li><p><strong>q2</strong> (<em>array-like</em><em> of </em><em>float</em>) – Points defining the second infinite line.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>status<span class="classifier">bool</span></dt><dd><p>True if the lines intersect, False otherwise.</p>
+</dd>
+<dt>point<span class="classifier">array-like of float or None</span></dt><dd><p>Intersection point if it exists, otherwise None.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (status, point)</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function treats the input as infinite lines, not segments,
+by delegating to <cite>SegSegIntersection</cite> with <cite>strict=False</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="HelperFunctions.Vector">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">HelperFunctions.</span></span><span class="sig-name descname"><span class="pre">Vector</span></span><a class="headerlink" href="#HelperFunctions.Vector" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecAngle2D">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecAngle2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radians</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecAngle2D" title="Link to this definition"></a></dt>
+<dd><p>Compute the signed angle between two 2D vectors.</p>
+<p>The angle is measured from vector u to vector v using the
+atan2 determinant formulation, which preserves orientation
+(clockwise vs counterclockwise).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First 2D vector (u1, u2).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second 2D vector (v1, v2).</p></li>
+<li><p><strong>radians</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, return the angle in radians.
+If False, return the angle in degrees. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Signed angle between the vectors:
+- in radians if radians=True
+- in degrees otherwise (range [0, 360))</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The angle is computed using:</p>
+<blockquote>
+<div><p>angle = atan2(det(u, v), dot(u, v))</p>
+</div></blockquote>
+<dl class="simple">
+<dt>where:</dt><dd><p>dot = u · v
+det = u_x * v_y - u_y * v_x</p>
+</dd>
+</dl>
+<p>This preserves directional information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecAngleBetween">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecAngleBetween</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecAngleBetween" title="Link to this definition"></a></dt>
+<dd><p>Compute the unsigned angle between two vectors in 2D or 3D space.</p>
+<p>The angle is always returned as the smallest positive angle between
+the two vectors, in degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First vector (2D or 3D).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second vector (2D or 3D).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Angle between the vectors in degrees, in the range [0, 180].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If either input vector has zero magnitude.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The angle is computed using the dot product formula:</p>
+<blockquote>
+<div><p>cos(theta) = (u · v) / (||u|| ||v||)</p>
+</div></blockquote>
+<p>followed by:</p>
+<blockquote>
+<div><p>theta = arccos(clamped(cos(theta)))</p>
+</div></blockquote>
+<p>where clamping ensures numerical stability in floating-point arithmetic.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecAngleBetween_np">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecAngleBetween_np</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecAngleBetween_np" title="Link to this definition"></a></dt>
+<dd><p>Compute the unsigned angle between two vectors using NumPy.</p>
+<p>The function returns the smallest angle between two vectors in
+Euclidean space, expressed in degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First vector (2D or 3D or higher-dimensional).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second vector (2D or 3D or higher-dimensional).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Angle between the vectors in degrees, in the range [0, 180].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The angle is computed using the dot product formula:</p>
+<blockquote>
+<div><p>cos(theta) = (u · v) / (||u|| ||v||)</p>
+</div></blockquote>
+<p>followed by:</p>
+<blockquote>
+<div><p>theta = arccos(clipped(cos(theta)))</p>
+</div></blockquote>
+<p>NumPy is used for vectorized and numerically stable computation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecAdd">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecAdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecAdd" title="Link to this definition"></a></dt>
+<dd><p>Compute the element-wise addition of two 3D vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First vector (u1, u2, u3).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second vector (v1, v2, v3).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resulting vector u + v.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecCrossProd">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecCrossProd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecCrossProd" title="Link to this definition"></a></dt>
+<dd><p>Compute the cross product of two 3D vectors.</p>
+<p>The cross product produces a vector that is orthogonal to both input
+vectors and follows the right-hand rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First vector (u1, u2, u3).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second vector (v1, v2, v3).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cross product vector u × v.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The cross product is defined as:</p>
+<blockquote>
+<div><p>u × v =
+(u2*v3 - u3*v2,
+u3*v1 - u1*v3,
+u1*v2 - u2*v1)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecDotProd">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecDotProd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecDotProd" title="Link to this definition"></a></dt>
+<dd><p>Compute the dot product of two 3D vectors.</p>
+<p>The dot product measures the magnitude of projection of one vector
+onto another and is widely used in geometry and mechanics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First vector (u1, u2, u3).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second vector (v1, v2, v3).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Scalar dot product u · v.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The dot product is defined as:</p>
+<blockquote>
+<div><p>u · v = u1*v1 + u2*v2 + u3*v3</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecNorm">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecNorm" title="Link to this definition"></a></dt>
+<dd><p>Compute the Euclidean norm (magnitude) of a 3D vector.</p>
+<p>The Euclidean norm represents the length of a vector in 3D space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – Input vector (u1, u2, u3).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Euclidean norm of the vector: ||u|| = sqrt(u1^2 + u2^2 + u3^2).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This implementation assumes a 3-dimensional vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecScale">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecScale" title="Link to this definition"></a></dt>
+<dd><p>Scale a vector by a scalar factor.</p>
+<p>This function performs element-wise multiplication of a 3D vector
+by a scalar value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Scalar multiplier.</p></li>
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – Input vector (u1, u2, u3).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Scaled vector k * u.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HelperFunctions.Vector.VecSubtract">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VecSubtract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HelperFunctions.Vector.VecSubtract" title="Link to this definition"></a></dt>
+<dd><p>Compute the element-wise subtraction of two 3D vectors.</p>
+<p>The result represents the vector difference u - v.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u</strong> (<em>array-like</em><em> of </em><em>float</em>) – First vector (u1, u2, u3).</p></li>
+<li><p><strong>v</strong> (<em>array-like</em><em> of </em><em>float</em>) – Second vector (v1, v2, v3).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resulting vector u - v.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="formfinding.html" class="btn btn-neutral float-left" title="FormFinding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="io.html" class="btn btn-neutral float-right" title="IO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Dr. Ioannis Mirtsopoulos.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

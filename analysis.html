@@ -1,0 +1,1133 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analysis &mdash; Graph Structural Design v.0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3573b5f5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FormFinding" href="formfinding.html" />
+    <link rel="prev" title="Truss" href="truss.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Graph Structural Design
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Graph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="graph.html#Graph.Graph"><code class="docutils literal notranslate"><span class="pre">Graph</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Adjacency"><code class="docutils literal notranslate"><span class="pre">Graph.Adjacency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AdjacencyList"><code class="docutils literal notranslate"><span class="pre">Graph.AdjacencyList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.ClosenessCentrality"><code class="docutils literal notranslate"><span class="pre">Graph.ClosenessCentrality</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Coords2D"><code class="docutils literal notranslate"><span class="pre">Graph.Coords2D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DegreeCentrality"><code class="docutils literal notranslate"><span class="pre">Graph.DegreeCentrality</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Density"><code class="docutils literal notranslate"><span class="pre">Graph.Density</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Diameter"><code class="docutils literal notranslate"><span class="pre">Graph.Diameter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeNodePairs"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeNodePairs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeObjs"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EigVecAdjacencyMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.EigVecAdjacencyMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EigVecLaplacian"><code class="docutils literal notranslate"><span class="pre">Graph.EigVecLaplacian</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Faces"><code class="docutils literal notranslate"><span class="pre">Graph.Faces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.FiedlerVec"><code class="docutils literal notranslate"><span class="pre">Graph.FiedlerVec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.GlobalClusteringCoefficient"><code class="docutils literal notranslate"><span class="pre">Graph.GlobalClusteringCoefficient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Incidence"><code class="docutils literal notranslate"><span class="pre">Graph.Incidence</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.IsGeometricallyPlanar"><code class="docutils literal notranslate"><span class="pre">Graph.IsGeometricallyPlanar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Lengths"><code class="docutils literal notranslate"><span class="pre">Graph.Lengths</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MaxLength"><code class="docutils literal notranslate"><span class="pre">Graph.MaxLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MeanLength"><code class="docutils literal notranslate"><span class="pre">Graph.MeanLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MinLength"><code class="docutils literal notranslate"><span class="pre">Graph.MinLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.NetworkXGraph"><code class="docutils literal notranslate"><span class="pre">Graph.NetworkXGraph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Order"><code class="docutils literal notranslate"><span class="pre">Graph.Order</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.PlanarityDegree"><code class="docutils literal notranslate"><span class="pre">Graph.PlanarityDegree</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Size"><code class="docutils literal notranslate"><span class="pre">Graph.Size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.StandardDeviationLength"><code class="docutils literal notranslate"><span class="pre">Graph.StandardDeviationLength</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VarianceLengths"><code class="docutils literal notranslate"><span class="pre">Graph.VarianceLengths</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VertexCoords"><code class="docutils literal notranslate"><span class="pre">Graph.VertexCoords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.VertexObjs"><code class="docutils literal notranslate"><span class="pre">Graph.VertexObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Vertices"><code class="docutils literal notranslate"><span class="pre">Graph.Vertices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Weights"><code class="docutils literal notranslate"><span class="pre">Graph.Weights</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AddEdge"><code class="docutils literal notranslate"><span class="pre">Graph.AddEdge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.AdjacencyMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.AdjacencyMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BetweennessCentralityEdges"><code class="docutils literal notranslate"><span class="pre">Graph.BetweennessCentralityEdges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BetweennessCentralityNodes"><code class="docutils literal notranslate"><span class="pre">Graph.BetweennessCentralityNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BFS"><code class="docutils literal notranslate"><span class="pre">Graph.BFS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.BracedVariants"><code class="docutils literal notranslate"><span class="pre">Graph.BracedVariants()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.Cycles"><code class="docutils literal notranslate"><span class="pre">Graph.Cycles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DegreeMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.DegreeMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.DFS"><code class="docutils literal notranslate"><span class="pre">Graph.DFS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeByEndIds"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeByEndIds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.EdgeById"><code class="docutils literal notranslate"><span class="pre">Graph.EdgeById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.FaceAngles"><code class="docutils literal notranslate"><span class="pre">Graph.FaceAngles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.GlobalAngleUniformity"><code class="docutils literal notranslate"><span class="pre">Graph.GlobalAngleUniformity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.IncidenceMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.IncidenceMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.LaplacianMatrix"><code class="docutils literal notranslate"><span class="pre">Graph.LaplacianMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MergeNodesById"><code class="docutils literal notranslate"><span class="pre">Graph.MergeNodesById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.MirrorGraph"><code class="docutils literal notranslate"><span class="pre">Graph.MirrorGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.NodeById"><code class="docutils literal notranslate"><span class="pre">Graph.NodeById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.PageRank"><code class="docutils literal notranslate"><span class="pre">Graph.PageRank()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html#Graph.Graph.RemoveEdgeById"><code class="docutils literal notranslate"><span class="pre">Graph.RemoveEdgeById()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="face.html">Face</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="face.html#Face.Face"><code class="docutils literal notranslate"><span class="pre">Face</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Coords2D"><code class="docutils literal notranslate"><span class="pre">Face.Coords2D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Coords3D"><code class="docutils literal notranslate"><span class="pre">Face.Coords3D</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Edges"><code class="docutils literal notranslate"><span class="pre">Face.Edges</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.EdgeObjs"><code class="docutils literal notranslate"><span class="pre">Face.EdgeObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Id"><code class="docutils literal notranslate"><span class="pre">Face.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.Vertices"><code class="docutils literal notranslate"><span class="pre">Face.Vertices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.VertexObjs"><code class="docutils literal notranslate"><span class="pre">Face.VertexObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="face.html#Face.Face.TriangulationScenarios"><code class="docutils literal notranslate"><span class="pre">Face.TriangulationScenarios()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edge.html">Edge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edge.html#Edge.Edge"><code class="docutils literal notranslate"><span class="pre">Edge</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EndNode"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.Id"><code class="docutils literal notranslate"><span class="pre">Edge.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.Length"><code class="docutils literal notranslate"><span class="pre">Edge.Length</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.MidPoint"><code class="docutils literal notranslate"><span class="pre">Edge.MidPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StartNode"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">Edge.StiffnessMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.BucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.BucklingLimit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.ForceMagnitude"><code class="docutils literal notranslate"><span class="pre">Edge.ForceMagnitude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EndNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode_AdjEdges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.EulerCriticalBucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.EulerCriticalBucklingLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="edge.html#Edge.Edge.StartNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode_AdjEdges()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vertex.html">Vertex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vertex.html#Vertex.Vertex"><code class="docutils literal notranslate"><span class="pre">Vertex</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Coords"><code class="docutils literal notranslate"><span class="pre">Vertex.Coords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Id"><code class="docutils literal notranslate"><span class="pre">Vertex.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Label"><code class="docutils literal notranslate"><span class="pre">Vertex.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Valency"><code class="docutils literal notranslate"><span class="pre">Vertex.Valency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.X"><code class="docutils literal notranslate"><span class="pre">Vertex.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Y"><code class="docutils literal notranslate"><span class="pre">Vertex.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Z"><code class="docutils literal notranslate"><span class="pre">Vertex.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.AdjacentNodes"><code class="docutils literal notranslate"><span class="pre">Vertex.AdjacentNodes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.IncidentEdges"><code class="docutils literal notranslate"><span class="pre">Vertex.IncidentEdges</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Ux"><code class="docutils literal notranslate"><span class="pre">Vertex.Ux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Uy"><code class="docutils literal notranslate"><span class="pre">Vertex.Uy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.Uz"><code class="docutils literal notranslate"><span class="pre">Vertex.Uz</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertex.html#Vertex.Vertex.AngleUniformity"><code class="docutils literal notranslate"><span class="pre">Vertex.AngleUniformity()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">Load</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="load.html#Load.Load"><code class="docutils literal notranslate"><span class="pre">Load</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Id"><code class="docutils literal notranslate"><span class="pre">Load.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Label"><code class="docutils literal notranslate"><span class="pre">Load.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.NodeId"><code class="docutils literal notranslate"><span class="pre">Load.NodeId</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Vec"><code class="docutils literal notranslate"><span class="pre">Load.Vec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.X"><code class="docutils literal notranslate"><span class="pre">Load.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Y"><code class="docutils literal notranslate"><span class="pre">Load.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.Z"><code class="docutils literal notranslate"><span class="pre">Load.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="load.html#Load.Load.AnchorNode"><code class="docutils literal notranslate"><span class="pre">Load.AnchorNode()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="truss.html">Truss</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="truss.html#Truss.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.BasicMetrics"><code class="docutils literal notranslate"><span class="pre">Truss.BasicMetrics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtLoads"><code class="docutils literal notranslate"><span class="pre">Truss.ExtLoads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtLoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.ExtLoadIds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ExtNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.ExtNodeIds</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.LoadObjs"><code class="docutils literal notranslate"><span class="pre">Truss.LoadObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxCompressionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxTensionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MeanForce"><code class="docutils literal notranslate"><span class="pre">Truss.MeanForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinCompressionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinTensionForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.StandardDeviationForce"><code class="docutils literal notranslate"><span class="pre">Truss.StandardDeviationForce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.StaticAction"><code class="docutils literal notranslate"><span class="pre">Truss.StaticAction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.VarianceForces"><code class="docutils literal notranslate"><span class="pre">Truss.VarianceForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.AxialForces"><code class="docutils literal notranslate"><span class="pre">Truss.AxialForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.EulerCriticalBucklingLimits"><code class="docutils literal notranslate"><span class="pre">Truss.EulerCriticalBucklingLimits()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.ForceDirectionality"><code class="docutils literal notranslate"><span class="pre">Truss.ForceDirectionality()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxGlobalDisplacement"><code class="docutils literal notranslate"><span class="pre">Truss.MaxGlobalDisplacement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MaxGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MaxGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Mass"><code class="docutils literal notranslate"><span class="pre">Truss.Mass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MeanGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MeanGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.MinGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MinGlobalUtilization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.UnconstrainedNodes"><code class="docutils literal notranslate"><span class="pre">Truss.UnconstrainedNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.UpdateAnalyzedGraph"><code class="docutils literal notranslate"><span class="pre">Truss.UpdateAnalyzedGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Utilizations"><code class="docutils literal notranslate"><span class="pre">Truss.Utilizations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="truss.html#Truss.Truss.Volume"><code class="docutils literal notranslate"><span class="pre">Truss.Volume()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Analysis.EquilibriumSolver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.EquilibriumSolver.AxialForcesSolver_wo_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_wo_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.EquilibriumSolver.AxialForcesSolver_w_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_w_reactions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Analysis.FE"><code class="docutils literal notranslate"><span class="pre">FE</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.Analysis"><code class="docutils literal notranslate"><span class="pre">FE.Analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.GlobalForceVector"><code class="docutils literal notranslate"><span class="pre">FE.GlobalForceVector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.GlobalStiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">FE.GlobalStiffnessMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.RecoverGlobalDisplacement"><code class="docutils literal notranslate"><span class="pre">FE.RecoverGlobalDisplacement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.ReduceForceSupports"><code class="docutils literal notranslate"><span class="pre">FE.ReduceForceSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.ReduceStiffnessSupports"><code class="docutils literal notranslate"><span class="pre">FE.ReduceStiffnessSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.RedundancyMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RedundancyMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.RigidityMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RigidityMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.SolveDisplacements"><code class="docutils literal notranslate"><span class="pre">FE.SolveDisplacements()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.SolveMemberForces"><code class="docutils literal notranslate"><span class="pre">FE.SolveMemberForces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.ApplyCrossSectionCalcVolume"><code class="docutils literal notranslate"><span class="pre">FE.ApplyCrossSectionCalcVolume()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.ReduceDimensionsDOF"><code class="docutils literal notranslate"><span class="pre">FE.ReduceDimensionsDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.TributaryForces"><code class="docutils literal notranslate"><span class="pre">FE.TributaryForces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Analysis.FE.TributarySupports"><code class="docutils literal notranslate"><span class="pre">FE.TributarySupports()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="formfinding.html">FormFinding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.FDM"><code class="docutils literal notranslate"><span class="pre">FDM</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.FDM.Solver"><code class="docutils literal notranslate"><span class="pre">FDM.Solver()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.Grid.Edges"><code class="docutils literal notranslate"><span class="pre">Grid.Edges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="formfinding.html#FormFinding.Grid.Nodes"><code class="docutils literal notranslate"><span class="pre">Grid.Nodes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="formfinding.html#FormFinding.GroundStructure"><code class="docutils literal notranslate"><span class="pre">GroundStructure</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helperfunctions.html">HelperFunctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry"><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.EuclideanDistance"><code class="docutils literal notranslate"><span class="pre">Geometry.EuclideanDistance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.PointPlaneDistance"><code class="docutils literal notranslate"><span class="pre">Geometry.PointPlaneDistance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.MirrorPoint"><code class="docutils literal notranslate"><span class="pre">Geometry.MirrorPoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.MidPoint"><code class="docutils literal notranslate"><span class="pre">Geometry.MidPoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.PlaneAsEquation"><code class="docutils literal notranslate"><span class="pre">Geometry.PlaneAsEquation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.IsPointOnPlane"><code class="docutils literal notranslate"><span class="pre">Geometry.IsPointOnPlane()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.SegSegIntersection"><code class="docutils literal notranslate"><span class="pre">Geometry.SegSegIntersection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Geometry.LineLineIntersection"><code class="docutils literal notranslate"><span class="pre">Geometry.LineLineIntersection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector"><code class="docutils literal notranslate"><span class="pre">Vector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAngle2D"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngle2D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAngleBetween"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngleBetween()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAngleBetween_np"><code class="docutils literal notranslate"><span class="pre">Vector.VecAngleBetween_np()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecAdd"><code class="docutils literal notranslate"><span class="pre">Vector.VecAdd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecCrossProd"><code class="docutils literal notranslate"><span class="pre">Vector.VecCrossProd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecDotProd"><code class="docutils literal notranslate"><span class="pre">Vector.VecDotProd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecNorm"><code class="docutils literal notranslate"><span class="pre">Vector.VecNorm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecScale"><code class="docutils literal notranslate"><span class="pre">Vector.VecScale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="helperfunctions.html#HelperFunctions.Vector.VecSubtract"><code class="docutils literal notranslate"><span class="pre">Vector.VecSubtract()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">IO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#IO.Import"><code class="docutils literal notranslate"><span class="pre">Import</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByCSVpath"><code class="docutils literal notranslate"><span class="pre">Import.ByCSVpath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSON"><code class="docutils literal notranslate"><span class="pre">Import.ByJSON()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSONpath"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONpath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Import.ByJSONstring"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONstring()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#IO.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToCSV"><code class="docutils literal notranslate"><span class="pre">Export.ToCSV()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToJSONadv"><code class="docutils literal notranslate"><span class="pre">Export.ToJSONadv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#IO.Export.ToJSON"><code class="docutils literal notranslate"><span class="pre">Export.ToJSON()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="viz.html">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="viz.html#Viz.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph3D"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.EdgePerformanceDonut"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.EdgePerformanceDonut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.GraphPerformanceSpider"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.GraphPerformanceSpider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotTruss.Graph2Compare"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph2Compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="viz.html#Viz.Plot.PlotGroundStructure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="viz.html#Viz.Plot.PlotGroundStructure.NodeGrid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.NodeGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Graph Structural Design</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Analysis</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/analysis.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="analysis">
+<h1>Analysis<a class="headerlink" href="#analysis" title="Link to this heading"></a></h1>
+<p>Core data structures for representing structural graphs, including
+nodes, edges, connectivity, and loads.</p>
+<dl class="py class" id="module-Analysis">
+<dt class="sig sig-object py" id="Analysis.EquilibriumSolver">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Analysis.</span></span><span class="sig-name descname"><span class="pre">EquilibriumSolver</span></span><a class="headerlink" href="#Analysis.EquilibriumSolver" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.EquilibriumSolver.AxialForcesSolver_wo_reactions">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AxialForcesSolver_wo_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_node_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.EquilibriumSolver.AxialForcesSolver_wo_reactions" title="Link to this definition"></a></dt>
+<dd><p>Solve axial forces in a truss using global equilibrium (matrix method),
+without explicitly forming a stiffness matrix.</p>
+<p>The method assembles a global equilibrium system of the form:</p>
+<blockquote>
+<div><p>A · x = -b</p>
+</div></blockquote>
+<p>where:
+- A contains member direction cosines and support constraint equations
+- x contains unknown axial forces and support reactions
+- b contains externally applied nodal loads</p>
+<p>A least-squares solution is used, allowing the method to handle
+statically determinate and indeterminate systems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="truss.html#Truss.Truss" title="Truss.Truss"><em>Truss</em></a>) – Truss object containing nodes and edges.</p></li>
+<li><p><strong>force_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs where external forces are applied.</p></li>
+<li><p><strong>ext_forces</strong> (<em>list</em><em> of </em><em>list</em><em>[</em><em>float</em><em>]</em>) – External force vectors at the corresponding nodes, given as
+[[Fx, Fy, Fz], …].</p></li>
+<li><p><strong>sup_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs that are fully constrained (supports). Each support
+contributes three reaction components (x, y, z).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>X_forces</strong> (<em>ndarray</em>) – Axial forces in each member (length = number of edges).
+Positive/negative sign convention depends on member orientation.</p></li>
+<li><p><strong>R_forces</strong> (<em>ndarray</em>) – Reaction forces at supports (length = 3 × number of support nodes),
+ordered per node as [Rx, Ry, Rz].</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The equilibrium matrix is constructed using direction cosines of each member.</p></li>
+<li><p>Each node contributes three equilibrium equations (x, y, z).</p></li>
+<li><p>Supports are modeled as unknown reaction forces (no displacement method used).</p></li>
+<li><dl class="simple">
+<dt>A least-squares solver (<cite>np.linalg.lstsq</cite>) is used:</dt><dd><ul>
+<li><p>Provides a solution even for over/underdetermined systems.</p></li>
+<li><p>For well-posed statically determinate systems, the solution is exact.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Rows corresponding to unconstrained and unconnected DOFs are removed before solving to improve numerical stability.</p></li>
+<li><p>Assumes pin-jointed truss behavior (axial forces only, no bending).</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ZeroDivisionError</strong> – If a member has zero length (coincident nodes).</p></li>
+<li><p><strong>ValueError</strong> – If input dimensions (nodes, forces) are inconsistent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.EquilibriumSolver.AxialForcesSolver_w_reactions">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AxialForcesSolver_w_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_forces</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.EquilibriumSolver.AxialForcesSolver_w_reactions" title="Link to this definition"></a></dt>
+<dd><p>Solve axial forces in a truss using global equilibrium with partially
+prescribed support reactions.</p>
+<p>The method assembles a global equilibrium system:</p>
+<blockquote>
+<div><p>A · x = -b</p>
+</div></blockquote>
+<p>where:
+- A contains member direction cosines and selected support reaction components
+- x contains unknown axial forces and (active) support reactions
+- b contains externally applied nodal loads</p>
+<p>Unlike the least-squares version, this formulation removes inactive
+degrees of freedom and solves the reduced system directly using
+<cite>np.linalg.solve</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="truss.html#Truss.Truss" title="Truss.Truss"><em>Truss</em></a>) – Truss object containing nodes and edges.</p></li>
+<li><p><strong>force_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs where external forces are applied.</p></li>
+<li><p><strong>ext_forces</strong> (<em>list</em><em> of </em><em>list</em><em>[</em><em>float</em><em>]</em>) – External force vectors at the corresponding nodes, given as
+[[Fx, Fy, Fz], …].</p></li>
+<li><p><strong>sup_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs that act as supports.</p></li>
+<li><p><strong>sup_forces</strong> (<em>list</em><em> of </em><em>list</em><em>[</em><em>float</em><em>]</em>) – Support reaction activation per node, given as [[Rx, Ry, Rz], …].
+Each component acts as a binary selector:
+- nonzero → reaction component is included as an unknown
+- zero → reaction component is excluded from the system</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Flattened solution vector containing:
+- axial forces (first E entries)
+- active support reaction components (remaining entries)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The equilibrium matrix is constructed using direction cosines of each member.</p></li>
+<li><p>Each node contributes three equilibrium equations (x, y, z).</p></li>
+<li><p>Support reactions are selectively included based on <cite>sup_forces</cite>.</p></li>
+<li><p>Rows corresponding to unconnected DOFs and columns corresponding to inactive unknowns are removed before solving.</p></li>
+<li><dl class="simple">
+<dt>The system is solved using <cite>np.linalg.solve</cite>, therefore:</dt><dd><ul>
+<li><p>The reduced system must be square and non-singular.</p></li>
+<li><p>This method assumes a well-posed, fully constrained structure.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Assumes pin-jointed truss behavior (axial forces only).</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>LinAlgError</strong> – If the system matrix is singular or not square.</p></li>
+<li><p><strong>ZeroDivisionError</strong> – If a member has zero length (coincident nodes).</p></li>
+<li><p><strong>ValueError</strong> – If input dimensions are inconsistent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Analysis.FE">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Analysis.</span></span><span class="sig-name descname"><span class="pre">FE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.Analysis">
+<span class="sig-name descname"><span class="pre">Analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.Analysis" title="Link to this definition"></a></dt>
+<dd><p>Perform structural analysis of a truss using the stiffness method.</p>
+<p>This method computes nodal displacements, member axial forces,
+strains, and stresses by assembling and solving the global
+equilibrium equations of the system.</p>
+<dl class="simple">
+<dt>The analysis pipeline consists of:</dt><dd><ol class="arabic simple">
+<li><p>Dimensionality reduction (2D/3D handling and DOF definition)</p></li>
+<li><p>Global stiffness matrix assembly</p></li>
+<li><p>Application of boundary conditions (supports)</p></li>
+<li><p>Reduction of the system to free degrees of freedom</p></li>
+<li><p>Solution of nodal displacements</p></li>
+<li><p>Recovery of full displacement vector</p></li>
+<li><p>Computation of member forces, strains, and stresses</p></li>
+<li><p>Update of the graph with analysis results</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="graph.html#Graph.Graph" title="Graph.Graph"><em>Graph</em></a>) – Structural graph representing the truss system, including geometry, connectivity, and material properties.</p></li>
+<li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (fully constrained nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>axial_forces</strong> (<em>list of float</em>) – Axial force in each member.</p></li>
+<li><p><strong>disp</strong> (<em>list of list[float]</em>) – Nodal displacements for each node as [Ux, Uy, Uz].</p></li>
+<li><p><strong>strain</strong> (<em>list of float</em>) – Axial strain in each member.</p></li>
+<li><p><strong>stress</strong> (<em>list of float</em>) – Axial stress in each member.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Uses the linear elastic stiffness method (small displacement assumption).</p></li>
+<li><p>Degrees of freedom (DOFs) are automatically determined based on the dimensionality of the structure.</p></li>
+<li><p>Supports are applied by removing constrained DOFs from the system.</p></li>
+<li><p>The reduced system is solved using standard linear algebra solvers.</p></li>
+<li><p>Results are written back to the input <cite>graph</cite> via <cite>Graph.UpdateAnalyzedGraph</cite>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>LinAlgError</strong> – If the reduced stiffness matrix is singular (mechanism or insufficient constraints).</p></li>
+<li><p><strong>ValueError</strong> – If input data (geometry, supports, loads) is inconsistent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.GlobalForceVector">
+<span class="sig-name descname"><span class="pre">GlobalForceVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.GlobalForceVector" title="Link to this definition"></a></dt>
+<dd><p>Assemble the global force vector for a truss structure.</p>
+<p>This method constructs the nodal force vector by mapping externally
+applied loads to the corresponding degrees of freedom (DOFs) of each node.
+Loads applied at support nodes are ignored, as those DOFs are assumed
+to be constrained.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="graph.html#Graph.Graph" title="Graph.Graph"><em>Graph</em></a>) – Structural graph containing nodes and applied loads (<cite>LoadObjs</cite>).</p></li>
+<li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (constrained nodes).</p></li>
+<li><p><strong>dof</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of degrees of freedom per node:
+- 2 → planar analysis (X, Z)
+- 3 → spatial analysis (X, Y, Z)
+Default is 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Global force vector of shape (dof * number_of_nodes, 1),
+where forces are arranged per node as:
+[Fx, Fz] (2D) or [Fx, Fy, Fz] (3D).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Loads are extracted from <cite>truss.LoadObjs</cite>.</p></li>
+<li><p>For 2D problems, only X and Z components are considered.</p></li>
+<li><p>For 3D problems, X, Y, and Z components are included.</p></li>
+<li><p>Forces applied at support nodes are excluded, since their displacements are constrained and handled separately.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>dof</cite> is not equal to 2 or 3.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.GlobalStiffnessMatrix">
+<span class="sig-name descname"><span class="pre">GlobalStiffnessMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.GlobalStiffnessMatrix" title="Link to this definition"></a></dt>
+<dd><p>Assemble the global stiffness matrix of a truss structure.</p>
+<p>This method computes the global stiffness matrix by assembling
+individual element stiffness matrices into a single system matrix
+using the direct stiffness method.</p>
+<p>Each element contributes to the global matrix based on its
+connectivity and degrees of freedom (DOFs). The formulation
+supports both 2D and 3D truss systems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>truss</strong> (<a class="reference internal" href="graph.html#Graph.Graph" title="Graph.Graph"><em>Graph</em></a>) – Structural graph containing nodes, elements, geometry,
+and element stiffness definitions.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Global stiffness matrix of size (dof * number_of_nodes,
+dof * number_of_nodes).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The stiffness matrix is assembled using:</dt><dd><p>K = Σ (k_e * K_e)
+where:
+* k_e = (A * E) / L is the axial stiffness of each member
+* K_e is the element stiffness matrix in global coordinates</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Degrees of freedom (DOFs) are determined automatically:</dt><dd><ul>
+<li><p>2 DOFs per node → planar truss (X, Z)</p></li>
+<li><p>3 DOFs per node → spatial truss (X, Y, Z)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The method assumes:</dt><dd><ul>
+<li><p>Linear elastic material behavior</p></li>
+<li><p>Pin-jointed truss members (axial forces only)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Assembly is performed by mapping local element DOFs to global DOF indices.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ZeroDivisionError</strong> – If an element has zero length.</p></li>
+<li><p><strong>ValueError</strong> – If the dimensionality (DOF) is not supported.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.RecoverGlobalDisplacement">
+<span class="sig-name descname"><span class="pre">RecoverGlobalDisplacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Uf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_dofs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.RecoverGlobalDisplacement" title="Link to this definition"></a></dt>
+<dd><p>Reconstruct the full global displacement vector from reduced DOFs.</p>
+<p>This method expands the displacement solution obtained from the
+reduced system (free degrees of freedom only) back into the full
+global displacement vector. Constrained DOFs (e.g., supports) are
+assigned zero displacement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Uf</strong> (<em>ndarray</em>) – Displacement vector corresponding to the free degrees of freedom.</p></li>
+<li><p><strong>free_dofs</strong> (<em>list</em><em> of </em><em>int</em>) – Indices of the free degrees of freedom in the global system.</p></li>
+<li><p><strong>ndof</strong> (<em>int</em>) – Total number of degrees of freedom in the full system
+(typically dof × number_of_nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Global displacement vector of length <cite>ndof</cite>, where:
+- entries corresponding to free DOFs are filled from <cite>Uf</cite>
+- constrained DOFs are set to zero</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This step is part of the standard stiffness method workflow:</dt><dd><ol class="arabic simple">
+<li><p>Reduce system → solve for free DOFs</p></li>
+<li><p>Recover full displacement vector</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Assumes that all constrained DOFs have zero displacement (Dirichlet boundary conditions).</p></li>
+<li><p>The ordering of <cite>Uf</cite> must match the ordering of <cite>free_dofs</cite>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the length of <cite>Uf</cite> does not match the number of <cite>free_dofs</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.ReduceForceSupports">
+<span class="sig-name descname"><span class="pre">ReduceForceSupports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.ReduceForceSupports" title="Link to this definition"></a></dt>
+<dd><p>Extract the reduced force vector corresponding to free DOFs.</p>
+<p>This method filters the global force vector to retain only the
+entries associated with free (unconstrained) degrees of freedom.
+It is used when forming the reduced system of equations after
+applying support constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>ndarray</em>) – Global force vector of size (ndof, 1) or (ndof,).</p></li>
+<li><p><strong>free_dofs</strong> (<em>list</em><em> of </em><em>int</em>) – Indices of the free degrees of freedom.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reduced force vector containing only the entries of <cite>F</cite>
+corresponding to <cite>free_dofs</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>This operation is equivalent to selecting rows of the global system associated with unconstrained DOFs.</p></li>
+<li><dl class="simple">
+<dt>Typically used together with a reduced stiffness matrix:</dt><dd><p>K_ff * U_f = F_f</p>
+</dd>
+</dl>
+</li>
+<li><p>Assumes that <cite>free_dofs</cite> are valid indices of <cite>F</cite>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.ReduceStiffnessSupports">
+<span class="sig-name descname"><span class="pre">ReduceStiffnessSupports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.ReduceStiffnessSupports" title="Link to this definition"></a></dt>
+<dd><p>Reduce the global stiffness matrix by removing constrained DOFs.</p>
+<p>This method constructs the reduced stiffness matrix by eliminating
+rows and columns associated with constrained (support) degrees of
+freedom. The resulting matrix corresponds only to the free DOFs and
+is used to solve the reduced equilibrium system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>K</strong> (<em>ndarray</em>) – Global stiffness matrix of size (ndof, ndof).</p></li>
+<li><p><strong>support_dofs</strong> (<em>list</em><em> of </em><em>int</em>) – Indices of constrained (support) degrees of freedom.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>K_ff<span class="classifier">ndarray</span></dt><dd><p>Reduced stiffness matrix corresponding to free DOFs.</p>
+</dd>
+<dt>free_dofs<span class="classifier">list of int</span></dt><dd><p>Indices of the free (unconstrained) DOFs.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (K_ff, free_dofs)</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><dl>
+<dt>The reduction follows the standard FEM partitioning:</dt><dd><p>[K_ff  K_fc] [U_f] = [F_f]
+[K_cf  K_cc] [U_c]   [F_c]</p>
+<p>where constrained displacements U_c are known (typically zero), allowing the system to be reduced to:</p>
+<p>K_ff * U_f = F_f</p>
+</dd>
+</dl>
+</li>
+<li><p>Uses NumPy advanced indexing (<cite>np.ix_</cite>) to extract the submatrix.</p></li>
+<li><p>The ordering of DOFs is preserved.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.RedundancyMatrix">
+<span class="sig-name descname"><span class="pre">RedundancyMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduced_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.RedundancyMatrix" title="Link to this definition"></a></dt>
+<dd><p>Compute the redundancy matrix of a truss structure.</p>
+<p>This method evaluates the redundancy (force indeterminacy) of a truss
+by constructing a compatibility matrix for redundant members and
+projecting it through the inverse of the reduced stiffness matrix.
+The resulting redundancy matrix quantifies the interaction between
+redundant forces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="graph.html#Graph.Graph" title="Graph.Graph"><em>Graph</em></a>) – The structural graph representing the truss system.</p></li>
+<li><p><strong>reduced_coords</strong> (<em>ndarray</em>) – Reduced nodal coordinates (after dimensionality reduction),
+used to determine the number of DOFs per node.</p></li>
+<li><p><strong>support_dofs</strong> (<em>list</em><em> of </em><em>int</em>) – Indices of constrained (support) degrees of freedom.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Redundancy matrix of size (r, r), where r is the number of
+redundant members. Returns None if the truss is statically
+determinate (i.e., no redundant members).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray or None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The number of redundant members is estimated as:</dt><dd><p>r = m - n_free_dof
+where:
+m = number of members (edges)
+n_free_dof = number of unconstrained degrees of freedom</p>
+</dd>
+</dl>
+</li>
+<li><p>A simplified compatibility matrix B is constructed by selecting the last r members as redundants.</p></li>
+<li><dl class="simple">
+<dt>The redundancy matrix is computed as:</dt><dd><p>R = B^T * K_ff^{-1} * B
+where K_ff is the reduced stiffness matrix.</p>
+</dd>
+</dl>
+</li>
+<li><p>This formulation is related to the force method in structural analysis.</p></li>
+</ul>
+<section id="assumptions">
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The truss is stable and K_ff is invertible.</p></li>
+<li><p>Redundant members are chosen heuristically (last r edges), which may not be optimal for all structures.</p></li>
+<li><p>Compatibility matrix B is constructed in a simplified manner.</p></li>
+</ul>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.RigidityMatrix">
+<span class="sig-name descname"><span class="pre">RigidityMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduced_coords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.RigidityMatrix" title="Link to this definition"></a></dt>
+<dd><p>Compute the rigidity (compatibility) matrix of a truss structure.</p>
+<p>The rigidity matrix relates nodal displacements to axial member
+elongations. Each row corresponds to a bar (edge), and each column
+corresponds to a degree of freedom of a node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="graph.html#Graph.Graph" title="Graph.Graph"><em>Graph</em></a>) – The structural graph representing the truss system.</p></li>
+<li><p><strong>reduced_coords</strong> (<em>ndarray</em><em> of </em><em>shape</em><em> (</em><em>n_nodes</em><em>, </em><em>d</em><em>)</em>) – Nodal coordinates after dimensionality reduction (e.g., removal
+of zero components). The dimension <cite>d</cite> is typically 2 or 3.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rigidity matrix of shape (n_bars, d * n_nodes), where each row
+encodes the directional contribution of a bar to nodal DOFs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>Each row corresponds to a bar connecting nodes i and j.</p></li>
+<li><p>For a bar (i, j), the matrix entries are constructed using the unit direction vector:</p>
+<blockquote>
+<div><p>u_ij = (x_i - x_j) / ||x_i - x_j||</p>
+</div></blockquote>
+</li>
+</ul>
+<p>and inserted as:</p>
+<blockquote>
+<div><p>R[k, d*i : d*(i+1)] =  u_ij
+R[k, d*j : d*(j+1)] = -u_ij</p>
+</div></blockquote>
+<ul>
+<li><p>The rigidity matrix maps nodal displacements <cite>u</cite> to member extensions <cite>e</cite>:</p>
+<blockquote>
+<div><p>e = R * u</p>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>This matrix is closely related to:</dt><dd><ul class="simple">
+<li><p>the equilibrium matrix (its transpose)</p></li>
+<li><p>stiffness matrix formulation in finite element methods</p></li>
+<li><p>rigidity theory in structural mechanics and graph theory</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>A zero-length bar is invalid and will raise an error.</p></li>
+</ul>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://mathworld.wolfram.com/RigidityMatrix.html">https://mathworld.wolfram.com/RigidityMatrix.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.SolveDisplacements">
+<span class="sig-name descname"><span class="pre">SolveDisplacements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Kff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.SolveDisplacements" title="Link to this definition"></a></dt>
+<dd><p>Solve the linear system for unknown nodal displacements at free degrees of freedom.</p>
+<p>This function computes the displacement vector of the unconstrained
+(free) degrees of freedom in a structural system by solving the reduced
+stiffness equation:</p>
+<blockquote>
+<div><p>Kff * Uf = Ff</p>
+<p>where:
+Kff is the stiffness matrix restricted to free DOFs,
+Ff is the corresponding reduced external force vector,
+Uf is the unknown displacement vector.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Kff</strong> (<em>ndarray</em>) – Reduced stiffness matrix corresponding to free degrees of freedom.
+Shape: (n_free_dofs, n_free_dofs).</p></li>
+<li><p><strong>Ff</strong> (<em>ndarray</em>) – Reduced external force vector corresponding to free DOFs.
+Shape: (n_free_dofs,) or (n_free_dofs, 1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displacement vector of free degrees of freedom.
+Shape: (n_free_dofs,).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Assumes the system is linear elastic and in static equilibrium.</p></li>
+<li><p>Requires Kff to be non-singular; otherwise the system is unstable or under-constrained.</p></li>
+<li><p>Uses a direct solver (NumPy LU-based solver via <cite>np.linalg.solve</cite>), which is efficient for dense systems but not optimal for large sparse structures.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>LinAlgError</strong> – If Kff is singular or ill-conditioned.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.linalg.solve</span></code></dt><dd><p>underlying linear solver used.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.SolveMemberForces">
+<span class="sig-name descname"><span class="pre">SolveMemberForces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ug</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.SolveMemberForces" title="Link to this definition"></a></dt>
+<dd><p>Compute internal axial response of each truss member based on global displacements.</p>
+<p>This function evaluates element-level mechanical quantities (strain, stress, and axial force)
+by projecting the relative nodal displacements of each bar onto its axial direction.</p>
+<p>For each element (i, j), the method:
+- Computes the element length and unit direction vector
+- Extracts nodal displacements from the global displacement vector Ug
+- Projects relative displacement onto the element axis
+- Computes axial strain, stress, and force using linear elastic relations</p>
+<p>The results are stored internally in the object (self.axialforces, self.strains,
+self.stresses, self.disp) and are also returned as a structured list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<em>Graph-like object</em>) – Structure containing node connectivity (EdgeNodePairs) and element data.</p></li>
+<li><p><strong>coords</strong> (<em>ndarray</em>) – Node coordinate array of shape (n_nodes, dim), where dim ∈ {2, 3}.</p></li>
+<li><p><strong>plane</strong> (<em>str</em>) – Projection plane used for displacement storage (“XY”, “XZ”, “YZ”, “XYZ”).</p></li>
+<li><p><strong>Ug</strong> (<em>ndarray</em>) – Global displacement vector containing all nodal DOFs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Element-wise results containing:
+- element : tuple (i, j)
+- length : float
+- direction : list[float] unit vector from i to j
+- u_i : list[float] nodal displacement at node i
+- u_j : list[float] nodal displacement at node j
+- delta_u_axial : float axial relative displacement
+- strain : float engineering strain
+- stress : float axial stress (E * strain)
+- force : float axial force (A * stress, positive = tension)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Assumes small deformation linear elasticity.</p></li>
+<li><p>Positive axial force corresponds to tension, negative to compression.</p></li>
+<li><p>Updates internal state dictionaries: self.disp, self.strains, self.stresses, self.axialforces.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.ApplyCrossSectionCalcVolume">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ApplyCrossSectionCalcVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lengths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_sections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_allowed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.ApplyCrossSectionCalcVolume" title="Link to this definition"></a></dt>
+<dd><p>Assign the minimum feasible cross-sectional area to each truss member based on axial force demand,
+and compute the resulting total structural volume.</p>
+<p>For each member, the required stress demand is evaluated and the smallest available cross-section
+that satisfies the allowable stress constraint is selected. The total structural volume is then
+computed as the sum of each member’s volume contribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forces</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Axial forces in each member (N). Positive or negative values are handled via absolute value.</p></li>
+<li><p><strong>lengths</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Member lengths (m), corresponding one-to-one with <cite>forces</cite>.</p></li>
+<li><p><strong>cross_sections</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Available cross-sectional areas (mm²), assumed sorted in ascending order. The algorithm selects the smallest section that satisfies the stress constraint.</p></li>
+<li><p><strong>sigma_allowed</strong> (<em>float</em>) – Allowable material stress (MPa = N/mm²).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>assigned_sections</strong> (<em>list[float]</em>) – Selected cross-sectional area for each member (mm²).</p></li>
+<li><p><strong>total_volume</strong> (<em>float</em>) – Total structural volume (m³), computed as sum(A * L) with unit conversion.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If input lists have inconsistent lengths or if no feasible cross-section exists for a given force demand.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Stress check: |F| / A ≤ σ_allowable</p></li>
+<li><dl class="simple">
+<dt>Unit consistency:</dt><dd><ul>
+<li><p>Force: N</p></li>
+<li><p>Area: mm² (converted internally to m² for volume)</p></li>
+<li><p>Length: m</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>This is a greedy per-member optimal sizing strategy, not a global optimization.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.ReduceDimensionsDOF">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ReduceDimensionsDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.ReduceDimensionsDOF" title="Link to this definition"></a></dt>
+<dd><p>Detect whether a truss geometry is planar or fully 3D and reduce its coordinate representation accordingly.</p>
+<p>The function inspects nodal coordinates and determines if all nodes lie on one of the principal planes
+(XY, XZ, or YZ). If so, it removes the redundant coordinate direction and returns a reduced 2D system.
+Otherwise, the full 3D representation is preserved.</p>
+<p>This is used to simplify subsequent structural analysis by reducing the number of degrees of freedom
+when the structure is planar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coords</strong> (<em>array_like</em>) – Nodal coordinates as an (N x 3) array or list, where each row is (x, y, z).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>reduced_coords</strong> (<em>ndarray</em>) – Coordinate array with reduced dimensionality:
+- (N x 2) if the structure is planar
+- (N x 3) if the structure is fully 3D</p></li>
+<li><p><strong>dof</strong> (<em>int</em>) – Number of degrees of freedom per node:
+- 2 for planar structures
+- 3 for spatial structures</p></li>
+<li><p><strong>plane</strong> (<em>str</em>) – Identified geometric plane or space:
+- “XY”, “XZ”, “YZ” for planar cases
+- “XYZ” for full 3D structures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Planarity is detected using np.allclose against zero coordinate components.</p></li>
+<li><p>Intended for preprocessing in finite element truss analysis pipelines.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.TributaryForces">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">TributaryForces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_per_meter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.TributaryForces" title="Link to this definition"></a></dt>
+<dd><p>Compute equivalent nodal forces from a uniformly distributed line load using tributary lengths.</p>
+<p>This method approximates how a distributed load along a polyline (e.g., beam or truss chord)
+is converted into equivalent nodal point loads. Each internal node receives a force based on
+half the adjacent segment lengths on either side, while end nodes receive half-contributions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>array-like</em>) – Nodal coordinates, where each entry is assumed to contain at least an x-coordinate
+used for spacing (coords[i][0]).</p></li>
+<li><p><strong>node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – Ordered list of node indices defining the loaded polyline path.</p></li>
+<li><p><strong>load_per_meter</strong> (<em>float</em>) – Uniform distributed load intensity (force per unit length).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of node_id → equivalent nodal force (same force units as load_per_meter × length).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[int, float]</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The method assumes nodes are ordered along a 1D projection (uses x-coordinate spacing).</p></li>
+<li><p>End nodes receive half tributary length contributions.</p></li>
+<li><p>Suitable for converting UDLs into lumped nodal loads in structural models.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Analysis.FE.TributarySupports">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">TributarySupports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_per_meter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analysis.FE.TributarySupports" title="Link to this definition"></a></dt>
+<dd><p>Compute equivalent nodal reactions (or support tributary forces) for a uniformly distributed load.</p>
+<p>This method distributes a uniform line load equally to the nodes of a simple span defined by two
+end points. It assumes the total load acts over a single segment between the first and last node,
+and assigns half of the total tributary contribution to each node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>array-like</em>) – Nodal coordinates used to compute span length (Euclidean distance between first two nodes).</p></li>
+<li><p><strong>node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – Node indices representing the support or boundary nodes of the span.</p></li>
+<li><p><strong>load_per_meter</strong> (<em>float</em>) – Uniform distributed load intensity (force per unit length).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of node_id → tributary support force contribution.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[int, float]</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The span length is computed using Euclidean distance between the first two nodes.</p></li>
+<li><p>Each node in <cite>node_ids</cite> receives an equal share: (total load / 2).</p></li>
+<li><p>This is a simplified distribution model and assumes uniform geometry and loading.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="truss.html" class="btn btn-neutral float-left" title="Truss" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="formfinding.html" class="btn btn-neutral float-right" title="FormFinding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Dr. Ioannis Mirtsopoulos.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

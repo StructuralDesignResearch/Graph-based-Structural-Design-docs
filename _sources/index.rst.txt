@@ -1,0 +1,20 @@
+Graph Structural Design
+=======================
+
+Documentation for structural graph modeling and analysis.
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+   graph
+   face
+   edge
+   vertex
+   load
+   truss
+   analysis
+   formfinding
+   helperfunctions
+   io
+   viz

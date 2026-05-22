@@ -1,0 +1,10 @@
+Graph
+=====
+
+Core data structures for representing structural graphs, including
+nodes, edges, connectivity, and loads.
+
+.. autoclass:: Graph.Graph
+   :members:
+   :undoc-members:
+   :show-inheritance:
