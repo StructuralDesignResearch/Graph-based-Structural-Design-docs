@@ -1,0 +1,8 @@
+How to use the module
+=====================
+
+.. code-block:: python
+
+   from gbsdr import Graph, Vertex, Edge
+
+   # your code here
