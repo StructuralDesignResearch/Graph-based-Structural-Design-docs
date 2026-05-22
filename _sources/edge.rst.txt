@@ -4,7 +4,7 @@ Edge
 Core data structures for representing structural graphs, including
 nodes, edges, connectivity, and loads.
 
-.. autoclass:: Edge.Edge
+.. autoclass:: model.Edge
    :members:
    :undoc-members:
    :show-inheritance:

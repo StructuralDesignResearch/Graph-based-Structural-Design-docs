@@ -4,7 +4,7 @@ Face
 Core data structures for representing structural graphs, including
 nodes, edges, connectivity, and loads.
 
-.. autoclass:: Face.Face
+.. autoclass:: Face
    :members:
    :undoc-members:
    :show-inheritance:

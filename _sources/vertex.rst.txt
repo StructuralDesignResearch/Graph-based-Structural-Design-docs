@@ -4,7 +4,7 @@ Vertex
 Core data structures for representing structural graphs, including
 nodes, edges, connectivity, and loads.
 
-.. autoclass:: Vertex.Vertex
+.. autoclass:: Vertex
    :members:
    :undoc-members:
    :show-inheritance:

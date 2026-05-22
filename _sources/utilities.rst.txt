@@ -4,7 +4,7 @@ HelperFunctions
 Core data structures for representing structural graphs, including
 nodes, edges, connectivity, and loads.
 
-.. automodule:: HelperFunctions
+.. automodule:: Utilities
    :members:
    :undoc-members:
    :show-inheritance:
