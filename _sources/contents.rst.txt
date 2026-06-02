@@ -21,7 +21,7 @@ Contents
    :members:
    :show-inheritance:
 
-.. autoclass:: gbsdr.Load
+.. autoclass:: gbsdr.Force
    :members:
    :show-inheritance:
 
@@ -54,6 +54,22 @@ Contents
    :show-inheritance:
 
 .. autoclass:: gbsdr.Grid
+   :members:
+   :show-inheritance:
+
+.. autoclass:: gbsdr.Pratt
+   :members:
+   :show-inheritance:
+
+.. autoclass:: gbsdr.Warren
+   :members:
+   :show-inheritance:
+
+.. autoclass:: gbsdr.KTruss
+   :members:
+   :show-inheritance:
+
+.. autoclass:: gbsdr.Fink
    :members:
    :show-inheritance:
 

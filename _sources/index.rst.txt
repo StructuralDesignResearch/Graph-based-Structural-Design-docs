@@ -14,3 +14,8 @@ nodes, edges, connectivity, and loads.
 
    how
    contents
+
+   Examples
+--------
+
+Demo Notebooks are available at our `examples repository <https://github.com/StructuralDesignResearch/trussgraph-examples>`_.

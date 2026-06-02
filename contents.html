@@ -165,6 +165,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.AngleUniformity"><code class="docutils literal notranslate"><span class="pre">Vertex.AngleUniformity()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.Force"><code class="docutils literal notranslate"><span class="pre">Force</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Id"><code class="docutils literal notranslate"><span class="pre">Force.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Label"><code class="docutils literal notranslate"><span class="pre">Force.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.NodeId"><code class="docutils literal notranslate"><span class="pre">Force.NodeId</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Vec"><code class="docutils literal notranslate"><span class="pre">Force.Vec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.X"><code class="docutils literal notranslate"><span class="pre">Force.X</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Y"><code class="docutils literal notranslate"><span class="pre">Force.Y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Z"><code class="docutils literal notranslate"><span class="pre">Force.Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.AnchorNode"><code class="docutils literal notranslate"><span class="pre">Force.AnchorNode()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Cycle"><code class="docutils literal notranslate"><span class="pre">Cycle</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Cycle.adjacency_2"><code class="docutils literal notranslate"><span class="pre">Cycle.adjacency_2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Cycle.min_spanning_tree"><code class="docutils literal notranslate"><span class="pre">Cycle.min_spanning_tree()</span></code></a></li>
@@ -231,6 +242,26 @@
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Grid.Edges"><code class="docutils literal notranslate"><span class="pre">Grid.Edges()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Grid.Nodes"><code class="docutils literal notranslate"><span class="pre">Grid.Nodes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.Pratt"><code class="docutils literal notranslate"><span class="pre">Pratt</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Pratt.GenerateNodes"><code class="docutils literal notranslate"><span class="pre">Pratt.GenerateNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Pratt.GenerateTopology"><code class="docutils literal notranslate"><span class="pre">Pratt.GenerateTopology()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.Warren"><code class="docutils literal notranslate"><span class="pre">Warren</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Warren.GenerateNodes"><code class="docutils literal notranslate"><span class="pre">Warren.GenerateNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Warren.GenerateTopology"><code class="docutils literal notranslate"><span class="pre">Warren.GenerateTopology()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.KTruss"><code class="docutils literal notranslate"><span class="pre">KTruss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.KTruss.GenerateNodes"><code class="docutils literal notranslate"><span class="pre">KTruss.GenerateNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.KTruss.GenerateTopology"><code class="docutils literal notranslate"><span class="pre">KTruss.GenerateTopology()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.Fink"><code class="docutils literal notranslate"><span class="pre">Fink</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Fink.GenerateNodes"><code class="docutils literal notranslate"><span class="pre">Fink.GenerateNodes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Fink.GenerateTopology"><code class="docutils literal notranslate"><span class="pre">Fink.GenerateTopology()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.GroundStructure"><code class="docutils literal notranslate"><span class="pre">GroundStructure</span></code></a><ul>
@@ -1512,7 +1543,7 @@ order as the internal force collection.</p>
 <dd class="field-odd"><p>List of force objects representing external forces.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of Force</p>
+<dd class="field-even"><p>list of <a class="reference internal" href="#gbsdr.Force" title="gbsdr.Force">Force</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2547,6 +2578,145 @@ as nodes_2D[node_id] -&gt; (x, y).</p>
 <li><p>Angles are computed pairwise between adjacency vectors.</p></li>
 <li><p>The method assumes 2D projections (x-y, x-z, or y-z plane).</p></li>
 </ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Force">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Force" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initialize a force applied to a node in the structural graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>float</em>) – Force component in the X direction.</p></li>
+<li><p><strong>Y</strong> (<em>float</em>) – Force component in the Y direction.</p></li>
+<li><p><strong>Z</strong> (<em>float</em>) – Force component in the Z direction.</p></li>
+<li><p><strong>node_id</strong> (<em>int</em>) – Identifier of the node to which the force is applied.</p></li>
+<li><p><strong>id</strong> (<em>int</em>) – Unique identifier for the force.</p></li>
+<li><p><strong>label</strong> (<em>int</em>) – Label describing the type or role of the force (e.g., external load,
+reaction, boundary condition tag, etc.).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>A forces represents an external force applied to a node in the structural
+graph. The components (X, Y, Z) define the force vector in the global
+coordinate system.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.Id">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Id</span></span><a class="headerlink" href="#gbsdr.Force.Id" title="Link to this definition"></a></dt>
+<dd><p>Unique identifier of the force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Identifier used to distinguish the force within the graph.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.Label">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Label</span></span><a class="headerlink" href="#gbsdr.Force.Label" title="Link to this definition"></a></dt>
+<dd><p>Label describing the type or role of the force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Label used to classify the force (e.g., external load, reaction, etc.).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.NodeId">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NodeId</span></span><a class="headerlink" href="#gbsdr.Force.NodeId" title="Link to this definition"></a></dt>
+<dd><p>Identifier of the node to which the force is applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Identifier of the node to which the force is applied.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.Vec">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Vec</span></span><a class="headerlink" href="#gbsdr.Force.Vec" title="Link to this definition"></a></dt>
+<dd><p>Force vector components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Vector representing the force in the form [Fx, Fy, Fz].</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.X">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">X</span></span><a class="headerlink" href="#gbsdr.Force.X" title="Link to this definition"></a></dt>
+<dd><p>X-component of the force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>X-component of the force vector in the global coordinate system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.Y">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Y</span></span><a class="headerlink" href="#gbsdr.Force.Y" title="Link to this definition"></a></dt>
+<dd><p>Y-component of the force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Y-component of the force vector in the global coordinate system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Force.Z">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Z</span></span><a class="headerlink" href="#gbsdr.Force.Z" title="Link to this definition"></a></dt>
+<dd><p>Z-component of the force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Z-component of the force vector in the global coordinate system.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Force.AnchorNode">
+<span class="sig-name descname"><span class="pre">AnchorNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Force.AnchorNode" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the node where the load is applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Graph instance containing the node.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Node object corresponding to the anchor point of the load.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Node</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -4149,6 +4319,785 @@ x and y directions. All nodes lie in the XY plane (z = 0).</p>
 <li><p>Nodes are generated in row-major order (y outer loop, x inner loop).</p></li>
 <li><p>Total number of nodes is nodes².</p></li>
 <li><p>The resulting grid is planar in the XY plane.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Pratt">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Pratt</span></span><a class="headerlink" href="#gbsdr.Pratt" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://www.structuralbasics.com/pratt-truss/">https://www.structuralbasics.com/pratt-truss/</a>
+<a class="reference external" href="https://www.structuralbasics.com/howe-truss/">https://www.structuralbasics.com/howe-truss/</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Pratt.GenerateNodes">
+<span class="sig-name descname"><span class="pre">GenerateNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_panels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Pratt.GenerateNodes" title="Link to this definition"></a></dt>
+<dd><p>Generate nodal coordinates for a symmetric Pratt truss geometry.</p>
+<p>This function constructs the coordinates of a Pratt truss based on a set of
+parametric offsets describing the lower and upper chord geometry for one
+half of the structure. The remaining half is generated automatically by
+mirroring the nodes about a symmetry plane.</p>
+<dl class="simple">
+<dt>The generated nodes are grouped into:</dt><dd><ul class="simple">
+<li><p>lower chord nodes</p></li>
+<li><p>upper chord nodes</p></li>
+</ul>
+</dd>
+</dl>
+<p>The function also returns index sets identifying lower chord nodes,
+upper chord nodes, and support nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>support_pt</strong> (<em>list</em><em>[</em><em>float</em><em>] or </em><em>tuple</em><em>[</em><em>float</em><em>]</em>) – <p>Coordinates of the left support node given as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[x0,</span> <span class="pre">y0,</span> <span class="pre">z0]</span></code></p>
+</p></li>
+<li><p><strong>truss_length</strong> (<em>float</em>) – Total span length of the truss.</p></li>
+<li><p><strong>no_panels</strong> (<em>int</em>) – <p>Number of panels along the lower chord.</p>
+<ul>
+<li><p>Odd values are reduced by one to enforce an even panel count,</p></li>
+</ul>
+<p>as Pratt trusses require symmetric panel pairs.
+- Even values produce mirrored geometry without a central node.</p>
+</p></li>
+<li><p><strong>coords</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – <p>Parametric coordinate offsets defining the truss geometry for one half
+of the structure (n = no_panels // 2 panels).</p>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">=</span> <span class="pre">[low_x,</span> <span class="pre">up_x,</span> <span class="pre">low_z,</span> <span class="pre">up_z]</span></code></p>
+<dl class="simple">
+<dt>where each segment contains exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> values:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_x</span></code> : horizontal offsets of lower chord nodes (indices <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_x</span></code>  : horizontal offsets of upper chord nodes (indices <code class="docutils literal notranslate"><span class="pre">n</span></code> to <code class="docutils literal notranslate"><span class="pre">2n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_z</span></code> : vertical offsets of lower chord nodes (indices <code class="docutils literal notranslate"><span class="pre">2n</span></code> to <code class="docutils literal notranslate"><span class="pre">3n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_z</span></code>  : vertical offsets of upper chord nodes (indices <code class="docutils literal notranslate"><span class="pre">3n</span></code> to <code class="docutils literal notranslate"><span class="pre">4n-1</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Offsets are applied relative to uniformly spaced panel positions along
+the lower chord, such that node <code class="docutils literal notranslate"><span class="pre">i</span></code> is placed at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x0</span> <span class="pre">+</span> <span class="pre">(i+1)</span> <span class="pre">*</span> <span class="pre">panel_width</span> <span class="pre">+</span> <span class="pre">low_x[i]</span></code>
+<code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z0</span> <span class="pre">+</span> <span class="pre">low_z[i]</span></code></p>
+</p></li>
+<li><p><strong>plane_origin</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – A point lying on the symmetry plane used for mirroring.</p></li>
+<li><p><strong>plane_normal</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Normal vector defining the symmetry plane.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>all_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all generated nodes ordered as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes</span> <span class="pre">(left</span> <span class="pre">+</span> <span class="pre">right),</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes</span> <span class="pre">(left</span> <span class="pre">+</span> <span class="pre">right)]</span></code></p>
+</li>
+<li><p><strong>low_chord_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all lower chord nodes, ordered left to right.</p></li>
+<li><p><strong>up_chord</strong> (<em>list[list[float]]</em>) – Coordinates of all upper chord nodes, ordered left to right.</p></li>
+<li><p><strong>low_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to lower chord nodes within <code class="docutils literal notranslate"><span class="pre">all_coords</span></code>.</p></li>
+<li><p><strong>up_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to upper chord nodes within <code class="docutils literal notranslate"><span class="pre">all_coords</span></code>.</p></li>
+<li><p><strong>support_ids</strong> (<em>list[int]</em>) – Indices of support nodes located at the two end nodes of the lower chord,
+given as <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">no_low_chord</span> <span class="pre">-</span> <span class="pre">1]</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Unlike Warren trusses, Pratt geometry always enforces an even panel count;</p></li>
+</ul>
+<p>any odd <code class="docutils literal notranslate"><span class="pre">no_panels</span></code> input is decremented by one before processing.
+- Lower and upper chord nodes for the left half are constructed first, then
+mirrored. The central node of the left half (index <code class="docutils literal notranslate"><span class="pre">n</span></code>) is excluded from
+mirroring to avoid duplication on the symmetry plane.
+- The final node ordering separates chords entirely:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All lower chord nodes (left half then right half)</p></li>
+<li><p>All upper chord nodes (left half then right half)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This ordering is suitable for:</dt><dd><ul>
+<li><p>Pratt truss graph generation</p></li>
+<li><p>Structural topology creation</p></li>
+<li><p>Finite element preprocessing</p></li>
+<li><p>Parametric bridge modeling</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Pratt.GenerateTopology">
+<span class="sig-name descname"><span class="pre">GenerateTopology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper_chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Pratt.GenerateTopology" title="Link to this definition"></a></dt>
+<dd><p>Generate the connectivity topology of a Pratt or Howe truss structure.</p>
+<p>This function creates the member connectivity (bars) for a Pratt or Howe
+truss based on ordered lower and upper chord node sets. The generated
+topology includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>lower chord members</p></li>
+<li><p>upper chord members</p></li>
+<li><p>vertical web members</p></li>
+<li><p>diagonal web members</p></li>
+</ul>
+</div></blockquote>
+<p>The connectivity is returned as adjacency pairs describing the node indices
+connected by each structural member.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lower_chord</strong> (<em>list</em>) – <p>List of lower chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+<li><p><strong>upper_chord</strong> (<em>list</em>) – <p>List of upper chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+<li><p><strong>inverse</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Controls the diagonal orientation, switching between Pratt and Howe
+topology. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> : Pratt truss — diagonals run from outer lower nodes toward</p></li>
+</ul>
+<p>the centre upper nodes (tension diagonals under typical loading).
+- <code class="docutils literal notranslate"><span class="pre">True</span></code>  : Howe truss — diagonals run from inner lower nodes toward
+the outer upper nodes (compression diagonals under typical loading).</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>bars</strong> (<em>list[list[int]]</em>) – Complete list of truss members represented as node index pairs,
+interleaved as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord,</span> <span class="pre">upper</span> <span class="pre">chord,</span> <span class="pre">diag+vert</span> <span class="pre">pairs...,</span> <span class="pre">last</span> <span class="pre">diagonal]</span></code></p>
+</li>
+<li><p><strong>bars_low</strong> (<em>list[list[int]]</em>) – Connectivity of lower chord members between consecutive lower chord nodes.</p></li>
+<li><p><strong>bars_up</strong> (<em>list[list[int]]</em>) – Connectivity of upper chord members between consecutive upper chord nodes.</p></li>
+<li><p><strong>bars_vert</strong> (<em>list[list[int]]</em>) – Connectivity of vertical web members connecting each interior lower chord
+node to its corresponding upper chord node.</p>
+<p>The mapping follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[i,</span> <span class="pre">no_lower</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">1]</span></code> for <code class="docutils literal notranslate"><span class="pre">i</span></code> in <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1)</span></code></p>
+</li>
+<li><p><strong>bars_diag</strong> (<em>list[list[int]]</em>) – Connectivity of diagonal web members.</p>
+<dl class="simple">
+<dt>For Pratt (<code class="docutils literal notranslate"><span class="pre">inverse=False</span></code>):</dt><dd><ul class="simple">
+<li><p>The leftmost support connects to the first upper chord node.</p></li>
+<li><p>Left-half diagonals slope inward-upward toward the centre.</p></li>
+<li><p>Right-half diagonals slope outward-upward away from the centre.</p></li>
+<li><p>The rightmost support connects to the last upper chord node.</p></li>
+</ul>
+</dd>
+<dt>For Howe (<code class="docutils literal notranslate"><span class="pre">inverse=True</span></code>):</dt><dd><ul class="simple">
+<li><p>Left-half diagonals slope outward-upward away from the centre.</p></li>
+<li><p>Right-half diagonals slope inward-upward toward the centre.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Lower chord members are generated between all consecutive lower chord nodes.</p></li>
+<li><p>Upper chord members are generated between all consecutive upper chord nodes.</p></li>
+<li><p>Vertical members connect each interior lower chord node (excluding the two</p></li>
+</ul>
+<p>end supports) to its corresponding upper chord node.
+- Unlike Warren trusses, Pratt/Howe trusses include explicit vertical members,
+with diagonals and verticals interleaved in the final <code class="docutils literal notranslate"><span class="pre">bars</span></code> output.
+- Node numbering follows the convention:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes]</span></code></p>
+<p>meaning upper chord node indices start at offset <code class="docutils literal notranslate"><span class="pre">no_lower</span></code>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The generated topology is suitable for:</dt><dd><ul>
+<li><p>Structural graph generation</p></li>
+<li><p>Truss finite element models</p></li>
+<li><p>Parametric bridge systems</p></li>
+<li><p>Topology optimization workflows</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Warren">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Warren</span></span><a class="headerlink" href="#gbsdr.Warren" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://www.structuralbasics.com/warren-truss/">https://www.structuralbasics.com/warren-truss/</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Warren.GenerateNodes">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GenerateNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truss_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_panels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Warren.GenerateNodes" title="Link to this definition"></a></dt>
+<dd><p>Generate nodal coordinates for a symmetric truss geometry.</p>
+<p>This function constructs the coordinates of a truss based on a set of
+parametric offsets describing the lower and upper chord geometry for one
+half of the structure. The remaining half is generated automatically by
+mirroring the nodes about a symmetry plane.</p>
+<dl class="simple">
+<dt>The generated nodes are grouped into:</dt><dd><ul class="simple">
+<li><p>lower chord nodes</p></li>
+<li><p>upper chord nodes</p></li>
+</ul>
+</dd>
+</dl>
+<p>The function also returns index sets identifying lower chord nodes,
+upper chord nodes, and support nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>support_pt</strong> (<em>list</em><em>[</em><em>float</em><em>] or </em><em>tuple</em><em>[</em><em>float</em><em>]</em>) – <p>Coordinates of the left support node given as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[x0,</span> <span class="pre">y0,</span> <span class="pre">z0]</span></code></p>
+</p></li>
+<li><p><strong>truss_length</strong> (<em>float</em>) – Total span length of the truss.</p></li>
+<li><p><strong>no_panels</strong> (<em>int</em>) – <p>Number of panels along the lower chord.</p>
+<ul>
+<li><p>Odd values produce a central upper node located on the symmetry plane.</p></li>
+<li><p>Even values produce mirrored geometry without a central node.</p></li>
+</ul>
+</p></li>
+<li><p><strong>coords</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – <p>Parametric coordinate offsets defining the truss geometry.</p>
+<p>The values are interpreted differently depending on whether
+<code class="docutils literal notranslate"><span class="pre">no_panels</span></code> is odd or even.</p>
+<p>For odd panel counts:</p>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">=</span> <span class="pre">[low_x,</span> <span class="pre">up_x,</span> <span class="pre">low_z,</span> <span class="pre">up_z]</span></code></p>
+<dl class="simple">
+<dt>where:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_x</span></code> : horizontal offsets of lower chord nodes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_x</span></code>  : horizontal offsets of upper chord nodes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_z</span></code> : vertical offsets of lower chord nodes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_z</span></code>  : vertical offsets of upper chord nodes</p></li>
+</ul>
+</dd>
+</dl>
+<p>For even panel counts:</p>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">=</span> <span class="pre">[low_x,</span> <span class="pre">up_x,</span> <span class="pre">low_z,</span> <span class="pre">up_z]</span></code></p>
+<p>with equal subdivision lengths.</p>
+</p></li>
+<li><p><strong>plane_origin</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – A point lying on the symmetry plane used for mirroring.</p></li>
+<li><p><strong>plane_normal</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Normal vector defining the symmetry plane.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>all_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all generated nodes ordered as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes]</span></code></p>
+</li>
+<li><p><strong>low_chord_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all lower chord nodes.</p></li>
+<li><p><strong>up_chord</strong> (<em>list[list[float]]</em>) – Coordinates of all upper chord nodes.</p></li>
+<li><p><strong>low_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to lower chord nodes.</p></li>
+<li><p><strong>up_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to upper chord nodes.</p></li>
+<li><p><strong>support_ids</strong> (<em>list[int]</em>) – Indices of support nodes located at the two end nodes of the lower chord.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Upper chord nodes are positioned relative to the midpoints of adjacent</p></li>
+</ul>
+<p>lower chord nodes.
+- Geometric symmetry is enforced by mirroring the left-half geometry about
+the specified plane.
+- The function assumes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Planar symmetry</p></li>
+<li><p>Ordered parametric input</p></li>
+<li><p>Consistent panel subdivision</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The resulting node ordering is suitable for:</dt><dd><ul>
+<li><p>Truss graph generation</p></li>
+<li><p>Structural topology creation</p></li>
+<li><p>Finite element preprocessing</p></li>
+<li><p>Parametric bridge modeling</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Warren.GenerateTopology">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GenerateTopology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower_chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_chord</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Warren.GenerateTopology" title="Link to this definition"></a></dt>
+<dd><p>Generate the connectivity topology of a truss structure.</p>
+<p>This function creates the member connectivity (bars) for a truss based on
+ordered lower and upper chord node sets. The generated topology includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>lower chord members</p></li>
+<li><p>upper chord members</p></li>
+<li><p>diagonal web members</p></li>
+</ul>
+</div></blockquote>
+<p>The connectivity is returned as adjacency pairs describing the node indices
+connected by each structural member.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lower_chord</strong> (<em>list</em>) – <p>List of lower chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+<li><p><strong>upper_chord</strong> (<em>list</em>) – <p>List of upper chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>bars</strong> (<em>list[list[int]]</em>) – Complete list of truss members represented as node index pairs:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[[i,</span> <span class="pre">j],</span> <span class="pre">...]</span></code></p>
+</li>
+<li><p><strong>bars_low</strong> (<em>list[list[int]]</em>) – Connectivity of lower chord members.</p></li>
+<li><p><strong>bars_up</strong> (<em>list[list[int]]</em>) – Connectivity of upper chord members.</p></li>
+<li><p><strong>bars_vert</strong> (<em>list[list[int]]</em>) – Connectivity of vertical members.</p>
+<p>Currently returned as an empty list.</p>
+</li>
+<li><p><strong>bars_diag</strong> (<em>list[list[int]]</em>) – Connectivity of diagonal web members.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Lower chord members are generated between consecutive lower chord nodes.</p></li>
+<li><p>Upper chord members are generated between consecutive upper chord nodes.</p></li>
+<li><p>Diagonal members are generated such that each upper chord node connects</p></li>
+</ul>
+<p>to two adjacent lower chord nodes, producing a triangulated truss layout.</p>
+<ul class="simple">
+<li><p>Node numbering is assumed to follow the convention:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes]</span></code></p>
+<p>meaning upper chord node indices start after the lower chord nodes.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The generated topology is suitable for:</dt><dd><ul>
+<li><p>Structural graph generation</p></li>
+<li><p>Truss finite element models</p></li>
+<li><p>Parametric bridge systems</p></li>
+<li><p>Topology optimization workflows</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The resulting structure forms a fully triangulated web system without</p></li>
+</ul>
+<p>vertical members.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.KTruss">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">KTruss</span></span><a class="headerlink" href="#gbsdr.KTruss" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://www.structuralbasics.com/k-truss/">https://www.structuralbasics.com/k-truss/</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.KTruss.GenerateNodes">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GenerateNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truss_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_panels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.KTruss.GenerateNodes" title="Link to this definition"></a></dt>
+<dd><p>Generate nodal coordinates for a symmetric K-truss geometry.</p>
+<p>This function constructs the coordinates of a K-truss based on a set of
+parametric offsets describing the lower and upper chord geometry for one
+half of the structure. The remaining half is generated automatically by
+mirroring the nodes about a symmetry plane. In addition to the lower and
+upper chords, a mid chord layer is computed from the midpoints of adjacent
+lower and upper chord nodes.</p>
+<dl class="simple">
+<dt>The generated nodes are grouped into:</dt><dd><ul class="simple">
+<li><p>lower chord nodes</p></li>
+<li><p>mid chord nodes</p></li>
+<li><p>upper chord nodes</p></li>
+</ul>
+</dd>
+</dl>
+<p>The function also returns index sets identifying lower chord nodes,
+upper chord nodes, and support nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>support_pt</strong> (<em>list</em><em>[</em><em>float</em><em>] or </em><em>tuple</em><em>[</em><em>float</em><em>]</em>) – <p>Coordinates of the left support node given as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[x0,</span> <span class="pre">y0,</span> <span class="pre">z0]</span></code></p>
+</p></li>
+<li><p><strong>truss_length</strong> (<em>float</em>) – Total span length of the truss.</p></li>
+<li><p><strong>no_panels</strong> (<em>int</em>) – <p>Number of panels along the lower chord.</p>
+<ul>
+<li><p>Odd values are decremented by one to enforce an even panel count,</p></li>
+</ul>
+<p>as K-trusses require symmetric panel pairs.
+- Even values are used directly.</p>
+</p></li>
+<li><p><strong>coords</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – <p>Parametric coordinate offsets defining the truss geometry for one half
+of the structure (n = no_panels // 2 panels).</p>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">=</span> <span class="pre">[low_x,</span> <span class="pre">up_x,</span> <span class="pre">low_z,</span> <span class="pre">up_z]</span></code></p>
+<dl class="simple">
+<dt>where each segment contains exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> values:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_x</span></code> : horizontal offsets of lower chord nodes (indices <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_x</span></code>  : horizontal offsets of upper chord nodes (indices <code class="docutils literal notranslate"><span class="pre">n</span></code> to <code class="docutils literal notranslate"><span class="pre">2n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_z</span></code> : vertical offsets of lower chord nodes (indices <code class="docutils literal notranslate"><span class="pre">2n</span></code> to <code class="docutils literal notranslate"><span class="pre">3n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_z</span></code>  : vertical offsets of upper chord nodes (indices <code class="docutils literal notranslate"><span class="pre">3n</span></code> to <code class="docutils literal notranslate"><span class="pre">4n-1</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Both lower and upper chord nodes are placed at uniform panel intervals
+with offsets applied as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x0</span> <span class="pre">+</span> <span class="pre">(i+1)</span> <span class="pre">*</span> <span class="pre">panel_width</span> <span class="pre">+</span> <span class="pre">x_offset[i]</span></code>
+<code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z0</span> <span class="pre">+</span> <span class="pre">z_offset[i]</span></code></p>
+</p></li>
+<li><p><strong>plane_origin</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – A point lying on the symmetry plane used for mirroring.</p></li>
+<li><p><strong>plane_normal</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Normal vector defining the symmetry plane.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>all_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all generated nodes ordered as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">mid</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes]</span></code></p>
+</li>
+<li><p><strong>low_chord_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all lower chord nodes, ordered left to right.</p></li>
+<li><p><strong>mid_chord_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all mid chord nodes, computed as the geometric midpoints
+between corresponding lower and upper chord node pairs. The central
+node (at the symmetry plane) and the two end support nodes are excluded.</p></li>
+<li><p><strong>up_chord_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all upper chord nodes, ordered left to right.</p></li>
+<li><p><strong>low_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to lower chord nodes within <code class="docutils literal notranslate"><span class="pre">all_coords</span></code>.</p></li>
+<li><p><strong>up_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to upper chord nodes within <code class="docutils literal notranslate"><span class="pre">all_coords</span></code>.</p></li>
+<li><p><strong>support_ids</strong> (<em>list[int]</em>) – Indices of support nodes located at the two end nodes of the lower chord,
+given as <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">no_low_chord</span> <span class="pre">-</span> <span class="pre">1]</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The K-truss extends the Pratt topology by introducing an intermediate mid</p></li>
+</ul>
+<p>chord layer. Each mid chord node is the geometric midpoint of a lower chord
+node and its corresponding upper chord neighbour (offset by one index).
+- Mid chord nodes are generated for all interior lower chord nodes except the
+central symmetry node (<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">!=</span> <span class="pre">len(low_chord)</span> <span class="pre">//</span> <span class="pre">2</span></code>), and excluding the two
+end support nodes.
+- The mirroring procedure follows the same convention as the Pratt truss: the
+central left-half node (index <code class="docutils literal notranslate"><span class="pre">n</span></code>) is excluded from mirroring to avoid
+duplication on the symmetry plane.
+- The final node ordering separates all three layers entirely:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All lower chord nodes (left half then right half)</p></li>
+<li><p>All mid chord nodes</p></li>
+<li><p>All upper chord nodes (left half then right half)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This ordering is suitable for:</dt><dd><ul>
+<li><p>K-truss graph generation</p></li>
+<li><p>Structural topology creation</p></li>
+<li><p>Finite element preprocessing</p></li>
+<li><p>Parametric bridge modeling</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.KTruss.GenerateTopology">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GenerateTopology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower_chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mid_chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_chord</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.KTruss.GenerateTopology" title="Link to this definition"></a></dt>
+<dd><p>Generate the connectivity topology of a K-truss structure.</p>
+<p>This function creates the member connectivity (bars) for a K-truss based on
+ordered lower, mid, and upper chord node sets. The generated topology includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>lower chord members</p></li>
+<li><p>upper chord members</p></li>
+<li><p>vertical web members</p></li>
+<li><p>diagonal web members</p></li>
+</ul>
+</div></blockquote>
+<p>The connectivity is returned as adjacency pairs describing the node indices
+connected by each structural member.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lower_chord</strong> (<em>list</em>) – <p>List of lower chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+<li><p><strong>mid_chord</strong> (<em>list</em>) – <p>List of mid chord node coordinates or node identifiers.</p>
+<p>Mid chord nodes lie between the lower and upper chords and are computed
+as midpoints of adjacent lower/upper chord node pairs. The two end support
+nodes and the central symmetry node are excluded.</p>
+</p></li>
+<li><p><strong>upper_chord</strong> (<em>list</em>) – <p>List of upper chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>bars_all</strong> (<em>list[list[int]]</em>) – Complete list of truss members represented as node index pairs, ordered as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord,</span> <span class="pre">upper</span> <span class="pre">chord,</span> <span class="pre">first</span> <span class="pre">diagonal,</span> <span class="pre">interleaved</span> <span class="pre">web</span> <span class="pre">members,</span> <span class="pre">last</span> <span class="pre">diagonal]</span></code></p>
+<p>The central web region is assembled by interleaving vertical and diagonal
+members in a pattern that reflects the K-truss geometry.</p>
+</li>
+<li><p><strong>bars_low</strong> (<em>list[list[int]]</em>) – Connectivity of lower chord members between consecutive lower chord nodes.</p></li>
+<li><p><strong>bars_up</strong> (<em>list[list[int]]</em>) – Connectivity of upper chord members between consecutive upper chord nodes.</p></li>
+<li><p><strong>bars_vert</strong> (<em>list[list[int]]</em>) – Connectivity of vertical web members. Each mid chord node connects
+vertically to both its adjacent lower and upper chord nodes, producing
+pairs of vertical segments that form the stems of the characteristic
+K-shape:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[i,</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1]</span></code> (lower to mid)
+<code class="docutils literal notranslate"><span class="pre">[i</span> <span class="pre">+</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">no_lower</span> <span class="pre">+</span> <span class="pre">no_mid</span> <span class="pre">-</span> <span class="pre">1]</span></code> (mid to upper)</p>
+<p>A single central vertical member connects the central lower chord node
+directly to the central upper chord node across the symmetry plane.</p>
+</li>
+<li><p><strong>bars_diag</strong> (<em>list[list[int]]</em>) – Connectivity of diagonal web members. Diagonals connect lower chord nodes
+to mid chord nodes and mid chord nodes to upper chord nodes, alternating
+direction across the half-span to produce the K-panel geometry:</p>
+<ul class="simple">
+<li><p>Left half: diagonals slope inward-upward from lower to mid, then</p></li>
+</ul>
+<p>continue inward-upward from mid to upper.
+- Right half: diagonals slope outward-upward, mirroring the left half.
+- The two outermost diagonals close the truss at both end supports:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">no_lower</span> <span class="pre">+</span> <span class="pre">no_mid]</span></code> and <code class="docutils literal notranslate"><span class="pre">[no_lower</span> <span class="pre">+</span> <span class="pre">no_mid</span> <span class="pre">+</span> <span class="pre">no_upper</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1]</span></code></p>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Node numbering follows the three-layer convention:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">mid</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes]</span></code></p>
+<p>meaning mid chord indices start at <code class="docutils literal notranslate"><span class="pre">no_lower</span></code> and upper chord indices
+start at <code class="docutils literal notranslate"><span class="pre">no_lower</span> <span class="pre">+</span> <span class="pre">no_mid</span></code>.</p>
+<ul class="simple">
+<li><p>The K-truss web system differs fundamentally from Pratt and Warren layouts:</p></li>
+</ul>
+<p>each panel contains both a vertical and two diagonal half-members meeting
+at a mid chord node, forming the distinctive K-shape.</p>
+<ul class="simple">
+<li><p>The final <code class="docutils literal notranslate"><span class="pre">bars_all</span></code> assembly interleaves vertical and diagonal members</p></li>
+</ul>
+<dl class="simple">
+<dt>in a structured pattern to preserve geometric ordering:</dt><dd><ul class="simple">
+<li><p>Left half panels: verticals precede diagonals.</p></li>
+<li><p>Right half panels: diagonals precede verticals.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The generated topology is suitable for:</dt><dd><ul>
+<li><p>Structural graph generation</p></li>
+<li><p>Truss finite element models</p></li>
+<li><p>Parametric bridge systems</p></li>
+<li><p>Topology optimization workflows</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Fink">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Fink</span></span><a class="headerlink" href="#gbsdr.Fink" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://www.structuralbasics.com/fink-truss/">https://www.structuralbasics.com/fink-truss/</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Fink.GenerateNodes">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GenerateNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_pt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truss_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_panels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Fink.GenerateNodes" title="Link to this definition"></a></dt>
+<dd><p>Generate nodal coordinates for a symmetric Fink truss geometry.</p>
+<p>This function constructs the coordinates of a Fink truss based on a set of
+parametric offsets describing the lower and upper chord geometry for one
+half of the structure. The remaining half is generated automatically by
+mirroring the nodes about a symmetry plane.</p>
+<dl class="simple">
+<dt>The generated nodes are grouped into:</dt><dd><ul class="simple">
+<li><p>lower chord nodes</p></li>
+<li><p>upper chord nodes</p></li>
+</ul>
+</dd>
+</dl>
+<p>The function also returns index sets identifying lower chord nodes,
+upper chord nodes, and support nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>support_pt</strong> (<em>list</em><em>[</em><em>float</em><em>] or </em><em>tuple</em><em>[</em><em>float</em><em>]</em>) – <p>Coordinates of the left support node given as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[x0,</span> <span class="pre">y0,</span> <span class="pre">z0]</span></code></p>
+</p></li>
+<li><p><strong>truss_length</strong> (<em>float</em>) – Total span length of the truss.</p></li>
+<li><p><strong>no_panels</strong> (<em>int</em>) – <p>Number of panels along the lower chord.</p>
+<ul>
+<li><p>Even values are incremented by one to enforce an odd panel count,</p></li>
+</ul>
+<p>as Fink trusses require a central apex node on the symmetry plane.
+- Odd values are used directly.</p>
+</p></li>
+<li><p><strong>coords</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – <p>Parametric coordinate offsets defining the truss geometry for one half
+of the structure (n = no_panels // 2 panels).</p>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">=</span> <span class="pre">[low_x,</span> <span class="pre">up_x,</span> <span class="pre">low_z,</span> <span class="pre">up_z]</span></code></p>
+<dl class="simple">
+<dt>where each segment contains exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> values:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_x</span></code> : horizontal offsets of lower chord nodes (indices <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_x</span></code>  : horizontal offsets of upper chord nodes (indices <code class="docutils literal notranslate"><span class="pre">n</span></code> to <code class="docutils literal notranslate"><span class="pre">2n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">low_z</span></code> : vertical offsets of lower chord nodes (indices <code class="docutils literal notranslate"><span class="pre">2n</span></code> to <code class="docutils literal notranslate"><span class="pre">3n-1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">up_z</span></code>  : vertical offsets of upper chord nodes (indices <code class="docutils literal notranslate"><span class="pre">3n</span></code> to <code class="docutils literal notranslate"><span class="pre">4n-1</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Lower chord nodes are placed at uniform panel intervals with offsets applied as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x0</span> <span class="pre">+</span> <span class="pre">(i+1)</span> <span class="pre">*</span> <span class="pre">panel_width</span> <span class="pre">+</span> <span class="pre">low_x[i]</span></code>
+<code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z0</span> <span class="pre">+</span> <span class="pre">low_z[i]</span></code></p>
+<p>Upper chord nodes are positioned at the midpoints of adjacent lower chord
+nodes, with offsets applied as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">midpoint(lower[i],</span> <span class="pre">lower[i+1]).x</span> <span class="pre">+</span> <span class="pre">up_x[i]</span></code>
+<code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z0</span> <span class="pre">+</span> <span class="pre">up_z[i]</span></code></p>
+</p></li>
+<li><p><strong>plane_origin</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – A point lying on the symmetry plane used for mirroring.</p></li>
+<li><p><strong>plane_normal</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Normal vector defining the symmetry plane.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>all_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all generated nodes ordered as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes</span> <span class="pre">(left</span> <span class="pre">+</span> <span class="pre">right),</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes</span> <span class="pre">(left</span> <span class="pre">+</span> <span class="pre">right)]</span></code></p>
+</li>
+<li><p><strong>low_chord_coords</strong> (<em>list[list[float]]</em>) – Coordinates of all lower chord nodes, ordered left to right.</p></li>
+<li><p><strong>up_chord</strong> (<em>list[list[float]]</em>) – Coordinates of all upper chord nodes, ordered left to right.</p></li>
+<li><p><strong>low_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to lower chord nodes within <code class="docutils literal notranslate"><span class="pre">all_coords</span></code>.</p></li>
+<li><p><strong>up_chord_ids</strong> (<em>list[int]</em>) – Indices corresponding to upper chord nodes within <code class="docutils literal notranslate"><span class="pre">all_coords</span></code>.</p></li>
+<li><p><strong>support_ids</strong> (<em>list[int]</em>) – Indices of support nodes located at the two end nodes of the lower chord,
+given as <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">no_low_chord</span> <span class="pre">-</span> <span class="pre">1]</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Unlike Pratt trusses, Fink geometry always enforces an odd panel count;</p></li>
+</ul>
+<p>any even <code class="docutils literal notranslate"><span class="pre">no_panels</span></code> input is incremented by one before processing.
+- A central apex node is explicitly appended to the left half at:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[x0</span> <span class="pre">+</span> <span class="pre">truss_length</span> <span class="pre">/</span> <span class="pre">2,</span> <span class="pre">y0,</span> <span class="pre">truss_height]</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">truss_height</span> <span class="pre">=</span> <span class="pre">truss_length</span> <span class="pre">/</span> <span class="pre">15</span></code>. This node lies on the symmetry
+plane and is included in the mirroring step (unlike the Pratt case where
+the central node is excluded).
+- The full right half is obtained by mirroring all left-half nodes, including
+the apex; the apex mirror is then excluded when assembling the right upper
+chord to avoid duplication.
+- The final node ordering separates chords entirely:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All lower chord nodes (left half then right half)</p></li>
+<li><p>All upper chord nodes (left half then right half)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This ordering is suitable for:</dt><dd><ul>
+<li><p>Fink truss graph generation</p></li>
+<li><p>Structural topology creation</p></li>
+<li><p>Finite element preprocessing</p></li>
+<li><p>Parametric bridge modeling</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Fink.GenerateTopology">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GenerateTopology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower_chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_chord</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Fink.GenerateTopology" title="Link to this definition"></a></dt>
+<dd><p>Generate the connectivity topology of a Fink truss structure.</p>
+<p>This function creates the member connectivity (bars) for a Fink truss based
+on ordered lower and upper chord node sets. The generated topology includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>lower chord members</p></li>
+<li><p>upper chord members</p></li>
+<li><p>diagonal web members</p></li>
+</ul>
+</div></blockquote>
+<p>The connectivity is returned as adjacency pairs describing the node indices
+connected by each structural member.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lower_chord</strong> (<em>list</em>) – <p>List of lower chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right.</p>
+</p></li>
+<li><p><strong>upper_chord</strong> (<em>list</em>) – <p>List of upper chord node coordinates or node identifiers.</p>
+<p>The nodes are assumed to be ordered sequentially from left to right,
+with the central apex node included.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><strong>bars</strong> (<em>list[list[int]]</em>) – Complete list of truss members represented as node index pairs,
+ordered as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">members,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">members,</span> <span class="pre">diagonal</span> <span class="pre">members]</span></code></p>
+</li>
+<li><p><strong>bars_low</strong> (<em>list[list[int]]</em>) – Connectivity of lower chord members between consecutive lower chord nodes.</p></li>
+<li><p><strong>bars_up</strong> (<em>list[list[int]]</em>) – Connectivity of upper chord members, including closing members that
+connect the two end support nodes to the first and last upper chord
+nodes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">no_lower]</span></code> and <code class="docutils literal notranslate"><span class="pre">[no_lower</span> <span class="pre">+</span> <span class="pre">no_upper</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1]</span></code></p>
+</li>
+<li><p><strong>bars_vert</strong> (<em>list[list[int]]</em>) – Connectivity of vertical members.</p>
+<p>Always returned as an empty list; Fink trusses have no vertical members.</p>
+</li>
+<li><p><strong>bars_diag</strong> (<em>list[list[int]]</em>) – Connectivity of diagonal web members.</p>
+<p>Each interior lower chord node (excluding end supports) connects to
+two adjacent upper chord nodes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[i,</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1]</span></code> and <code class="docutils literal notranslate"><span class="pre">[i,</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">no_lower]</span></code></p>
+<p>for <code class="docutils literal notranslate"><span class="pre">i</span></code> in <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">no_lower</span> <span class="pre">-</span> <span class="pre">1)</span></code>, producing a fan-like
+triangulated web pattern characteristic of Fink trusses.</p>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Lower chord members are generated between all consecutive lower chord nodes.</p></li>
+<li><p>The upper chord forms a closed polygonal chain by explicitly connecting both</p></li>
+</ul>
+<p>end support nodes to the outermost upper chord nodes, in addition to linking
+consecutive upper chord nodes.
+- Each interior lower chord node connects diagonally to two upper chord nodes,
+creating a double-diagonal fan pattern that distinguishes Fink trusses from
+Pratt and Warren layouts.
+- No vertical members are generated; the returned <code class="docutils literal notranslate"><span class="pre">bars_vert</span></code> list is always
+empty.
+- Node numbering follows the convention:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[lower</span> <span class="pre">chord</span> <span class="pre">nodes,</span> <span class="pre">upper</span> <span class="pre">chord</span> <span class="pre">nodes]</span></code></p>
+<p>meaning upper chord node indices start at offset <code class="docutils literal notranslate"><span class="pre">no_lower</span></code>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The generated topology is suitable for:</dt><dd><ul>
+<li><p>Structural graph generation</p></li>
+<li><p>Truss finite element models</p></li>
+<li><p>Parametric bridge systems</p></li>
+<li><p>Topology optimization workflows</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd></dl>
 
