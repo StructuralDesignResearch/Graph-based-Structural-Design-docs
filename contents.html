@@ -120,7 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.MeanGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MeanGlobalUtilization()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.MinGlobalUtilization"><code class="docutils literal notranslate"><span class="pre">Truss.MinGlobalUtilization()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.UnconstrainedNodes"><code class="docutils literal notranslate"><span class="pre">Truss.UnconstrainedNodes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.UpdateAnalyzedGraph"><code class="docutils literal notranslate"><span class="pre">Truss.UpdateAnalyzedGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.UpdateAnalyzedTruss"><code class="docutils literal notranslate"><span class="pre">Truss.UpdateAnalyzedTruss()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Utilizations"><code class="docutils literal notranslate"><span class="pre">Truss.Utilizations()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Volume"><code class="docutils literal notranslate"><span class="pre">Truss.Volume()</span></code></a></li>
 </ul>
@@ -1891,8 +1891,8 @@ Default is 100.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gbsdr.Truss.UpdateAnalyzedGraph">
-<span class="sig-name descname"><span class="pre">UpdateAnalyzedGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axial_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss.UpdateAnalyzedGraph" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="gbsdr.Truss.UpdateAnalyzedTruss">
+<span class="sig-name descname"><span class="pre">UpdateAnalyzedTruss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axial_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss.UpdateAnalyzedTruss" title="Link to this definition"></a></dt>
 <dd><p>Update graph elements with results from structural analysis.</p>
 <p>This method assigns computed physical quantities (forces,
 displacements, strain, and stress) back to the corresponding
@@ -2839,11 +2839,11 @@ Each component acts as a binary selector:
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gbsdr.FE">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">FE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.FE" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">FE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.FE" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.FE.Solver">
-<span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.FE.Solver" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.FE.Solver" title="Link to this definition"></a></dt>
 <dd><p>Perform structural analysis of a truss using the stiffness method.</p>
 <p>This method computes nodal displacements, member axial forces,
 strains, and stresses by assembling and solving the global
@@ -2864,7 +2864,7 @@ equilibrium equations of the system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Structural graph representing the truss system, including geometry, connectivity, and material properties.</p></li>
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Structural graph representing the truss system, including geometry, connectivity, and material properties.</p></li>
 <li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (fully constrained nodes).</p></li>
 </ul>
 </dd>
