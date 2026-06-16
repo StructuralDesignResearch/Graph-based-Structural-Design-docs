@@ -150,13 +150,13 @@
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Vertex"><code class="docutils literal notranslate"><span class="pre">Vertex</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Coords"><code class="docutils literal notranslate"><span class="pre">Vertex.Coords</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Id"><code class="docutils literal notranslate"><span class="pre">Vertex.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.IsFree"><code class="docutils literal notranslate"><span class="pre">Vertex.IsFree</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Valency"><code class="docutils literal notranslate"><span class="pre">Vertex.Valency</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.X"><code class="docutils literal notranslate"><span class="pre">Vertex.X</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Y"><code class="docutils literal notranslate"><span class="pre">Vertex.Y</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Z"><code class="docutils literal notranslate"><span class="pre">Vertex.Z</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.AdjacentNodes"><code class="docutils literal notranslate"><span class="pre">Vertex.AdjacentNodes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.IncidentEdges"><code class="docutils literal notranslate"><span class="pre">Vertex.IncidentEdges</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Label"><code class="docutils literal notranslate"><span class="pre">Vertex.Label</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Ux"><code class="docutils literal notranslate"><span class="pre">Vertex.Ux</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Uy"><code class="docutils literal notranslate"><span class="pre">Vertex.Uy</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Vertex.Uz"><code class="docutils literal notranslate"><span class="pre">Vertex.Uz</span></code></a></li>
@@ -165,7 +165,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Force"><code class="docutils literal notranslate"><span class="pre">Force</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Force.Id"><code class="docutils literal notranslate"><span class="pre">Force.Id</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Force.Label"><code class="docutils literal notranslate"><span class="pre">Force.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Force.IsLoad"><code class="docutils literal notranslate"><span class="pre">Force.IsLoad</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Force.NodeId"><code class="docutils literal notranslate"><span class="pre">Force.NodeId</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Force.Vec"><code class="docutils literal notranslate"><span class="pre">Force.Vec</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Force.X"><code class="docutils literal notranslate"><span class="pre">Force.X</span></code></a></li>
@@ -556,17 +556,21 @@
 </li>
       <li><a href="contents.html#gbsdr.Graph.Incidence">Incidence (gbsdr.Graph property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Graph.IncidenceMatrix">IncidenceMatrix() (gbsdr.Graph method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Vertex.IncidentEdges">IncidentEdges (gbsdr.Vertex property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Utils.IndexList">IndexList() (gbsdr.Utils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Utils.IndexList2">IndexList2() (gbsdr.Utils static method)</a>
 </li>
+      <li><a href="contents.html#gbsdr.Vertex.IsFree">IsFree (gbsdr.Vertex property)</a>
+</li>
       <li><a href="contents.html#gbsdr.Graph.IsGeometricallyPlanar">IsGeometricallyPlanar (gbsdr.Graph property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Force.IsLoad">IsLoad (gbsdr.Force property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Geometry.IsPointOnPlane">IsPointOnPlane() (gbsdr.Geometry method)</a>
 </li>
@@ -584,20 +588,14 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="contents.html#gbsdr.Force.Label">Label (gbsdr.Force property)</a>
-
-      <ul>
-        <li><a href="contents.html#gbsdr.Vertex.Label">(gbsdr.Vertex property)</a>
-</li>
-      </ul></li>
       <li><a href="contents.html#gbsdr.Graph.LaplacianMatrix">LaplacianMatrix() (gbsdr.Graph method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Edge.Length">Length (gbsdr.Edge property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Graph.Lengths">Lengths (gbsdr.Graph property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Geometry.LineLineIntersection">LineLineIntersection() (gbsdr.Geometry static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.LoadIds">LoadIds (gbsdr.Truss property)</a>

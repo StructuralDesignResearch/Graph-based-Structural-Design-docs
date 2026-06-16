@@ -153,13 +153,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Vertex"><code class="docutils literal notranslate"><span class="pre">Vertex</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Coords"><code class="docutils literal notranslate"><span class="pre">Vertex.Coords</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Id"><code class="docutils literal notranslate"><span class="pre">Vertex.Id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.IsFree"><code class="docutils literal notranslate"><span class="pre">Vertex.IsFree</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Valency"><code class="docutils literal notranslate"><span class="pre">Vertex.Valency</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.X"><code class="docutils literal notranslate"><span class="pre">Vertex.X</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Y"><code class="docutils literal notranslate"><span class="pre">Vertex.Y</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Z"><code class="docutils literal notranslate"><span class="pre">Vertex.Z</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.AdjacentNodes"><code class="docutils literal notranslate"><span class="pre">Vertex.AdjacentNodes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.IncidentEdges"><code class="docutils literal notranslate"><span class="pre">Vertex.IncidentEdges</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Label"><code class="docutils literal notranslate"><span class="pre">Vertex.Label</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Ux"><code class="docutils literal notranslate"><span class="pre">Vertex.Ux</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Uy"><code class="docutils literal notranslate"><span class="pre">Vertex.Uy</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Vertex.Uz"><code class="docutils literal notranslate"><span class="pre">Vertex.Uz</span></code></a></li>
@@ -168,7 +168,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Force"><code class="docutils literal notranslate"><span class="pre">Force</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Id"><code class="docutils literal notranslate"><span class="pre">Force.Id</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Label"><code class="docutils literal notranslate"><span class="pre">Force.Label</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.IsLoad"><code class="docutils literal notranslate"><span class="pre">Force.IsLoad</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.NodeId"><code class="docutils literal notranslate"><span class="pre">Force.NodeId</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.Vec"><code class="docutils literal notranslate"><span class="pre">Force.Vec</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.X"><code class="docutils literal notranslate"><span class="pre">Force.X</span></code></a></li>
@@ -2391,6 +2391,20 @@ as displacements.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Vertex.IsFree">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">IsFree</span></span><a class="headerlink" href="#gbsdr.Vertex.IsFree" title="Link to this definition"></a></dt>
+<dd><p>Label describing the role of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1 if the vertex is free (not a support), 0 if it is a support.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="gbsdr.Vertex.Valency">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Valency</span></span><a class="headerlink" href="#gbsdr.Vertex.Valency" title="Link to this definition"></a></dt>
 <dd><p>Valency of the vertex (number of adjacent nodes).</p>
@@ -2472,20 +2486,6 @@ to this vertex.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="gbsdr.Vertex.Label">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Label</span></span><a class="headerlink" href="#gbsdr.Vertex.Label" title="Link to this definition"></a></dt>
-<dd><p>Label describing the role of the node.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>1 if the vertex is free (not a support), 0 if it is a support.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2601,12 +2601,12 @@ coordinate system.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="gbsdr.Force.Label">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Label</span></span><a class="headerlink" href="#gbsdr.Force.Label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="gbsdr.Force.IsLoad">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">IsLoad</span></span><a class="headerlink" href="#gbsdr.Force.IsLoad" title="Link to this definition"></a></dt>
 <dd><p>Label describing the type or role of the force.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Label used to classify the force (e.g., external load, reaction, etc.).</p>
+<dd class="field-odd"><p>1 if the force is applied load, 0 if it is a support reaction.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
