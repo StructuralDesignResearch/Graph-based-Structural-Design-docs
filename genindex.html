@@ -96,6 +96,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.CrossSectionAreas"><code class="docutils literal notranslate"><span class="pre">Truss.CrossSectionAreas</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.LoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.LoadIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.Forces"><code class="docutils literal notranslate"><span class="pre">Truss.Forces</span></code></a></li>
@@ -107,7 +108,9 @@
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.MinTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinTensionForce</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.StandardDeviationForce"><code class="docutils literal notranslate"><span class="pre">Truss.StandardDeviationForce</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.StaticAction"><code class="docutils literal notranslate"><span class="pre">Truss.StaticAction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.SupportNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.SupportNodeIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.VarianceForces"><code class="docutils literal notranslate"><span class="pre">Truss.VarianceForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.StructuralWeight"><code class="docutils literal notranslate"><span class="pre">Truss.StructuralWeight</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.AxialForces"><code class="docutils literal notranslate"><span class="pre">Truss.AxialForces</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.EulerCriticalBucklingLimits"><code class="docutils literal notranslate"><span class="pre">Truss.EulerCriticalBucklingLimits()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.ForceDirectionality"><code class="docutils literal notranslate"><span class="pre">Truss.ForceDirectionality()</span></code></a></li>
@@ -140,6 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.MidPoint"><code class="docutils literal notranslate"><span class="pre">Edge.MidPoint</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.StartNode"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.StiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">Edge.StiffnessMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.AreaCS"><code class="docutils literal notranslate"><span class="pre">Edge.AreaCS</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.BucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.BucklingLimit</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.ForceMagnitude"><code class="docutils literal notranslate"><span class="pre">Edge.ForceMagnitude</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Edge.EndNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode_AdjEdges()</span></code></a></li>
@@ -190,7 +194,6 @@
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.FE.RigidityMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RigidityMatrix()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.FE.ApplyCrossSectionCalcVolume"><code class="docutils literal notranslate"><span class="pre">FE.ApplyCrossSectionCalcVolume()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.FE.TributaryForces"><code class="docutils literal notranslate"><span class="pre">FE.TributaryForces()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.FE.TributarySupports"><code class="docutils literal notranslate"><span class="pre">FE.TributarySupports()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Geometry"><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></a><ul>
@@ -336,13 +339,15 @@
 </li>
       <li><a href="contents.html#gbsdr.Vertex.AdjacentNodes">AdjacentNodes (gbsdr.Vertex property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Force.AnchorNode">AnchorNode() (gbsdr.Force method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Vertex.AngleUniformity">AngleUniformity() (gbsdr.Vertex method)</a>
 </li>
       <li><a href="contents.html#gbsdr.FE.ApplyCrossSectionCalcVolume">ApplyCrossSectionCalcVolume() (gbsdr.FE static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Edge.AreaCS">AreaCS (gbsdr.Edge property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.AxialForces">AxialForces (gbsdr.Truss property)</a>
 </li>
@@ -395,6 +400,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Face.Coords3D">Coords3D (gbsdr.Face property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Truss.CrossSectionAreas">CrossSectionAreas (gbsdr.Truss property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Graph.Cycles">Cycles() (gbsdr.Graph method)</a>
 </li>
@@ -728,10 +735,10 @@
         <li><a href="contents.html#gbsdr.FE.Solver">(gbsdr.FE method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Truss.StandardDeviationForce">StandardDeviationForce (gbsdr.Truss property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Graph.StandardDeviationLength">StandardDeviationLength (gbsdr.Graph property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Edge.StartNode">StartNode (gbsdr.Edge property)</a>
@@ -741,6 +748,10 @@
       <li><a href="contents.html#gbsdr.Truss.StaticAction">StaticAction (gbsdr.Truss property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Edge.StiffnessMatrix">StiffnessMatrix (gbsdr.Edge property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Truss.StructuralWeight">StructuralWeight (gbsdr.Truss property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Truss.SupportNodeIds">SupportNodeIds (gbsdr.Truss property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -759,8 +770,6 @@
       <li><a href="contents.html#gbsdr.Face.TriangulationScenarios">TriangulationScenarios() (gbsdr.Face method)</a>
 </li>
       <li><a href="contents.html#gbsdr.FE.TributaryForces">TributaryForces() (gbsdr.FE static method)</a>
-</li>
-      <li><a href="contents.html#gbsdr.FE.TributarySupports">TributarySupports() (gbsdr.FE static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss">Truss (class in gbsdr)</a>
 </li>

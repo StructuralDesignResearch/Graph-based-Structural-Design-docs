@@ -99,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.CrossSectionAreas"><code class="docutils literal notranslate"><span class="pre">Truss.CrossSectionAreas</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.LoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.LoadIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Forces"><code class="docutils literal notranslate"><span class="pre">Truss.Forces</span></code></a></li>
@@ -110,7 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.MinTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MinTensionForce</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.StandardDeviationForce"><code class="docutils literal notranslate"><span class="pre">Truss.StandardDeviationForce</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.StaticAction"><code class="docutils literal notranslate"><span class="pre">Truss.StaticAction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.SupportNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.SupportNodeIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.VarianceForces"><code class="docutils literal notranslate"><span class="pre">Truss.VarianceForces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.StructuralWeight"><code class="docutils literal notranslate"><span class="pre">Truss.StructuralWeight</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.AxialForces"><code class="docutils literal notranslate"><span class="pre">Truss.AxialForces</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.EulerCriticalBucklingLimits"><code class="docutils literal notranslate"><span class="pre">Truss.EulerCriticalBucklingLimits()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.ForceDirectionality"><code class="docutils literal notranslate"><span class="pre">Truss.ForceDirectionality()</span></code></a></li>
@@ -143,6 +146,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.MidPoint"><code class="docutils literal notranslate"><span class="pre">Edge.MidPoint</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.StartNode"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.StiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">Edge.StiffnessMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.AreaCS"><code class="docutils literal notranslate"><span class="pre">Edge.AreaCS</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.BucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.BucklingLimit</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.ForceMagnitude"><code class="docutils literal notranslate"><span class="pre">Edge.ForceMagnitude</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.EndNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode_AdjEdges()</span></code></a></li>
@@ -193,7 +197,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.FE.RigidityMatrix"><code class="docutils literal notranslate"><span class="pre">FE.RigidityMatrix()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.FE.ApplyCrossSectionCalcVolume"><code class="docutils literal notranslate"><span class="pre">FE.ApplyCrossSectionCalcVolume()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.FE.TributaryForces"><code class="docutils literal notranslate"><span class="pre">FE.TributaryForces()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.FE.TributarySupports"><code class="docutils literal notranslate"><span class="pre">FE.TributarySupports()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Geometry"><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></a><ul>
@@ -1470,8 +1473,22 @@ dependent connectivity structures.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="gbsdr.Truss">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Truss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodal_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Truss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodal_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Truss.CrossSectionAreas">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">CrossSectionAreas</span></span><a class="headerlink" href="#gbsdr.Truss.CrossSectionAreas" title="Link to this definition"></a></dt>
+<dd><p>Cross-sectional areas of all structural members.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cross-sectional area (m²) for each edge in the structure.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="gbsdr.Truss.Loads">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Loads</span></span><a class="headerlink" href="#gbsdr.Truss.Loads" title="Link to this definition"></a></dt>
@@ -1634,6 +1651,20 @@ the minimum compression.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Truss.SupportNodeIds">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SupportNodeIds</span></span><a class="headerlink" href="#gbsdr.Truss.SupportNodeIds" title="Link to this definition"></a></dt>
+<dd><p>Node IDs corresponding to structural supports.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of node indices that are constrained (support nodes) in the structure.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="gbsdr.Truss.VarianceForces">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VarianceForces</span></span><a class="headerlink" href="#gbsdr.Truss.VarianceForces" title="Link to this definition"></a></dt>
 <dd><p>Variance of axial forces in the structure.</p>
@@ -1647,6 +1678,21 @@ the minimum compression.</p>
 </dl>
 <p class="rubric">Notes</p>
 <p>Measures the dispersion of internal axial forces.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Truss.StructuralWeight">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StructuralWeight</span></span><a class="headerlink" href="#gbsdr.Truss.StructuralWeight" title="Link to this definition"></a></dt>
+<dd><p>Structural weight (objective measure) of the truss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Weighted sum of member contributions based on axial force magnitude,
+member length, and cross-sectional area.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -1892,7 +1938,7 @@ Default is 100.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.Truss.UpdateAnalyzedTruss">
-<span class="sig-name descname"><span class="pre">UpdateAnalyzedTruss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axial_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss.UpdateAnalyzedTruss" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">UpdateAnalyzedTruss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axial_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_reactions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss.UpdateAnalyzedTruss" title="Link to this definition"></a></dt>
 <dd><p>Update graph elements with results from structural analysis.</p>
 <p>This method assigns computed physical quantities (forces,
 displacements, strain, and stress) back to the corresponding
@@ -2247,6 +2293,20 @@ of the start and end node coordinates.</p>
 </dl>
 <p class="rubric">Notes</p>
 <p>The matrix must be multiplied with the stiffness coefficient (EA/L) to obtain the actual stiffness matrix for structural analysis. The current implementation assumes a unit stiffness coefficient for demonstration purposes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Edge.AreaCS">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AreaCS</span></span><a class="headerlink" href="#gbsdr.Edge.AreaCS" title="Link to this definition"></a></dt>
+<dd><p>Cross-sectional area of the edge.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cross-sectional area of the member (m²).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -3248,7 +3308,7 @@ R[k, dof*j : dof*(j+1)] = -u_ij</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.FE.ApplyCrossSectionCalcVolume">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ApplyCrossSectionCalcVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lengths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_sections</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_allowed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.FE.ApplyCrossSectionCalcVolume" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ApplyCrossSectionCalcVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lengths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_sections</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yield_strengthed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.FE.ApplyCrossSectionCalcVolume" title="Link to this definition"></a></dt>
 <dd><p>Assign the minimum feasible cross-sectional area to each truss member based on axial force demand,
 and compute the resulting total structural volume.</p>
 <p>For each member, the required stress demand is evaluated and the smallest available cross-section
@@ -3260,7 +3320,7 @@ computed as the sum of each member’s volume contribution.</p>
 <li><p><strong>forces</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Axial forces in each member (N). Positive or negative values are handled via absolute value.</p></li>
 <li><p><strong>lengths</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Member lengths (m), corresponding one-to-one with <cite>forces</cite>.</p></li>
 <li><p><strong>cross_sections</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Available cross-sectional areas (mm²), assumed sorted in ascending order. The algorithm selects the smallest section that satisfies the stress constraint.</p></li>
-<li><p><strong>sigma_allowed</strong> (<em>float</em>) – Allowable material stress (MPa = N/mm²).</p></li>
+<li><p><strong>yield_strengthed</strong> (<em>float</em>) – Allowable material stress (MPa = N/mm²).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -3318,36 +3378,6 @@ used for spacing (coords[i][0]).</p></li>
 <li><p>The method assumes nodes are ordered along a 1D projection (uses x-coordinate spacing).</p></li>
 <li><p>End nodes receive half tributary length contributions.</p></li>
 <li><p>Suitable for converting UDLs into lumped nodal loads in structural models.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gbsdr.FE.TributarySupports">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">TributarySupports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_per_meter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.FE.TributarySupports" title="Link to this definition"></a></dt>
-<dd><p>Compute equivalent nodal reactions (or support tributary forces) for a uniformly distributed load.</p>
-<p>This method distributes a uniform line load equally to the nodes of a simple span defined by two
-end points. It assumes the total load acts over a single segment between the first and last node,
-and assigns half of the total tributary contribution to each node.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>coords</strong> (<em>array-like</em>) – Nodal coordinates used to compute span length (Euclidean distance between first two nodes).</p></li>
-<li><p><strong>node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – Node indices representing the support or boundary nodes of the span.</p></li>
-<li><p><strong>load_per_meter</strong> (<em>float</em>) – Uniform distributed load intensity (force per unit length).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Mapping of node_id → tributary support force contribution.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict[int, float]</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>The span length is computed using Euclidean distance between the first two nodes.</p></li>
-<li><p>Each node in <cite>node_ids</cite> receives an equal share: (total load / 2).</p></li>
-<li><p>This is a simplified distribution model and assumes uniform geometry and loading.</p></li>
 </ul>
 </dd></dl>
 
