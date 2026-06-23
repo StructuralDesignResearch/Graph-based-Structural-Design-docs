@@ -181,6 +181,23 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Force.AnchorNode"><code class="docutils literal notranslate"><span class="pre">Force.AnchorNode()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.ScaleResults"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ScaleResults()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.ReduceDimensionsDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ReduceDimensionsDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalEquilibriumMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorGraph"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalForceVectorGraph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalForceVectorTruss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.ReduceForceVector"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ReduceForceVector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GetFreeDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GetFreeDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.SolveSupportReactions"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.SolveSupportReactions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.LayoutOptimization"><code class="docutils literal notranslate"><span class="pre">LayoutOptimization</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.LayoutOptimization.InitialSetup"><code class="docutils literal notranslate"><span class="pre">LayoutOptimization.InitialSetup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.LayoutOptimization.SetupLoadSupports"><code class="docutils literal notranslate"><span class="pre">LayoutOptimization.SetupLoadSupports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.LayoutOptimization.SolveTrussLayoutOptimization"><code class="docutils literal notranslate"><span class="pre">LayoutOptimization.SolveTrussLayoutOptimization()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.EquilibriumSolver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.EquilibriumSolver.AxialForcesSolver_wo_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_wo_reactions()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.EquilibriumSolver.AxialForcesSolver_w_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_w_reactions()</span></code></a></li>
@@ -2754,6 +2771,619 @@ coordinate system.</p>
 <dd class="field-odd"><p>Node</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">StructuralAnalysisUtils</span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.ScaleResults">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ScaleResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.ScaleResults" title="Link to this definition"></a></dt>
+<dd><p>Scale all structural analysis results in a truss model by a uniform factor.</p>
+<p>The function applies a global scalar multiplier to all stored analysis
+quantities in the truss object, including applied loads, reaction forces,
+internal axial forces, and nodal displacements.</p>
+<p>This is a post-processing utility typically used for visualization,
+normalization, or sensitivity demonstration purposes. It does NOT
+recompute equilibrium or modify the structural state; it only scales
+already-computed results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Truss object containing analysis results, including:
+- ForceObjs (external loads and reactions)
+- EdgeObjs (member axial forces)
+- VertexObjs (nodal displacements)</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – <p>Uniform scaling factor applied to all result quantities:</p>
+<ul>
+<li><p>Forces (loads and reactions)</p></li>
+<li><p>Member axial forces</p></li>
+<li><p>Nodal displacements</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The same truss object with all analysis results scaled in-place.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss">Truss</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>The operation is purely algebraic and does NOT involve re-solving
+the finite element system.</p></li>
+<li><p>Scaling is applied as:</p>
+<blockquote>
+<div><p>Forces        → F ← scale · F
+Axial forces  → N ← scale · N
+Displacements → u ← scale · u</p>
+</div></blockquote>
+</li>
+<li><p>The method modifies the input object in-place and also returns it.</p></li>
+<li><p>This assumes linear elastic behavior; scaling is only physically
+meaningful under linearity assumptions.</p></li>
+<li><p>Useful for visualization exaggeration or unit normalization, but not
+for physical reanalysis.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.ReduceDimensionsDOF">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ReduceDimensionsDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.ReduceDimensionsDOF" title="Link to this definition"></a></dt>
+<dd><p>Detect whether a truss geometry is planar or fully 3D and reduce its coordinate representation accordingly.</p>
+<p>The function inspects nodal coordinates and determines if all nodes lie on one of the principal planes
+(XY, XZ, or YZ). If so, it removes the redundant coordinate direction and returns a reduced 2D system.
+Otherwise, the full 3D representation is preserved.</p>
+<p>This is used to simplify subsequent structural analysis by reducing the number of degrees of freedom
+when the structure is planar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coords</strong> (<em>array_like</em>) – Nodal coordinates as an (N x 3) array or list, where each row is (x, y, z).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>reduced_coords</strong> (<em>ndarray</em>) – Coordinate array with reduced dimensionality:
+- (N x 2) if the structure is planar
+- (N x 3) if the structure is fully 3D</p></li>
+<li><p><strong>dof</strong> (<em>int</em>) – Number of degrees of freedom per node:
+- 2 for planar structures
+- 3 for spatial structures</p></li>
+<li><p><strong>plane</strong> (<em>str</em>) – Identified geometric plane or space:
+- “XY”, “XZ”, “YZ” for planar cases
+- “XYZ” for full 3D structures</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Planarity is detected using np.allclose against zero coordinate components.</p></li>
+<li><p>Intended for preprocessing in finite element truss analysis pipelines.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalEquilibriumMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix" title="Link to this definition"></a></dt>
+<dd><p>Construct the global equilibrium matrix for a truss graph.</p>
+<p>The function assembles the equilibrium (compatibility) matrix used in
+ground-structure and truss optimization formulations. Each column of the
+matrix corresponds to a structural member (edge), and each row enforces
+force equilibrium at a specific degree of freedom of a node.</p>
+<p>The resulting matrix enforces:</p>
+<blockquote>
+<div><p>A x = 0   (internal equilibrium formulation)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>where:</dt><dd><ul class="simple">
+<li><p>A is the equilibrium matrix</p></li>
+<li><p>x is the vector of axial member forces</p></li>
+</ul>
+</dd>
+</dl>
+<p>Each member contributes direction-cosine-weighted equilibrium terms at its
+start and end nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Graph representation of the truss structure, containing:
+- VertexCoords (nodal coordinates)
+- EdgeObjs (connectivity and geometry)
+- Order (number of nodes)
+- Size (number of members)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>A</strong> – Global equilibrium matrix of shape:</p>
+<ul class="simple">
+<li><p>(2 * n_nodes, n_members) for 2D structures</p></li>
+<li><p>(3 * n_nodes, n_members) for 3D structures</p></li>
+</ul>
+<p>Each column corresponds to one truss member, and each row corresponds
+to a nodal equilibrium equation in a specific coordinate direction.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the detected system dimensionality is not 2D or 3D.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>The function first detects dimensionality using:</p>
+<blockquote>
+<div><p>ReduceDimensionsDOF(graph.VertexCoords)</p>
+</div></blockquote>
+</li>
+</ul>
+<p>which determines whether the structure is planar or spatial.</p>
+<ul>
+<li><p>Each element contributes using its direction cosines:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>2D:</dt><dd><p>[ c, s ] where c = dx/L, s = dy/L</p>
+</dd>
+<dt>3D:</dt><dd><p>[ l, m, n ] where l,m,n are direction cosines</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>For each member:</dt><dd><ul class="simple">
+<li><p>Positive contributions are assigned to the start node</p></li>
+<li><p>Negative contributions are assigned to the end node</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The formulation assumes:</dt><dd><ul class="simple">
+<li><p>Axial-only truss behavior</p></li>
+<li><p>Linear geometry</p></li>
+<li><p>Small deformations</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>This matrix is a core component in:</dt><dd><ul class="simple">
+<li><p>Ground structure topology optimization</p></li>
+<li><p>Linear programming truss layout problems</p></li>
+<li><p>Force density / equilibrium methods</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalForceVectorGraph">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalForceVectorGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorGraph" title="Link to this definition"></a></dt>
+<dd><p>Assemble the global external force vector for a truss graph.</p>
+<p>The function constructs the nodal force vector used in equilibrium-based
+truss analysis and optimization formulations. External loads are assigned
+to their corresponding nodal degrees of freedom based on node indexing
+and the system dimensionality (2D or 3D).</p>
+<p>The resulting vector represents all externally applied nodal forces in
+global coordinate ordering:</p>
+<blockquote>
+<div><p>F_global ∈ R^(n_nodes · dof)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Truss graph containing nodal and connectivity information, including:
+- VertexCoords (used for dimensionality detection)
+- Order (number of nodes)</p></li>
+<li><p><strong>load_components</strong> (<em>list</em><em>[</em><em>tuple</em><em>]</em>) – <p>List of force vectors applied at nodes. Each tuple defines the force
+components in global coordinates:</p>
+<ul>
+<li><p>2D: (Fx, Fy)</p></li>
+<li><p>3D: (Fx, Fy, Fz)</p></li>
+</ul>
+</p></li>
+<li><p><strong>load_node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of node indices where external loads are applied.
+Each entry corresponds one-to-one with <code class="docutils literal notranslate"><span class="pre">load_components</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>Fglobal</strong> – Flattened global force vector of shape:</p>
+<ul class="simple">
+<li><p>(2 * n_nodes,) for 2D structures</p></li>
+<li><p>(3 * n_nodes,) for 3D structures</p></li>
+</ul>
+<p>Entries are ordered by nodal DOFs:</p>
+<blockquote>
+<div><p>[Fx1, Fy1, Fx2, Fy2, …]   (2D)
+[Fx1, Fy1, Fz1, …]        (3D)</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the detected system dimensionality is not 2D or 3D.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>Dimensionality is determined using:</p>
+<blockquote>
+<div><p>ReduceDimensionsDOF(graph.VertexCoords)</p>
+</div></blockquote>
+</li>
+<li><p>Loads are applied directly to the corresponding DOFs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>2D:</dt><dd><p>F[2*i]     = Fx
+F[2*i + 1] = Fy</p>
+</dd>
+<dt>3D:</dt><dd><p>F[3*i]     = Fx
+F[3*i + 1] = Fy
+F[3*i + 2] = Fz</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>The function assumes:</dt><dd><ul class="simple">
+<li><p>Consistent node indexing between loads and graph vertices</p></li>
+<li><p>Global coordinate system alignment for all loads</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalForceVectorTruss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss" title="Link to this definition"></a></dt>
+<dd><p>Assemble the global force vector for a truss structure.</p>
+<p>This method constructs the nodal force vector by mapping externally
+applied loads to the corresponding degrees of freedom (DOFs) of each node.
+Loads applied at support nodes are ignored, as those DOFs are assumed
+to be constrained.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Structural graph containing nodes and applied loads (<cite>LoadObjs</cite>).</p></li>
+<li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (constrained nodes).</p></li>
+<li><p><strong>dof</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of degrees of freedom per node:
+- 2 → planar analysis (X, Z)
+- 3 → spatial analysis (X, Y, Z)
+Default is 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Global force vector of shape (dof * number_of_nodes, 1),
+where forces are arranged per node as:
+[Fx, Fz] (2D) or [Fx, Fy, Fz] (3D).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Loads are extracted from <cite>truss.LoadObjs</cite>.</p></li>
+<li><p>For 2D problems, only X and Z components are considered.</p></li>
+<li><p>For 3D problems, X, Y, and Z components are included.</p></li>
+<li><p>Forces applied at support nodes are excluded, since their displacements are constrained and handled separately.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>dof</cite> is not equal to 2 or 3.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.ReduceForceVector">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ReduceForceVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_dofs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.ReduceForceVector" title="Link to this definition"></a></dt>
+<dd><p>Extract the reduced force vector corresponding to free DOFs.</p>
+<p>This method filters the global force vector to retain only the
+entries associated with free (unconstrained) degrees of freedom.
+It is used when forming the reduced system of equations after
+applying support constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>ndarray</em>) – Global force vector of size (ndof, 1) or (ndof,).</p></li>
+<li><p><strong>free_dofs</strong> (<em>list</em><em> of </em><em>int</em>) – Indices of the free degrees of freedom.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reduced force vector containing only the entries of <cite>F</cite>
+corresponding to <cite>free_dofs</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>This operation is equivalent to selecting rows of the global system associated with unconstrained DOFs.</p></li>
+<li><dl class="simple">
+<dt>Typically used together with a reduced stiffness matrix:</dt><dd><p>K_ff * U_f = F_f</p>
+</dd>
+</dl>
+</li>
+<li><p>Assumes that <cite>free_dofs</cite> are valid indices of <cite>F</cite>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GetFreeDOF">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GetFreeDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_dofs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GetFreeDOF" title="Link to this definition"></a></dt>
+<dd><p>Identify free degrees of freedom (DOFs) in a constrained structural system.</p>
+<p>The function computes the set of unconstrained (free) degrees of freedom by
+removing the support (fixed) DOFs from the full DOF set. This is a standard
+preprocessing step in finite element analysis and equilibrium-based truss
+formulations, where equations associated with supports are eliminated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>support_dofs</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of constrained DOF indices corresponding to fixed boundary
+conditions (supports). Each entry represents a single DOF index in the
+global system.</p></li>
+<li><p><strong>dof</strong> (<em>int</em>) – Number of degrees of freedom per node:
+- 2 for planar (2D) structures
+- 3 for spatial (3D) structures</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – Total number of nodes in the structure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>free_dofs</strong> – List of unconstrained DOF indices, i.e. all global DOFs excluding the
+ones specified in <cite>support_dofs</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int]</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>The global DOF indexing convention is assumed to be:</p>
+<blockquote>
+<div><p>node i → DOFs [dof*i, dof*i + 1, …, dof*i + dof - 1]</p>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>This function performs a simple set subtraction:</dt><dd><p>free_dofs = {0, …, n*dof-1} support_dofs</p>
+</dd>
+</dl>
+</li>
+<li><p>Order of returned DOFs follows ascending global indexing.</p></li>
+<li><p>This is typically used to reduce equilibrium systems:</p>
+<blockquote>
+<div><p>A_free x = b_free</p>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.SolveSupportReactions">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SolveSupportReactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R_global_np</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.SolveSupportReactions" title="Link to this definition"></a></dt>
+<dd><p>Extract nodal support reactions from a global reaction vector.</p>
+<p>The function maps a global DOF-based reaction vector into a node-based
+dictionary of support reactions. It reconstructs per-node force components
+by grouping DOFs according to the system dimensionality and assigns zero
+values to suppressed directions in planar cases.</p>
+<p>This is typically used after computing the global equilibrium residual:</p>
+<blockquote>
+<div><p>R_global = -(A_full &#64; x + b_full)</p>
+</div></blockquote>
+<p>where support reactions are obtained from DOFs associated with constrained
+nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R_global_np</strong> (<em>ndarray</em>) – <p>Global reaction vector (flattened), ordered by nodal DOFs:</p>
+<blockquote>
+<div><p>[Fx1, Fy1, Fz1, Fx2, Fy2, Fz2, …] (3D)
+[Fx1, Fy1, Fx2, Fy2, …]            (2D)</p>
+</div></blockquote>
+<p>This vector typically represents equilibrium residuals at supports.</p>
+</p></li>
+<li><p><strong>support_node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of node IDs corresponding to constrained (support) nodes.</p></li>
+<li><p><strong>dof</strong> (<em>int</em>) – Number of degrees of freedom per node:
+- 2 for planar structures
+- 3 for spatial structures</p></li>
+<li><p><strong>plane</strong> (<em>str</em>) – <p>Geometric plane identifier used for planar structures:</p>
+<ul>
+<li><p>”XY”</p></li>
+<li><p>”XZ”</p></li>
+<li><p>”YZ”</p></li>
+<li><p>or “XYZ” / None for full 3D</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>support_reactions</strong> –</p>
+<p>Dictionary mapping each support node ID to its reaction force vector:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>node_id: [Rx, Ry, Rz]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>In planar cases, the suppressed direction is explicitly set to 0.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>Reaction extraction assumes consistent DOF ordering:</p>
+<blockquote>
+<div><p>node i → [dof*i, …, dof*i + dof - 1]</p>
+</div></blockquote>
+</li>
+<li><p>For planar structures, the function enforces zero reaction in the</p></li>
+</ul>
+<p>out-of-plane direction based on the provided <cite>plane</cite> argument.</p>
+<ul class="simple">
+<li><p>This function does not perform equilibrium validation; it only maps</p></li>
+</ul>
+<p>DOF-level values into node-level representations.</p>
+<ul>
+<li><p>Typical usage:</p>
+<blockquote>
+<div><p>R_global = -(A_full &#64; x + b_full)
+reactions = SolveSupportReactions(R_global, support_nodes, dof, plane)</p>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.LayoutOptimization">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">LayoutOptimization</span></span><a class="headerlink" href="#gbsdr.LayoutOptimization" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.LayoutOptimization.InitialSetup">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">InitialSetup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.LayoutOptimization.InitialSetup" title="Link to this definition"></a></dt>
+<dd><p>Create and optionally visualize an initial ground structure for layout optimization.</p>
+<p>The function generates a regular nodal grid and corresponding ground structure
+using the specified geometric parameters. It serves as a convenient initialization
+step for layout optimization workflows by constructing the design domain and,
+optionally, displaying the generated structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_rows</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of node rows in the grid. Default is 5.</p></li>
+<li><p><strong>n_cols</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of node columns in the grid. Default is 9.</p></li>
+<li><p><strong>depth</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of layers in the third dimension. A value of 1 creates a planar
+structure, while values greater than 1 generate a spatial grid.
+Default is 1.</p></li>
+<li><p><strong>dx</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between nodes in the x-direction. Default is 1.0.</p></li>
+<li><p><strong>dy</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between nodes in the y-direction. Default is 1.0.</p></li>
+<li><p><strong>dz</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between nodes in the z-direction. Default is 1.0.</p></li>
+<li><p><strong>Lmax</strong> (<em>float</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Maximum allowable member length for generating ground structure
+connections. If None, no explicit length limit is applied.
+Default is None.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the generated ground structure is visualized using the
+plotting utility. Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>gs</strong> – Generated ground structure object containing the nodal layout and
+connectivity information.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.GroundStructure">GroundStructure</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.LayoutOptimization.SetupLoadSupports">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SetupLoadSupports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.truss_generator.GroundStructure"><span class="pre">GroundStructure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.LayoutOptimization.SetupLoadSupports" title="Link to this definition"></a></dt>
+<dd><p>Visualize support and load node assignments on a ground structure.</p>
+<p>The function displays the nodal grid of a ground structure and highlights
+the nodes designated as supports and load application points. This provides
+a convenient verification step before performing structural analysis or
+optimization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gs</strong> (<a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.GroundStructure"><em>GroundStructure</em></a>) – Ground structure object containing the nodal layout and connectivity
+information.</p></li>
+<li><p><strong>support_node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of node IDs corresponding to support locations (fixed or
+constrained nodes).</p></li>
+<li><p><strong>load_node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of node IDs where external loads are applied (but still free).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function generates a visualization and does not return a value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.LayoutOptimization.SolveTrussLayoutOptimization">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SolveTrussLayoutOptimization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.truss_generator.GroundStructure"><span class="pre">GroundStructure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio_tc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_summary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.LayoutOptimization.SolveTrussLayoutOptimization" title="Link to this definition"></a></dt>
+<dd><p>Solve the truss layout optimization problem using a ground-structure linear programming formulation.</p>
+<p>The function computes the optimal truss topology by minimizing total structural volume under
+static equilibrium constraints. The method is based on a ground-structure approach where all
+potential members are included initially and the optimal subset is identified through a
+linear program.</p>
+<p>The formulation splits axial forces into tensile and compressive components to allow
+different stress limits in tension and compression. After solving the optimization problem,
+inactive members are removed and the resulting reduced structure is returned.</p>
+<p>Additionally, support reactions are recovered from the full equilibrium residual and are
+associated back to their corresponding nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gs</strong> (<a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.GroundStructure"><em>GroundStructure</em></a>) – Ground structure containing nodal coordinates, connectivity, and geometric data.</p></li>
+<li><p><strong>support_node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of node IDs that are constrained (supports). These nodes enforce displacement
+constraints and generate reaction forces.</p></li>
+<li><p><strong>load_node_ids</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of node IDs where external loads are applied.</p></li>
+<li><p><strong>load_components</strong> (<em>list</em><em>[</em><em>tuple</em><em>]</em>) – Force vectors corresponding to each entry in <code class="docutils literal notranslate"><span class="pre">load_node_ids</span></code>. Each tuple represents
+the applied load components per node.</p></li>
+<li><p><strong>ratio_tc</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>Ratio between compressive and tensile allowable stresses:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sigma_c</span> <span class="pre">=</span> <span class="pre">ratio_tc</span> <span class="pre">*</span> <span class="pre">sigma_t</span></code></p>
+<p>Values &lt; 1.0 impose stricter compression limits than tension. Default is 1.0.</p>
+</p></li>
+<li><p><strong>plot_summary</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, prints solver diagnostics including convergence status, objective value,
+residual norm, and active member statistics. Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Optimized structural model containing only active members.</p>
+<p>If the full structural model is successfully constructed, a <code class="docutils literal notranslate"><span class="pre">Truss</span></code> object is returned
+containing:
+- Reduced nodal coordinates
+- Active element connectivity
+- Axial member forces
+- Applied loads and support reactions
+- Updated support node definitions</p>
+<p>If construction of a <code class="docutils literal notranslate"><span class="pre">Truss</span></code> object fails, a fallback <code class="docutils literal notranslate"><span class="pre">Graph</span></code> object is returned
+containing only geometry and connectivity information.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss">Truss</a> or <a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph">Graph</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the linear programming solver fails to return a valid solution vector or if the
+    detected dimensionality is not 2D or 3D.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The optimization is formulated as a linear program and solved using the HiGHS method</p></li>
+</ul>
+<p>via <code class="docutils literal notranslate"><span class="pre">scipy.optimize.linprog</span></code>.
+- Equilibrium is enforced only on free degrees of freedom; support DOFs are eliminated
+during system reduction.
+- Axial forces are decomposed into positive (tension) and negative (compression) components
+for stress-limited design.
+- Members with force magnitude below <code class="docutils literal notranslate"><span class="pre">Geometry.Tolerance</span></code> are removed from the final design.
+- Support reactions are computed from the full equilibrium residual:</p>
+<p><code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">-(A_full</span> <span class="pre">&#64;</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">b_full)</span></code></p>
+<ul class="simple">
+<li><p>The function automatically detects whether the structure is 2D or 3D using coordinate</p></li>
+</ul>
+<p>analysis and reduces the degrees of freedom accordingly.</p>
 </dd></dl>
 
 </dd></dl>

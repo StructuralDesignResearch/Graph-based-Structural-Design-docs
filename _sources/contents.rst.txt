@@ -25,7 +25,11 @@ Contents
    :members:
    :show-inheritance:
 
-.. autoclass:: gbsdr.Cycle
+.. autoclass:: gbsdr.StructuralAnalysisUtils
+   :members:
+   :show-inheritance:
+
+.. autoclass:: gbsdr.LayoutOptimization
    :members:
    :show-inheritance:
 
