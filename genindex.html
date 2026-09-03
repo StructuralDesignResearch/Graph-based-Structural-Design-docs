@@ -286,7 +286,34 @@
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Export.ToJSON"><code class="docutils literal notranslate"><span class="pre">Export.ToJSON()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss.Graph"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss.Graph3D"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss.EdgePerformanceDonut"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.EdgePerformanceDonut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss.GraphPerformanceSpider"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.GraphPerformanceSpider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss.Graph2Compare"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph2Compare()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotTruss.LPresult"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.LPresult()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotFromCoords"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotFromCoords.plot_generated_grid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_generated_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotFromCoords.plot_truss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_truss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotFromCoords.plot_deformed_truss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_deformed_truss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotFromCoords.plot_member_force_comparison"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_member_force_comparison()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotInventory"><code class="docutils literal notranslate"><span class="pre">Plot.PlotInventory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotInventory.Inventory"><code class="docutils literal notranslate"><span class="pre">Plot.PlotInventory.Inventory()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotGroundStructure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotGroundStructure.Structure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.Structure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="contents.html#gbsdr.Plot.PlotGroundStructure.NodeGrid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.NodeGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
@@ -471,6 +498,8 @@
         <li><a href="contents.html#gbsdr.Graph.EdgeObjs">(gbsdr.Graph property)</a>
 </li>
       </ul></li>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss.EdgePerformanceDonut">EdgePerformanceDonut() (gbsdr.Plot.PlotTruss static method)</a>
+</li>
       <li><a href="contents.html#gbsdr.Face.Edges">Edges (gbsdr.Face property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Grid.Edges">Edges() (gbsdr.Grid static method)</a>
@@ -555,12 +584,12 @@
       </ul></li>
       <li><a href="contents.html#gbsdr.Geometry">Geometry (class in gbsdr)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.GetFreeDOF">GetFreeDOF() (gbsdr.StructuralAnalysisUtils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Graph.GlobalAngleUniformity">GlobalAngleUniformity() (gbsdr.Graph method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Graph.GlobalClusteringCoefficient">GlobalClusteringCoefficient (gbsdr.Graph property)</a>
 </li>
       <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix">GlobalEquilibriumMatrix() (gbsdr.StructuralAnalysisUtils static method)</a>
@@ -570,6 +599,14 @@
       <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss">GlobalForceVectorTruss() (gbsdr.StructuralAnalysisUtils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Graph">Graph (class in gbsdr)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss.Graph">Graph() (gbsdr.Plot.PlotTruss static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss.Graph2Compare">Graph2Compare() (gbsdr.Plot.PlotTruss static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss.Graph3D">Graph3D() (gbsdr.Plot.PlotTruss static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss.GraphPerformanceSpider">GraphPerformanceSpider() (gbsdr.Plot.PlotTruss static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Grid">Grid (class in gbsdr)</a>
 </li>
@@ -597,15 +634,17 @@
 </li>
       <li><a href="contents.html#gbsdr.Graph.IncidenceMatrix">IncidenceMatrix() (gbsdr.Graph method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Vertex.IncidentEdges">IncidentEdges (gbsdr.Vertex property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Utils.IndexList">IndexList() (gbsdr.Utils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Utils.IndexList2">IndexList2() (gbsdr.Utils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.LayoutOptimization.InitialSetup">InitialSetup() (gbsdr.LayoutOptimization static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotInventory.Inventory">Inventory() (gbsdr.Plot.PlotInventory static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Vertex.IsFree">IsFree (gbsdr.Vertex property)</a>
 </li>
@@ -646,6 +685,8 @@
       <li><a href="contents.html#gbsdr.Truss.LoadObjs">LoadObjs (gbsdr.Truss property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.Loads">Loads (gbsdr.Truss property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss.LPresult">LPresult() (gbsdr.Plot.PlotTruss static method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -703,6 +744,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="contents.html#gbsdr.Plot.PlotGroundStructure.NodeGrid">NodeGrid() (gbsdr.Plot.PlotGroundStructure static method)</a>
+</li>
       <li><a href="contents.html#gbsdr.Force.NodeId">NodeId (gbsdr.Force property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Grid.Nodes">Nodes() (gbsdr.Grid static method)</a>
@@ -731,9 +774,25 @@
 </li>
       <li><a href="contents.html#gbsdr.Geometry.PlaneAsEquation">PlaneAsEquation() (gbsdr.Geometry static method)</a>
 </li>
+      <li><a href="contents.html#gbsdr.Plot">Plot (class in gbsdr)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotFromCoords">Plot.PlotFromCoords (class in gbsdr)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotGroundStructure">Plot.PlotGroundStructure (class in gbsdr)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotInventory">Plot.PlotInventory (class in gbsdr)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="contents.html#gbsdr.Plot">Plot (class in gbsdr)</a>
+      <li><a href="contents.html#gbsdr.Plot.PlotTruss">Plot.PlotTruss (class in gbsdr)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotFromCoords.plot_deformed_truss">plot_deformed_truss() (gbsdr.Plot.PlotFromCoords static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotFromCoords.plot_generated_grid">plot_generated_grid() (gbsdr.Plot.PlotFromCoords static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotFromCoords.plot_member_force_comparison">plot_member_force_comparison() (gbsdr.Plot.PlotFromCoords static method)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotFromCoords.plot_truss">plot_truss() (gbsdr.Plot.PlotFromCoords static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Geometry.PointPlaneDistance">PointPlaneDistance() (gbsdr.Geometry static method)</a>
 </li>
@@ -781,10 +840,10 @@
 </li>
       <li><a href="contents.html#gbsdr.LayoutOptimization.SolveTrussLayoutOptimization">SolveTrussLayoutOptimization() (gbsdr.LayoutOptimization static method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Truss.StandardDeviationForce">StandardDeviationForce (gbsdr.Truss property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Graph.StandardDeviationLength">StandardDeviationLength (gbsdr.Graph property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Edge.StartNode">StartNode (gbsdr.Edge property)</a>
@@ -798,6 +857,8 @@
       <li><a href="contents.html#gbsdr.StructuralAnalysisUtils">StructuralAnalysisUtils (class in gbsdr)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.StructuralWeight">StructuralWeight (gbsdr.Truss property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Plot.PlotGroundStructure.Structure">Structure() (gbsdr.Plot.PlotGroundStructure static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.SupportNodeIds">SupportNodeIds (gbsdr.Truss property)</a>
 </li>

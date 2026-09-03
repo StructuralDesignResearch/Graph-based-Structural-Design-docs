@@ -289,7 +289,34 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Export.ToJSON"><code class="docutils literal notranslate"><span class="pre">Export.ToJSON()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#gbsdr.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gbsdr.Plot"><code class="docutils literal notranslate"><span class="pre">Plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Plot.PlotTruss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotTruss.Graph"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotTruss.Graph3D"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotTruss.EdgePerformanceDonut"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.EdgePerformanceDonut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotTruss.GraphPerformanceSpider"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.GraphPerformanceSpider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotTruss.Graph2Compare"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.Graph2Compare()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotTruss.LPresult"><code class="docutils literal notranslate"><span class="pre">Plot.PlotTruss.LPresult()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Plot.PlotFromCoords"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotFromCoords.plot_generated_grid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_generated_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotFromCoords.plot_truss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_truss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotFromCoords.plot_deformed_truss"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_deformed_truss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotFromCoords.plot_member_force_comparison"><code class="docutils literal notranslate"><span class="pre">Plot.PlotFromCoords.plot_member_force_comparison()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Plot.PlotInventory"><code class="docutils literal notranslate"><span class="pre">Plot.PlotInventory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotInventory.Inventory"><code class="docutils literal notranslate"><span class="pre">Plot.PlotInventory.Inventory()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Plot.PlotGroundStructure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotGroundStructure.Structure"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.Structure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gbsdr.Plot.PlotGroundStructure.NodeGrid"><code class="docutils literal notranslate"><span class="pre">Plot.PlotGroundStructure.NodeGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
@@ -4966,6 +4993,551 @@ structural or analysis data.</p>
 <dt class="sig sig-object py" id="gbsdr.Plot">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Plot</span></span><a class="headerlink" href="#gbsdr.Plot" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PlotTruss</span></span><a class="headerlink" href="#gbsdr.Plot.PlotTruss" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Plotting utilities for <a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a> and <a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><code class="xref py py-class docutils literal notranslate"><span class="pre">Truss</span></code></a> objects.</p>
+<p>This class groups static methods for visualizing structural
+graphs and trusses in 2D and 3D, including force-colored diagrams,
+performance donut charts, radar comparisons, side-by-side graph
+comparisons, and linear-programming baseline solutions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss.Graph">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_edge_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_face_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_utilization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colored</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002848</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">235000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotTruss.Graph" title="Link to this definition"></a></dt>
+<dd><p>Plot a 2D or 3D representation of a graph.</p>
+<p>This function visualizes a graph using NetworkX and Matplotlib.
+If the graph is 3D, it delegates to a dedicated 3D plotting function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Instance of the Graph class to be visualized.</p></li>
+<li><p><strong>show_weights</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, display edge weights as labels.</p></li>
+<li><p><strong>show_edge_ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, display edge IDs.</p></li>
+<li><p><strong>show_face_ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, highlight faces and display their IDs.</p></li>
+<li><p><strong>show_utilization</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, display edge utilization values.</p></li>
+<li><p><strong>colored</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, edges are colored and scaled based on force magnitude:
+- blue for tension
+- red for compression
+- black for zero force</p></li>
+<li><p><strong>A</strong> (<em>float</em><em>, </em><em>optional</em>) – Cross-sectional area used for utilization calculation.</p></li>
+<li><p><strong>S</strong> (<em>float</em><em>, </em><em>optional</em>) – Yield strength used for utilization calculation.</p></li>
+<li><p><strong>weight_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for edge thickness based on force magnitude.</p></li>
+<li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for edge label font size.</p></li>
+<li><p><strong>node_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node size.</p></li>
+<li><p><strong>node_font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node label font size.</p></li>
+<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches.</p></li>
+<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays the plot using Matplotlib.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss.Graph3D">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Graph3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotTruss.Graph3D" title="Link to this definition"></a></dt>
+<dd><p>Plot a 3D representation of a graph using Plotly.</p>
+<p>This function visualizes nodes and edges of a graph in 3D space.
+Edge labels can display either force magnitudes or edge IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Instance of the Graph class to be visualized.</p></li>
+<li><p><strong>show_weights</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, edge labels display force magnitudes.
+If False, edge labels display edge IDs. Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays an interactive 3D plot using Plotly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires Plotly (<cite>plotly.graph_objects</cite>).</p></li>
+<li><p>Nodes are displayed as points, edges as line segments.</p></li>
+<li><p>Node IDs are shown as text labels.</p></li>
+<li><p>Edge labels are positioned at edge midpoints.</p></li>
+<li><dl class="simple">
+<dt>Includes predefined camera views:</dt><dd><ul>
+<li><p>Plan (top view)</p></li>
+<li><p>Front view</p></li>
+<li><p>Isometric view</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss.EdgePerformanceDonut">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">EdgePerformanceDonut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">donut_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">donut_thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.075</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wedge_edgecolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wedge_linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotTruss.EdgePerformanceDonut" title="Link to this definition"></a></dt>
+<dd><p>Plot a donut chart representing edge performance based on length and axial force.</p>
+<p>Each wedge corresponds to an edge in the graph:
+- Wedge size is proportional to edge length.
+- Wedge color represents axial force (compression/tension).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Instance of the Truss class containing edge lengths and forces.</p></li>
+<li><p><strong>show_colorbar</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, display a colorbar indicating axial force magnitude.</p></li>
+<li><p><strong>donut_radius</strong> (<em>float</em><em>, </em><em>optional</em>) – Outer radius of the donut chart.</p></li>
+<li><p><strong>donut_thickness</strong> (<em>float</em><em>, </em><em>optional</em>) – Thickness of the donut (difference between outer and inner radius).</p></li>
+<li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for label font size.</p></li>
+<li><p><strong>label_offset</strong> (<em>float</em><em>, </em><em>optional</em>) – Radial offset for positioning edge labels outside the donut.</p></li>
+<li><p><strong>wedge_edgecolor</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of wedge borders.</p></li>
+<li><p><strong>wedge_linewidth</strong> (<em>float</em><em>, </em><em>optional</em>) – Line width of wedge borders.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays the donut chart using Matplotlib.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NumPy and Matplotlib.</p></li>
+<li><p>Edge lengths determine angular span of wedges.</p></li>
+<li><dl class="simple">
+<dt>Axial forces are mapped to colors using a blue-white-red colormap:</dt><dd><ul>
+<li><p>Blue → compression</p></li>
+<li><p>Red → tension</p></li>
+<li><p>White → near-zero force</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Edges are sorted by force magnitude for consistent grouping.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss.GraphPerformanceSpider">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GraphPerformanceSpider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scenario_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'grey'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_linestyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'--'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radial_axis_extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotTruss.GraphPerformanceSpider" title="Link to this definition"></a></dt>
+<dd><p>Plot a radar (spider) chart for comparing graph performance metrics.</p>
+<p>Each polygon represents a scenario (e.g., a truss design), and each axis
+corresponds to a performance metric.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics</strong> (<em>list</em><em> of </em><em>str</em>) – Names of the performance metrics (axes of the radar chart).</p></li>
+<li><p><strong>values_list</strong> (<em>list</em><em> of </em><em>list</em><em> of </em><em>float</em>) – Values for each scenario. Each sublist corresponds to one scenario
+and must have the same length as <cite>metrics</cite>.</p></li>
+<li><p><strong>scenario_labels</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – Labels for each scenario. If None, default labels are assigned.</p></li>
+<li><p><strong>colors</strong> (<em>list</em><em> of </em><em>color-like</em><em>, </em><em>optional</em>) – Colors for each scenario polygon. If None, a default colormap is used.</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, normalize values per metric across scenarios to [0, 1].</p></li>
+<li><p><strong>fill_alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – Transparency of the filled polygon areas.</p></li>
+<li><p><strong>line_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Line width of the scenario outlines.</p></li>
+<li><p><strong>label_distance</strong> (<em>float</em><em>, </em><em>optional</em>) – Radial distance for positioning metric labels.</p></li>
+<li><p><strong>label_fontsize</strong> (<em>int</em><em>, </em><em>optional</em>) – Font size of metric labels.</p></li>
+<li><p><strong>grid_levels</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of concentric grid levels.</p></li>
+<li><p><strong>grid_color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of grid lines.</p></li>
+<li><p><strong>grid_alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – Transparency of grid lines.</p></li>
+<li><p><strong>grid_linestyle</strong> (<em>str</em><em>, </em><em>optional</em>) – Line style of grid lines.</p></li>
+<li><p><strong>grid_linewidth</strong> (<em>float</em><em>, </em><em>optional</em>) – Line width of grid lines.</p></li>
+<li><p><strong>radial_axis_extension</strong> (<em>float</em><em>, </em><em>optional</em>) – Extension beyond the outermost grid for radial axes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays the radar chart using Matplotlib.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NumPy and Matplotlib.</p></li>
+<li><p>Each metric is normalized independently across all scenarios when <cite>normalize=True</cite>.</p></li>
+<li><p>The chart is drawn in polar coordinates with custom polygonal grids.</p></li>
+<li><p>Suitable for comparing structural performance metrics across multiple designs.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss.Graph2Compare">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Graph2Compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_edges1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_nodes1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_edges2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highlight_nodes2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotTruss.Graph2Compare" title="Link to this definition"></a></dt>
+<dd><p>Plot a side-by-side comparison of two graphs.</p>
+<p>The function displays four subplots:
+- Top-left: first graph with edge IDs
+- Bottom-left: first graph with edge weights
+- Top-right: second graph with edge IDs
+- Bottom-right: second graph with edge weights</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph1</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Original graph instance.</p></li>
+<li><p><strong>graph2</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Modified graph instance to compare against the original.</p></li>
+<li><p><strong>highlight_edges1</strong> (<em>list</em><em> of </em><em>int</em><em>, </em><em>optional</em>) – Indices of edges in <cite>graph1</cite> to highlight.</p></li>
+<li><p><strong>highlight_nodes1</strong> (<em>list</em><em> of </em><em>int</em><em>, </em><em>optional</em>) – Indices of nodes in <cite>graph1</cite> to highlight.</p></li>
+<li><p><strong>highlight_edges2</strong> (<em>list</em><em> of </em><em>int</em><em>, </em><em>optional</em>) – Indices of edges in <cite>graph2</cite> to highlight.</p></li>
+<li><p><strong>highlight_nodes2</strong> (<em>list</em><em> of </em><em>int</em><em>, </em><em>optional</em>) – Indices of nodes in <cite>graph2</cite> to highlight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays the comparison plot using Matplotlib.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NetworkX and Matplotlib.</p></li>
+<li><p>Node positions are taken from graph coordinates (assumed 2D).</p></li>
+<li><p>Highlighted nodes and edges are colored differently using a colormap.</p></li>
+<li><p>Edge labels display either IDs (top row) or weights (bottom row).</p></li>
+<li><p>Useful for visualizing structural modifications between two graphs.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotTruss.LPresult">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">LPresult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.truss_generator.GroundStructure"><span class="pre">GroundStructure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_bar_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotTruss.LPresult" title="Link to this definition"></a></dt>
+<dd><p>Plot the baseline linear-programming (LP) truss solution over its ground structure.</p>
+<p>Draws the full ground structure in the background as light gray lines,
+then overlays the active members returned by the LP solve, colored by
+axial force sign (tension vs. compression) and scaled in thickness by
+force magnitude. Supports, applied loads, and a reference unit-length
+bar are also drawn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Truss instance containing the LP solution (adjacency list, weights,
+vertex coordinates, supports, and applied forces).</p></li>
+<li><p><strong>gs</strong> (<a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.GroundStructure"><em>GroundStructure</em></a>) – Ground structure instance providing the full candidate member set
+and node coordinates used as the background layout.</p></li>
+<li><p><strong>show_bar_labels</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, annotate each active member with its length and axial force.</p></li>
+<li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for label font sizes.</p></li>
+<li><p><strong>node_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node and support marker sizes.</p></li>
+<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches.</p></li>
+<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays the plot using Matplotlib.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NumPy and Matplotlib.</p></li>
+<li><p>Members with <a href="#id1"><span class="problematic" id="id2">|weight|</span></a> below <cite>Geometry.Tolerance</cite> are treated as
+inactive and are not drawn as solution members.</p></li>
+<li><p>Tension members are drawn in red, compression members in blue.</p></li>
+<li><p>Support nodes are drawn as black squares; free nodes as white circles.</p></li>
+<li><p>Applied loads are drawn as green arrows scaled by force components.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotFromCoords">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PlotFromCoords</span></span><a class="headerlink" href="#gbsdr.Plot.PlotFromCoords" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Plotting utilities that operate directly on raw coordinate and
+connectivity arrays.</p>
+<p>Useful for visualizing generated datasets, model predictions, and
+deformed shapes where the structure is represented as plain
+NumPy arrays.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotFromCoords.plot_generated_grid">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">plot_generated_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(18,</span> <span class="pre">8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotFromCoords.plot_generated_grid" title="Link to this definition"></a></dt>
+<dd><p>Plot a grid of small truss thumbnails sampled from a batch of coordinates.</p>
+<p>Selects (or accepts) a subset of structures from <cite>coords</cite> and renders
+each one as a small, unlabeled truss diagram arranged in a grid of
+subplots. Useful for quickly inspecting many generated or predicted
+truss layouts at once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>array-like</em>) – Array of shape (N, n_nodes, 2) containing node coordinates for
+N candidate structures, all sharing the same <cite>connectivity</cite>.</p></li>
+<li><p><strong>connectivity</strong> (<em>iterable</em><em> of </em><em>(</em><em>i</em><em>, </em><em>j</em><em>)</em>) – Member connectivity shared by all structures in <cite>coords</cite>.</p></li>
+<li><p><strong>n_rows</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of rows in the subplot grid.</p></li>
+<li><p><strong>n_cols</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of columns in the subplot grid.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Overall figure size in inches.</p></li>
+<li><p><strong>indices</strong> (<em>array-like</em><em> of </em><em>int</em><em>, </em><em>optional</em>) – Specific indices into <cite>coords</cite> to plot. If None, <cite>n_rows * n_cols</cite>
+indices are randomly sampled using <cite>seed</cite>.</p></li>
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – Random seed used when <cite>indices</cite> is None.</p></li>
+<li><p><strong>save</strong> (<em>str</em><em>, </em><em>optional</em>) – If provided, the figure is saved to this file path.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The generated figure containing the grid of truss thumbnails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NumPy and Matplotlib.</p></li>
+<li><p>Node IDs are not shown in the thumbnails (kept minimal for overview).</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotFromCoords.plot_truss">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">plot_truss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_node_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotFromCoords.plot_truss" title="Link to this definition"></a></dt>
+<dd><p>Plot a single truss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>(</em><em>n_nodes</em><em>, </em><em>2</em><em>) </em><em>array-like</em>) – Node coordinates.</p></li>
+<li><p><strong>connectivity</strong> (<em>iterable</em><em> of </em><em>(</em><em>i</em><em>, </em><em>j</em><em>)</em>) – Member connectivity.</p></li>
+<li><p><strong>show_node_ids</strong> (<em>bool</em>) – Whether to display node indices.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em>) – Figure size.</p></li>
+<li><p><strong>node_size</strong> (<em>float</em>) – Marker size for nodes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotFromCoords.plot_deformed_truss">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">plot_deformed_truss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">true_displacement</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Test</span> <span class="pre">example'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotFromCoords.plot_deformed_truss" title="Link to this definition"></a></dt>
+<dd><p>Plot the undeformed truss alongside true and predicted deformed shapes.</p>
+<p>Displacements are amplified for visibility and overlaid on the original
+(undeformed) geometry, allowing visual comparison between a ground-truth
+deformation and a model’s prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>array-like</em>) – Undeformed node coordinates, shape (n_nodes, 2).</p></li>
+<li><p><strong>connectivity</strong> (<em>array-like</em><em> of </em><em>(</em><em>i</em><em>, </em><em>j</em><em>)</em>) – Member connectivity as node index pairs.</p></li>
+<li><p><strong>support_ids</strong> (<em>array-like</em><em> of </em><em>int</em>) – Indices of support (constrained) nodes, drawn as squares.</p></li>
+<li><p><strong>true_displacement</strong> (<em>array-like</em>) – Ground-truth nodal displacements, shape (n_nodes, 2).</p></li>
+<li><p><strong>prediction</strong> (<em>array-like</em>) – Predicted nodal displacements, shape (n_nodes, 2).</p></li>
+<li><p><strong>plane</strong> (<em>str</em><em>, </em><em>optional</em>) – Two-character label used for the axis titles (e.g. “xz”).</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Base title for the plot; “ — deformation” is appended.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The generated figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NumPy and Matplotlib.</p></li>
+<li><p>The displacement amplification factor is computed automatically from
+the structure’s span and the largest displacement present, so that
+deformations remain visually legible regardless of their true scale.</p></li>
+<li><p>Undeformed members are drawn in grey, true deformation in solid black,
+and predicted deformation in dashed green.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotFromCoords.plot_member_force_comparison">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">plot_member_force_comparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">true_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicted_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bwr_r'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotFromCoords.plot_member_force_comparison" title="Link to this definition"></a></dt>
+<dd><p>Plot true vs. predicted member axial forces as two side-by-side force fields.</p>
+<p>Each truss member is drawn as a line segment colored according to its
+axial force value, using a shared, symmetric color normalization so the
+two panels (true and predicted) are directly comparable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>array-like</em>) – Node coordinates, shape (n_nodes, 2).</p></li>
+<li><p><strong>connectivity</strong> (<em>array-like</em><em> of </em><em>(</em><em>i</em><em>, </em><em>j</em><em>)</em>) – Member connectivity as node index pairs.</p></li>
+<li><p><strong>true_values</strong> (<em>array-like</em>) – Ground-truth axial force per member.</p></li>
+<li><p><strong>predicted_values</strong> (<em>array-like</em>) – Predicted axial force per member.</p></li>
+<li><p><strong>cmap</strong> (<em>str</em><em>, </em><em>optional</em>) – Matplotlib colormap name used for the force fields.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The generated figure containing both force-field panels and a
+shared colorbar.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Requires NumPy and Matplotlib.</p></li>
+<li><p>Color normalization is centered at zero (<cite>TwoSlopeNorm</cite>) and scaled
+symmetrically to the larger of the true/predicted magnitude ranges,
+so sign and relative magnitude are comparable across both panels.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotInventory">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PlotInventory</span></span><a class="headerlink" href="#gbsdr.Plot.PlotInventory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Plotting utilities for visualizing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Stock</span></code> inventory.</p>
+<p>Currently provides a single grouped bar chart that summarizes
+available stock elements by type, length, and cross-sectional area.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotInventory.Inventory">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Inventory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_gap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_summary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gbsdr.Plot.PlotInventory.Inventory" title="Link to this definition"></a></dt>
+<dd><p>Plot a grouped bar chart of the stock inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stock</strong> (<em>Stock</em>) – Instance of the Stock class to be visualized.</p></li>
+<li><p><strong>bar_spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between stock elements inside one type group.</p></li>
+<li><p><strong>group_gap</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between stock-type groups.</p></li>
+<li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for all font sizes.</p></li>
+<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches.</p></li>
+<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches.</p></li>
+<li><p><strong>print_summary</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, print a summary of the inventory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Displays the plot using Matplotlib.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotGroundStructure">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PlotGroundStructure</span></span><a class="headerlink" href="#gbsdr.Plot.PlotGroundStructure" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Plotting utilities for visualizing a <a class="reference internal" href="#gbsdr.GroundStructure" title="gbsdr.GroundStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroundStructure</span></code></a> grid.</p>
+<p>Provides methods to inspect the raw structural topology (nodes and
+candidate members) as well as annotated node grids highlighting
+supports and load-anchorage nodes, primarily for pre-analysis
+verification and debugging.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotGroundStructure.Structure">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ground_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_edges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_node_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_edge_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_supports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotGroundStructure.Structure" title="Link to this definition"></a></dt>
+<dd><p>Visualize a ground-structure grid in 2D.</p>
+<p>This method generates a 2D plot of a discretized ground structure,
+including nodes, connectivity (edges), and optional annotations such as
+node IDs and edge IDs. It is primarily used for inspection and debugging
+of structural layouts before analysis or optimization.</p>
+<p>The visualization is based on a regular node grid defined by the
+ground structure object and supports flexible display options for
+different levels of detail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ground_structure</strong> – Ground structure object containing nodal coordinates, connectivity,
+and grid metadata (rows, columns, spacing).</p></li>
+<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches. If None, derived from grid size.</p></li>
+<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches. If None, derived from grid size.</p></li>
+<li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for all text elements (titles, labels, annotations).</p></li>
+<li><p><strong>node_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node marker size.</p></li>
+<li><p><strong>node_font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node ID font size.</p></li>
+<li><p><strong>show_nodes</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plots structural nodes.</p></li>
+<li><p><strong>show_edges</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plots structural connectivity (edges).</p></li>
+<li><p><strong>show_node_ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, displays node indices next to nodes.</p></li>
+<li><p><strong>show_edge_ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, displays edge indices at midpoints of members.</p></li>
+<li><p><strong>show_supports</strong> (<em>bool</em><em>, </em><em>optional</em>) – Placeholder flag for future visualization of boundary conditions.</p></li>
+<li><p><strong>show_loads</strong> (<em>bool</em><em>, </em><em>optional</em>) – Placeholder flag for future visualization of external loads.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>This function produces a matplotlib figure and displays it.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The plot assumes a structured grid geometry defined by:</dt><dd><ul>
+<li><p>n_rows, n_cols</p></li>
+<li><p>dx, dy spacing</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Nodes are plotted as scatter points, edges as line segments.</p></li>
+<li><p>Edge and node labels are optional overlays for debugging.</p></li>
+<li><dl class="simple">
+<dt>The function is intended for:</dt><dd><ul>
+<li><p>Pre-analysis inspection</p></li>
+<li><p>Ground structure verification</p></li>
+<li><p>Debugging topology generation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Plot.PlotGroundStructure.NodeGrid">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NodeGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ground_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anchored_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Plot.PlotGroundStructure.NodeGrid" title="Link to this definition"></a></dt>
+<dd><p>Visualize a ground-structure node grid with support and load nodes.</p>
+<p>This method generates a 2D visualization of a structured node grid and
+highlights specific node subsets such as support nodes and load-anchorage
+nodes. It is primarily used for structural modeling, preprocessing
+inspection, and verification of boundary conditions in ground-structure
+formulations.</p>
+<p>The plot distinguishes different node roles using marker styles and colors,
+while also displaying node indices for reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ground_structure</strong> – Ground structure object containing nodal coordinates and grid layout
+information (rows, columns, spacing).</p></li>
+<li><p><strong>support_nodes</strong> (<em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – List of node indices representing support (constrained) nodes.</p></li>
+<li><p><strong>anchored_nodes</strong> (<em>list</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – List of node indices representing nodes where external loads are
+applied or anchored.</p></li>
+<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches. If None, derived from grid size.</p></li>
+<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches. If None, derived from grid size.</p></li>
+<li><p><strong>show_legend</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, displays a legend identifying node categories.</p></li>
+<li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for text elements (title, labels, legend).</p></li>
+<li><p><strong>node_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node marker sizes.</p></li>
+<li><p><strong>node_font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for node ID font size.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>This function produces a matplotlib figure and displays it.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Base nodes are always plotted as black points.</p></li>
+<li><p>Support nodes are highlighted with square red markers.</p></li>
+<li><p>Anchored/load nodes are highlighted with green X markers.</p></li>
+<li><p>Node IDs are displayed for all nodes for traceability.</p></li>
+<li><dl class="simple">
+<dt>The visualization is intended for:</dt><dd><ul>
+<li><p>Boundary condition verification</p></li>
+<li><p>Load application checking</p></li>
+<li><p>Ground structure debugging and validation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
 </dd></dl>
 
 </section>
