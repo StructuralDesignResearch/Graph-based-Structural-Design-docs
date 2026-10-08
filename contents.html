@@ -237,6 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Utils"><code class="docutils literal notranslate"><span class="pre">Utils</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.Coords2Dto3D"><code class="docutils literal notranslate"><span class="pre">Utils.Coords2Dto3D()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.DifferenceList"><code class="docutils literal notranslate"><span class="pre">Utils.DifferenceList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.IndexList"><code class="docutils literal notranslate"><span class="pre">Utils.IndexList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.IndexList2"><code class="docutils literal notranslate"><span class="pre">Utils.IndexList2()</span></code></a></li>
@@ -4378,6 +4379,26 @@ by a scalar value.</p>
 <dt class="sig sig-object py" id="gbsdr.Utils">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Utils</span></span><a class="headerlink" href="#gbsdr.Utils" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Utils.Coords2Dto3D">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Coords2Dto3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords2D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Utils.Coords2Dto3D" title="Link to this definition"></a></dt>
+<dd><p>Convert 2D coordinates to 3D by adding a 0-value along the specified axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords2D</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_points</em><em>, </em><em>2</em><em>)</em>) – Input 2D coordinates.</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – The axis to add to all points</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Converted 3D coordinates with the specified z-value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray of shape (n_points, 3)</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.Utils.DifferenceList">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DifferenceList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_A</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Utils.DifferenceList" title="Link to this definition"></a></dt>
