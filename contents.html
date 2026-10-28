@@ -2968,97 +2968,107 @@ when the structure is planar.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalEquilibriumMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix" title="Link to this definition"></a></dt>
-<dd><p>Construct the global equilibrium matrix for a truss graph.</p>
-<p>The function assembles the equilibrium (compatibility) matrix used in
-ground-structure and truss optimization formulations. Each column of the
-matrix corresponds to a structural member (edge), and each row enforces
-force equilibrium at a specific degree of freedom of a node.</p>
-<p>The resulting matrix enforces:</p>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalEquilibriumMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix" title="Link to this definition"></a></dt>
+<dd><p>Assemble the global equilibrium matrix of a pin-jointed truss.</p>
+<p>Each column corresponds to a member and each row to the equilibrium
+equation of one nodal degree of freedom. Column e holds the unit vector
+of member e, pointing from its start node i to its end node j, with a
+positive sign at node i and a negative sign at node j.</p>
+<p>With this sign convention, A = -C^T, where C is the compatibility
+matrix (member elongations delta = C u). Nodal equilibrium reads</p>
 <blockquote>
-<div><p>A x = 0   (internal equilibrium formulation)</p>
+<div><p>A q + f = 0</p>
 </div></blockquote>
-<dl class="simple">
-<dt>where:</dt><dd><ul class="simple">
-<li><p>A is the equilibrium matrix</p></li>
-<li><p>x is the vector of axial member forces</p></li>
-</ul>
-</dd>
-</dl>
-<p>Each member contributes direction-cosine-weighted equilibrium terms at its
-start and end nodes.</p>
+<p>for tension-positive axial forces q and external nodal loads f
+(equivalently, A q = f for compression-positive q). States of
+self-stress span the null space of A.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Graph representation of the truss structure, containing:
-- VertexCoords (nodal coordinates)
-- EdgeObjs (connectivity and geometry)
-- Order (number of nodes)
-- Size (number of members)</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Truss graph providing:
+- Coords2D : (n_nodes, 2) in-plane coordinates, used if dof == 2
+- Vertices : (n_nodes, 3) coordinates, used if dof == 3
+- EdgeNodePairs : (n_members, 2) start and end node indices
+- Order : number of nodes</p></li>
+<li><p><strong>dof</strong> (<em>int</em>) – Degrees of freedom per node: 2 (planar) or 3 (spatial).</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><p><strong>A</strong> – Global equilibrium matrix of shape:</p>
-<ul class="simple">
-<li><p>(2 * n_nodes, n_members) for 2D structures</p></li>
-<li><p>(3 * n_nodes, n_members) for 3D structures</p></li>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>A</strong> (<em>ndarray, shape (dof * n_nodes, n_members)</em>) – Global equilibrium matrix.</p></li>
+<li><p><strong>L</strong> (<em>ndarray, shape (n_members,)</em>) – Member lengths.</p></li>
 </ul>
-<p>Each column corresponds to one truss member, and each row corresponds
-to a nodal equilibrium equation in a specific coordinate direction.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If the detected system dimensionality is not 2D or 3D.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If dof is not 2 or 3, or does not match the coordinate dimension.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<ul>
-<li><p>The function first detects dimensionality using:</p>
+<p>Column e for a member from node i to node j, with
+(dx, dy[, dz]) = x_j - x_i. All other entries in the column are zero.</p>
+<p>2D (dof = 2), direction cosines c = dx/L, s = dy/L:</p>
 <blockquote>
-<div><p>ReduceDimensionsDOF(graph.VertexCoords)</p>
+<div><blockquote>
+<div><p>col e</p>
 </div></blockquote>
-</li>
-</ul>
-<p>which determines whether the structure is planar or spatial.</p>
-<ul>
-<li><p>Each element contributes using its direction cosines:</p>
+<p>row 2i   [  c ]
+row 2i+1 [  s ]
+row 2j   [ -c ]
+row 2j+1 [ -s ]</p>
+</div></blockquote>
+<p>3D (dof = 3), direction cosines l = dx/L, m = dy/L, n = dz/L:</p>
 <blockquote>
-<div><dl class="simple">
-<dt>2D:</dt><dd><p>[ c, s ] where c = dx/L, s = dy/L</p>
-</dd>
-<dt>3D:</dt><dd><p>[ l, m, n ] where l,m,n are direction cosines</p>
-</dd>
-</dl>
+<div><blockquote>
+<div><p>col e</p>
 </div></blockquote>
-</li>
-<li><dl class="simple">
-<dt>For each member:</dt><dd><ul class="simple">
-<li><p>Positive contributions are assigned to the start node</p></li>
-<li><p>Negative contributions are assigned to the end node</p></li>
+<p>row 3i   [  l ]
+row 3i+1 [  m ]
+row 3i+2 [  n ]
+row 3j   [ -l ]
+row 3j+1 [ -m ]
+row 3j+2 [ -n ]</p>
+</div></blockquote>
+<p>Example (2D): a member from node 0 at (0, 0) to node 2 at (3, 4) has
+L = 5, c = 0.6, s = 0.8. Its column holds 0.6, 0.8 in rows 0, 1 and
+-0.6, -0.8 in rows 4, 5.</p>
+<p>Assumptions:
+- Axial-only (pin-jointed) members; equilibrium is written in the</p>
+<blockquote>
+<div><p>undeformed geometry (small displacements).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Node indices in EdgeNodePairs run from 0 to n_nodes - 1 and match
+the row order of the coordinate arrays.</p></li>
+<li><p>For planar trusses, Coords2D must be coordinates in the plane of the
+truss, not a projection onto XY; otherwise trusses lying in other
+planes (e.g., XZ) yield incorrect matrices.</p></li>
+<li><p>Zero-length members (coincident nodes) cause division by zero.</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>The formulation assumes:</dt><dd><ul class="simple">
-<li><p>Axial-only truss behavior</p></li>
-<li><p>Linear geometry</p></li>
-<li><p>Small deformations</p></li>
+<p>Typical uses:
+- Ground-structure layout optimization (plastic LP formulation) [1].
+- Static and kinematic determinacy: the rank and null spaces of A give</p>
+<blockquote>
+<div><p>states of self-stress and mechanisms [2].</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Linear stiffness assembly, K = A diag(EA/L) A^T, which is
+independent of the sign convention.</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>This matrix is a core component in:</dt><dd><ul class="simple">
-<li><p>Ground structure topology optimization</p></li>
-<li><p>Linear programming truss layout problems</p></li>
-<li><p>Force density / equilibrium methods</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>W. S. Dorn, R. E. Gomory, H. J. Greenberg, “Automatic design of
+optimal structures,” Journal de Mécanique, 3, 25-52, 1964.</p>
+</aside>
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>S. Pellegrino, C. R. Calladine, “Matrix analysis of statically
+and kinematically indeterminate frameworks,” International Journal
+of Solids and Structures, 22(4), 409-428, 1986.</p>
+</aside>
+</aside>
 </dd></dl>
 
 <dl class="py method">
@@ -5216,7 +5226,7 @@ and node coordinates used as the background layout.</p></li>
 <p class="rubric">Notes</p>
 <ul class="simple">
 <li><p>Requires NumPy and Matplotlib.</p></li>
-<li><p>Members with <a href="#id1"><span class="problematic" id="id2">|weight|</span></a> below <cite>Geometry.Tolerance</cite> are treated as
+<li><p>Members with <a href="#id3"><span class="problematic" id="id4">|weight|</span></a> below <cite>Geometry.Tolerance</cite> are treated as
 inactive and are not drawn as solution members.</p></li>
 <li><p>Tension members are drawn in red, compression members in blue.</p></li>
 <li><p>Support nodes are drawn as black squares; free nodes as white circles.</p></li>
