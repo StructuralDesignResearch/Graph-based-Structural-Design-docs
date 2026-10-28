@@ -101,7 +101,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.CrossSectionAreas"><code class="docutils literal notranslate"><span class="pre">Truss.CrossSectionAreas</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Loads2D"><code class="docutils literal notranslate"><span class="pre">Truss.Loads2D</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.LoadObjs"><code class="docutils literal notranslate"><span class="pre">Truss.LoadObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.LoadNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.LoadNodeIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.LoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.LoadIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.Forces"><code class="docutils literal notranslate"><span class="pre">Truss.Forces</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.ForceObjs"><code class="docutils literal notranslate"><span class="pre">Truss.ForceObjs</span></code></a></li>
@@ -183,6 +185,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.BuildSupports"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.BuildSupports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.ScaleResults"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ScaleResults()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.ReduceDimensionsDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ReduceDimensionsDOF()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalEquilibriumMatrix()</span></code></a></li>
@@ -190,6 +193,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalForceVectorTruss()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.ReduceForceVector"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ReduceForceVector()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GetFreeDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GetFreeDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.GetSupportDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GetSupportDOF()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.SolveSupportReactions"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.SolveSupportReactions()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.StructuralAnalysisUtils.objective_from_coords"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.objective_from_coords()</span></code></a></li>
 </ul>
@@ -201,8 +205,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.EquilibriumSolver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.EquilibriumSolver.AxialForcesSolver_wo_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_wo_reactions()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.EquilibriumSolver.AxialForcesSolver_w_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_w_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.EquilibriumSolver.Solver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.Solver()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.FE"><code class="docutils literal notranslate"><span class="pre">FE</span></code></a><ul>
@@ -237,7 +240,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Utils"><code class="docutils literal notranslate"><span class="pre">Utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.Coords2Dto3D"><code class="docutils literal notranslate"><span class="pre">Utils.Coords2Dto3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.NestedLists2DT"><code class="docutils literal notranslate"><span class="pre">Utils.NestedLists2DT()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.Coords2Dto3DbyAxis"><code class="docutils literal notranslate"><span class="pre">Utils.Coords2Dto3DbyAxis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.Vectors2Dto3D"><code class="docutils literal notranslate"><span class="pre">Utils.Vectors2Dto3D()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.DifferenceList"><code class="docutils literal notranslate"><span class="pre">Utils.DifferenceList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.IndexList"><code class="docutils literal notranslate"><span class="pre">Utils.IndexList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Utils.IndexList2"><code class="docutils literal notranslate"><span class="pre">Utils.IndexList2()</span></code></a></li>
@@ -1550,6 +1555,31 @@ dependent connectivity structures.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Truss.Loads2D">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Loads2D</span></span><a class="headerlink" href="#gbsdr.Truss.Loads2D" title="Link to this definition"></a></dt>
+<dd><p>2D or projected loads of the graph.</p>
+<p>The load vectors are automatically projected to a 2D plane if the
+input data lies in a coordinate plane (XY, XZ, or YZ). Otherwise,
+full 3D load vectors are returned.</p>
+<p>Projection rules:</p>
+<ul class="simple">
+<li><p>If all z = 0 → returns XY vectors</p></li>
+<li><p>If all y = 0 → returns XZ vectors</p></li>
+<li><p>If all x = 0 → returns YZ vectors</p></li>
+<li><p>Otherwise → returns full 3D vectors</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Load vectors in reduced 2D form if planar, otherwise full
+3D vectors. Shape is (n_nodes, 2) or (n_nodes, 3).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="gbsdr.Truss.LoadObjs">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">LoadObjs</span></span><a class="headerlink" href="#gbsdr.Truss.LoadObjs" title="Link to this definition"></a></dt>
 <dd><p>Load objects (applied loads) associated with the graph.</p>
@@ -1559,6 +1589,21 @@ dependent connectivity structures.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of <a class="reference internal" href="#gbsdr.Force" title="gbsdr.Force">Force</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gbsdr.Truss.LoadNodeIds">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">LoadNodeIds</span></span><a class="headerlink" href="#gbsdr.Truss.LoadNodeIds" title="Link to this definition"></a></dt>
+<dd><p>Node IDs corresponding to applied loads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of node IDs where external loads are applied (loads with
+label == 1).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2828,6 +2873,12 @@ coordinate system.</p>
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">StructuralAnalysisUtils</span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.BuildSupports">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">BuildSupports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.BuildSupports" title="Link to this definition"></a></dt>
+<dd><p>Parallel lists, e.g. node_ids = [0, 6], types = [“pin”, “roller”].</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.ScaleResults">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ScaleResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.ScaleResults" title="Link to this definition"></a></dt>
 <dd><p>Scale all structural analysis results in a truss model by a uniform factor.</p>
@@ -3218,6 +3269,12 @@ ones specified in <cite>support_dofs</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GetSupportDOF">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GetSupportDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">supports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GetSupportDOF" title="Link to this definition"></a></dt>
+<dd><p>Global indices of restrained DOFs from {node_id: fixity mask}.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.SolveSupportReactions">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SolveSupportReactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R_global_np</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.SolveSupportReactions" title="Link to this definition"></a></dt>
 <dd><p>Extract nodal support reactions from a global reaction vector.</p>
@@ -3468,129 +3525,20 @@ for stress-limited design.
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">EquilibriumSolver</span></span><a class="headerlink" href="#gbsdr.EquilibriumSolver" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gbsdr.EquilibriumSolver.AxialForcesSolver_wo_reactions">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AxialForcesSolver_wo_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_node_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.EquilibriumSolver.AxialForcesSolver_wo_reactions" title="Link to this definition"></a></dt>
-<dd><p>Solve axial forces in a truss using global equilibrium (matrix method),
-without explicitly forming a stiffness matrix.</p>
-<p>The method assembles a global equilibrium system of the form:</p>
-<blockquote>
-<div><p>A · x = -b</p>
-</div></blockquote>
-<p>where:
-- A contains member direction cosines and support constraint equations
-- x contains unknown axial forces and support reactions
-- b contains externally applied nodal loads</p>
-<p>A least-squares solution is used, allowing the method to handle
-statically determinate and indeterminate systems.</p>
+<dt class="sig sig-object py" id="gbsdr.EquilibriumSolver.Solver">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">BC</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.EquilibriumSolver.Solver" title="Link to this definition"></a></dt>
+<dd><p>Equilibrium-based truss solver with bar forces and reactions as unknowns, A [q; r] = -b.
+Determinate: equilibrium alone. Indeterminate: minimum complementary energy (needs E, A).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Truss object containing nodes and edges.</p></li>
-<li><p><strong>force_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs where external forces are applied.</p></li>
-<li><p><strong>ext_forces</strong> (<em>list</em><em> of </em><em>list</em><em>[</em><em>float</em><em>]</em>) – External force vectors at the corresponding nodes, given as
-[[Fx, Fy, Fz], …].</p></li>
-<li><p><strong>sup_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs that are fully constrained (supports). Each support
-contributes three reaction components (x, y, z).</p></li>
+<li><p><strong>BC</strong> (<em>support type per support node</em><em>, </em><em>e.g.</em><em> [</em><em>&quot;pin&quot;</em><em>, </em><em>&quot;roller&quot;</em><em>]</em>)</p></li>
+<li><p><strong>E</strong> (<em>young's modulus; required if statically indeterminate</em>)</p></li>
+<li><p><strong>A</strong> (<em>cross-sectional area; required if statically indeterminate</em>)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>X_forces</strong> (<em>ndarray</em>) – Axial forces in each member (length = number of edges).
-Positive/negative sign convention depends on member orientation.</p></li>
-<li><p><strong>R_forces</strong> (<em>ndarray</em>) – Reaction forces at supports (length = 3 × number of support nodes),
-ordered per node as [Rx, Ry, Rz].</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>The equilibrium matrix is constructed using direction cosines of each member.</p></li>
-<li><p>Each node contributes three equilibrium equations (x, y, z).</p></li>
-<li><p>Supports are modeled as unknown reaction forces (no displacement method used).</p></li>
-<li><dl class="simple">
-<dt>A least-squares solver (<cite>np.linalg.lstsq</cite>) is used:</dt><dd><ul>
-<li><p>Provides a solution even for over/underdetermined systems.</p></li>
-<li><p>For well-posed statically determinate systems, the solution is exact.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Rows corresponding to unconstrained and unconnected DOFs are removed before solving to improve numerical stability.</p></li>
-<li><p>Assumes pin-jointed truss behavior (axial forces only, no bending).</p></li>
-</ul>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ZeroDivisionError</strong> – If a member has zero length (coincident nodes).</p></li>
-<li><p><strong>ValueError</strong> – If input dimensions (nodes, forces) are inconsistent.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gbsdr.EquilibriumSolver.AxialForcesSolver_w_reactions">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AxialForcesSolver_w_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_forces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_node_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_forces</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.EquilibriumSolver.AxialForcesSolver_w_reactions" title="Link to this definition"></a></dt>
-<dd><p>Solve axial forces in a truss using global equilibrium with partially
-prescribed support reactions.</p>
-<p>The method assembles a global equilibrium system:</p>
-<blockquote>
-<div><p>A · x = -b</p>
-</div></blockquote>
-<p>where:
-- A contains member direction cosines and selected support reaction components
-- x contains unknown axial forces and (active) support reactions
-- b contains externally applied nodal loads</p>
-<p>Unlike the least-squares version, this formulation removes inactive
-degrees of freedom and solves the reduced system directly using
-<cite>np.linalg.solve</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Truss object containing nodes and edges.</p></li>
-<li><p><strong>force_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs where external forces are applied.</p></li>
-<li><p><strong>ext_forces</strong> (<em>list</em><em> of </em><em>list</em><em>[</em><em>float</em><em>]</em>) – External force vectors at the corresponding nodes, given as
-[[Fx, Fy, Fz], …].</p></li>
-<li><p><strong>sup_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs that act as supports.</p></li>
-<li><p><strong>sup_forces</strong> (<em>list</em><em> of </em><em>list</em><em>[</em><em>float</em><em>]</em>) – Support reaction activation per node, given as [[Rx, Ry, Rz], …].
-Each component acts as a binary selector:
-- nonzero → reaction component is included as an unknown
-- zero → reaction component is excluded from the system</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Flattened solution vector containing:
-- axial forces (first E entries)
-- active support reaction components (remaining entries)</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<ul class="simple">
-<li><p>The equilibrium matrix is constructed using direction cosines of each member.</p></li>
-<li><p>Each node contributes three equilibrium equations (x, y, z).</p></li>
-<li><p>Support reactions are selectively included based on <cite>sup_forces</cite>.</p></li>
-<li><p>Rows corresponding to unconnected DOFs and columns corresponding to inactive unknowns are removed before solving.</p></li>
-<li><dl class="simple">
-<dt>The system is solved using <cite>np.linalg.solve</cite>, therefore:</dt><dd><ul>
-<li><p>The reduced system must be square and non-singular.</p></li>
-<li><p>This method assumes a well-posed, fully constrained structure.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Assumes pin-jointed truss behavior (axial forces only).</p></li>
-</ul>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>LinAlgError</strong> – If the system matrix is singular or not square.</p></li>
-<li><p><strong>ZeroDivisionError</strong> – If a member has zero length (coincident nodes).</p></li>
-<li><p><strong>ValueError</strong> – If input dimensions are inconsistent.</p></li>
-</ul>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>axial forces (n_bars, 1), reactions (n_sup, 3), displacements (n_nodes, 3) or None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3603,7 +3551,7 @@ Each component acts as a binary selector:
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.FE.Solver">
-<span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.FE.Solver" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">BC</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.FE.Solver" title="Link to this definition"></a></dt>
 <dd><p>Perform structural analysis of a truss using the stiffness method.</p>
 <p>This method computes nodal displacements, member axial forces,
 strains, and stresses by assembling and solving the global
@@ -3623,10 +3571,7 @@ equilibrium equations of the system.</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Structural graph representing the truss system, including geometry, connectivity, and material properties.</p></li>
-<li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (fully constrained nodes).</p></li>
-</ul>
+<dd class="field-odd"><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Structural graph representing the truss system, including geometry, connectivity, and material properties.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
@@ -4380,8 +4325,15 @@ by a scalar value.</p>
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Utils</span></span><a class="headerlink" href="#gbsdr.Utils" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gbsdr.Utils.Coords2Dto3D">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Coords2Dto3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords2D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Utils.Coords2Dto3D" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="gbsdr.Utils.NestedLists2DT">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NestedLists2DT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nested</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Utils.NestedLists2DT" title="Link to this definition"></a></dt>
+<dd><p>Convert a nested list or array into a DataTree, one branch {i} per row.</p>
+<p>nested : list of lists, list of 1D arrays, or 2D numpy array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Utils.Coords2Dto3DbyAxis">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Coords2Dto3DbyAxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords2D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Utils.Coords2Dto3DbyAxis" title="Link to this definition"></a></dt>
 <dd><p>Convert 2D coordinates to 3D by adding a 0-value along the specified axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -4397,6 +4349,14 @@ by a scalar value.</p>
 <dd class="field-odd"><p>numpy.ndarray of shape (n_points, 3)</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Utils.Vectors2Dto3D">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Vectors2Dto3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector2D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Utils.Vectors2Dto3D" title="Link to this definition"></a></dt>
+<dd><p>Insert the dropped global axis back into reduced coordinates or vectors.</p>
+<p>vector2D : (n, 2) or (2,) array-like
+plane    : “XY”, “XZ”, “YZ” or “XYZ”, as returned by ReduceDimensionsDOF</p>
 </dd></dl>
 
 <dl class="py method">

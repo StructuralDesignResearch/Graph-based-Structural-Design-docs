@@ -98,7 +98,9 @@
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.CrossSectionAreas"><code class="docutils literal notranslate"><span class="pre">Truss.CrossSectionAreas</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.Loads"><code class="docutils literal notranslate"><span class="pre">Truss.Loads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.Loads2D"><code class="docutils literal notranslate"><span class="pre">Truss.Loads2D</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.LoadObjs"><code class="docutils literal notranslate"><span class="pre">Truss.LoadObjs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.LoadNodeIds"><code class="docutils literal notranslate"><span class="pre">Truss.LoadNodeIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.LoadIds"><code class="docutils literal notranslate"><span class="pre">Truss.LoadIds</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.Forces"><code class="docutils literal notranslate"><span class="pre">Truss.Forces</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Truss.ForceObjs"><code class="docutils literal notranslate"><span class="pre">Truss.ForceObjs</span></code></a></li>
@@ -180,6 +182,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.BuildSupports"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.BuildSupports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.ScaleResults"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ScaleResults()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.ReduceDimensionsDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ReduceDimensionsDOF()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalEquilibriumMatrix()</span></code></a></li>
@@ -187,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalForceVectorTruss()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.ReduceForceVector"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.ReduceForceVector()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.GetFreeDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GetFreeDOF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.GetSupportDOF"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GetSupportDOF()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.SolveSupportReactions"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.SolveSupportReactions()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.StructuralAnalysisUtils.objective_from_coords"><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.objective_from_coords()</span></code></a></li>
 </ul>
@@ -198,8 +202,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.EquilibriumSolver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.EquilibriumSolver.AxialForcesSolver_wo_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_wo_reactions()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.EquilibriumSolver.AxialForcesSolver_w_reactions"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.AxialForcesSolver_w_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.EquilibriumSolver.Solver"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver.Solver()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.FE"><code class="docutils literal notranslate"><span class="pre">FE</span></code></a><ul>
@@ -234,7 +237,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contents.html#gbsdr.Utils"><code class="docutils literal notranslate"><span class="pre">Utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.Coords2Dto3D"><code class="docutils literal notranslate"><span class="pre">Utils.Coords2Dto3D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.NestedLists2DT"><code class="docutils literal notranslate"><span class="pre">Utils.NestedLists2DT()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.Coords2Dto3DbyAxis"><code class="docutils literal notranslate"><span class="pre">Utils.Coords2Dto3DbyAxis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.Vectors2Dto3D"><code class="docutils literal notranslate"><span class="pre">Utils.Vectors2Dto3D()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.DifferenceList"><code class="docutils literal notranslate"><span class="pre">Utils.DifferenceList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.IndexList"><code class="docutils literal notranslate"><span class="pre">Utils.IndexList()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="contents.html#gbsdr.Utils.IndexList2"><code class="docutils literal notranslate"><span class="pre">Utils.IndexList2()</span></code></a></li>
@@ -385,10 +390,10 @@
 </li>
       <li><a href="contents.html#gbsdr.Vertex.AdjacentNodes">AdjacentNodes (gbsdr.Vertex property)</a>
 </li>
-      <li><a href="contents.html#gbsdr.Force.AnchorNode">AnchorNode() (gbsdr.Force method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="contents.html#gbsdr.Force.AnchorNode">AnchorNode() (gbsdr.Force method)</a>
+</li>
       <li><a href="contents.html#gbsdr.Vertex.AngleUniformity">AngleUniformity() (gbsdr.Vertex method)</a>
 </li>
       <li><a href="contents.html#gbsdr.FE.ApplyCrossSectionCalcVolume">ApplyCrossSectionCalcVolume() (gbsdr.FE static method)</a>
@@ -396,10 +401,6 @@
       <li><a href="contents.html#gbsdr.Edge.AreaCS">AreaCS (gbsdr.Edge property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.AxialForces">AxialForces (gbsdr.Truss property)</a>
-</li>
-      <li><a href="contents.html#gbsdr.EquilibriumSolver.AxialForcesSolver_w_reactions">AxialForcesSolver_w_reactions() (gbsdr.EquilibriumSolver static method)</a>
-</li>
-      <li><a href="contents.html#gbsdr.EquilibriumSolver.AxialForcesSolver_wo_reactions">AxialForcesSolver_wo_reactions() (gbsdr.EquilibriumSolver static method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -415,9 +416,11 @@
 </li>
       <li><a href="contents.html#gbsdr.Graph.BracedVariants">BracedVariants() (gbsdr.Graph method)</a>
 </li>
+      <li><a href="contents.html#gbsdr.Edge.BucklingLimit">BucklingLimit (gbsdr.Edge property)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="contents.html#gbsdr.Edge.BucklingLimit">BucklingLimit (gbsdr.Edge property)</a>
+      <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.BuildSupports">BuildSupports() (gbsdr.StructuralAnalysisUtils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Import.ByCSVpath">ByCSVpath() (gbsdr.Import static method)</a>
 </li>
@@ -443,7 +446,7 @@
         <li><a href="contents.html#gbsdr.Graph.Coords2D">(gbsdr.Graph property)</a>
 </li>
       </ul></li>
-      <li><a href="contents.html#gbsdr.Utils.Coords2Dto3D">Coords2Dto3D() (gbsdr.Utils static method)</a>
+      <li><a href="contents.html#gbsdr.Utils.Coords2Dto3DbyAxis">Coords2Dto3DbyAxis() (gbsdr.Utils static method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -589,10 +592,12 @@
 </li>
       <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.GetFreeDOF">GetFreeDOF() (gbsdr.StructuralAnalysisUtils static method)</a>
 </li>
-      <li><a href="contents.html#gbsdr.Graph.GlobalAngleUniformity">GlobalAngleUniformity() (gbsdr.Graph method)</a>
+      <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.GetSupportDOF">GetSupportDOF() (gbsdr.StructuralAnalysisUtils static method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="contents.html#gbsdr.Graph.GlobalAngleUniformity">GlobalAngleUniformity() (gbsdr.Graph method)</a>
+</li>
       <li><a href="contents.html#gbsdr.Graph.GlobalClusteringCoefficient">GlobalClusteringCoefficient (gbsdr.Graph property)</a>
 </li>
       <li><a href="contents.html#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix">GlobalEquilibriumMatrix() (gbsdr.StructuralAnalysisUtils static method)</a>
@@ -679,15 +684,19 @@
 </li>
       <li><a href="contents.html#gbsdr.Graph.Lengths">Lengths (gbsdr.Graph property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Geometry.LineLineIntersection">LineLineIntersection() (gbsdr.Geometry static method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Truss.LoadIds">LoadIds (gbsdr.Truss property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Truss.LoadNodeIds">LoadNodeIds (gbsdr.Truss property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.LoadObjs">LoadObjs (gbsdr.Truss property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Truss.Loads">Loads (gbsdr.Truss property)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Truss.Loads2D">Loads2D (gbsdr.Truss property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Plot.PlotTruss.LPresult">LPresult() (gbsdr.Plot.PlotTruss static method)</a>
 </li>
@@ -741,6 +750,8 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="contents.html#gbsdr.Utils.NestedLists2DT">NestedLists2DT() (gbsdr.Utils static method)</a>
+</li>
       <li><a href="contents.html#gbsdr.Graph.NetworkXGraph">NetworkXGraph (gbsdr.Graph property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Graph.NodeById">NodeById() (gbsdr.Graph method)</a>
@@ -833,9 +844,11 @@
 </li>
       <li><a href="contents.html#gbsdr.Graph.Size">Size (gbsdr.Graph property)</a>
 </li>
-      <li><a href="contents.html#gbsdr.FDM.Solver">Solver() (gbsdr.FDM static method)</a>
+      <li><a href="contents.html#gbsdr.EquilibriumSolver.Solver">Solver() (gbsdr.EquilibriumSolver static method)</a>
 
       <ul>
+        <li><a href="contents.html#gbsdr.FDM.Solver">(gbsdr.FDM static method)</a>
+</li>
         <li><a href="contents.html#gbsdr.FE.Solver">(gbsdr.FE method)</a>
 </li>
       </ul></li>
@@ -843,10 +856,10 @@
 </li>
       <li><a href="contents.html#gbsdr.LayoutOptimization.SolveTrussLayoutOptimization">SolveTrussLayoutOptimization() (gbsdr.LayoutOptimization static method)</a>
 </li>
-      <li><a href="contents.html#gbsdr.Truss.StandardDeviationForce">StandardDeviationForce (gbsdr.Truss property)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="contents.html#gbsdr.Truss.StandardDeviationForce">StandardDeviationForce (gbsdr.Truss property)</a>
+</li>
       <li><a href="contents.html#gbsdr.Graph.StandardDeviationLength">StandardDeviationLength (gbsdr.Graph property)</a>
 </li>
       <li><a href="contents.html#gbsdr.Edge.StartNode">StartNode (gbsdr.Edge property)</a>
@@ -933,15 +946,17 @@
 </li>
       <li><a href="contents.html#gbsdr.Vector.VecDotProd">VecDotProd() (gbsdr.Vector static method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Vector.VecNorm">VecNorm() (gbsdr.Vector static method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="contents.html#gbsdr.Vector.VecScale">VecScale() (gbsdr.Vector static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Vector.VecSubtract">VecSubtract() (gbsdr.Vector static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Vector">Vector (class in gbsdr)</a>
+</li>
+      <li><a href="contents.html#gbsdr.Utils.Vectors2Dto3D">Vectors2Dto3D() (gbsdr.Utils static method)</a>
 </li>
       <li><a href="contents.html#gbsdr.Vertex">Vertex (class in gbsdr)</a>
 </li>
