@@ -5287,17 +5287,28 @@ so sign and relative magnitude are comparable across both panels.</p></li>
 available stock elements by type, length, and cross-sectional area.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.Plot.PlotInventory.Inventory">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Inventory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_gap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_summary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gbsdr.Plot.PlotInventory.Inventory" title="Link to this definition"></a></dt>
-<dd><p>Plot a grouped bar chart of the stock inventory.</p>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Inventory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_gap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.45</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_gap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_summary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gbsdr.Plot.PlotInventory.Inventory" title="Link to this definition"></a></dt>
+<dd><p>Plot the stock inventory as bars grouped by type and profile.</p>
+<p>Each bar is one stock member; its height is the member length and its
+width scales with the cross-sectional area. Bars are grouped by profile
+(sorted by area), and profiles by type (shaded bands, labeled with the
+family). Within a profile, members are sorted by decreasing length.</p>
+<p>A row below the bars shows each profile’s cross-section, filled and
+drawn to one common scale, so the filled areas are proportional to A.
+Sections without dimensions (synthetic stocks) are drawn as squares of
+area proportional to A.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>stock</strong> (<em>Stock</em>) – Instance of the Stock class to be visualized.</p></li>
-<li><p><strong>bar_spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between stock elements inside one type group.</p></li>
-<li><p><strong>group_gap</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between stock-type groups.</p></li>
+<li><p><strong>bar_spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between members inside one profile group.</p></li>
+<li><p><strong>group_gap</strong> (<em>float</em><em>, </em><em>optional</em>) – Spacing between profile groups.</p></li>
+<li><p><strong>type_gap</strong> (<em>float</em><em>, </em><em>optional</em>) – Additional spacing between types.</p></li>
 <li><p><strong>font_scale</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling factor for all font sizes.</p></li>
-<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches.</p></li>
-<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches.</p></li>
+<li><p><strong>fig_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Width of the figure in inches. If None, it scales with the
+number of members so that the element labels stay legible.</p></li>
+<li><p><strong>fig_height</strong> (<em>float</em><em>, </em><em>optional</em>) – Height of the figure in inches, including the section row.</p></li>
+<li><p><strong>show_ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, label each bar with its element ID.</p></li>
 <li><p><strong>print_summary</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, print a summary of the inventory.</p></li>
 </ul>
 </dd>
