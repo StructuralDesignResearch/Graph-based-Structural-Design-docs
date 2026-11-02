@@ -2810,7 +2810,7 @@ for physical reanalysis.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalEquilibriumMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalEquilibriumMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalEquilibriumMatrix" title="Link to this definition"></a></dt>
 <dd><p>Assemble the global equilibrium matrix of a pin-jointed truss.</p>
 <p>Each column corresponds to a member and each row to the equilibrium
 equation of one nodal degree of freedom. Column e holds the unit vector
@@ -2826,14 +2826,11 @@ matrix (member elongations delta = C u). Nodal equilibrium reads</p>
 self-stress span the null space of A.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Truss graph providing:
+<dd class="field-odd"><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Truss object providing:
 - Coords2D : (n_nodes, 2) in-plane coordinates, used if dof == 2
 - Vertices : (n_nodes, 3) coordinates, used if dof == 3
 - EdgeNodePairs : (n_members, 2) start and end node indices
-- Order : number of nodes</p></li>
-<li><p><strong>dof</strong> (<em>int</em>) – Degrees of freedom per node: 2 (planar) or 3 (spatial).</p></li>
-</ul>
+- Order : number of nodes</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
@@ -2915,7 +2912,7 @@ of Solids and Structures, 22(4), 409-428, 1986.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalForceVectorGraph">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalForceVectorGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorGraph" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalForceVectorGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorGraph" title="Link to this definition"></a></dt>
 <dd><p>Assemble the global external force vector for a truss graph.</p>
 <p>The function constructs the nodal force vector used in equilibrium-based
 truss analysis and optimization formulations. External loads are assigned
@@ -2929,7 +2926,7 @@ global coordinate ordering:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Truss graph containing nodal and connectivity information, including:
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – Truss graph containing nodal and connectivity information, including:
 - VertexCoords (used for dimensionality detection)
 - Order (number of nodes)</p></li>
 <li><p><strong>load_components</strong> (<em>list</em><em>[</em><em>tuple</em><em>]</em>) – <p>List of force vectors applied at nodes. Each tuple defines the force
@@ -2967,7 +2964,7 @@ Each entry corresponds one-to-one with <code class="docutils literal notranslate
 <ul>
 <li><p>Dimensionality is determined using:</p>
 <blockquote>
-<div><p>Vector.VecPlanarization(graph.VertexCoords)</p>
+<div><p>Truss.Dimension</p>
 </div></blockquote>
 </li>
 <li><p>Loads are applied directly to the corresponding DOFs:</p>
@@ -3455,7 +3452,7 @@ equilibrium equations of the system.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.FE.RedundancyMatrix">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">RedundancyMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.FE.RedundancyMatrix" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">RedundancyMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.FE.RedundancyMatrix" title="Link to this definition"></a></dt>
 <dd><p>Compute the redundancy matrix of a truss structure.</p>
 <p>This method evaluates the redundancy (force indeterminacy) of a truss
 by constructing a compatibility matrix for redundant members and
@@ -3465,7 +3462,7 @@ redundant forces.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – The structural graph representing the truss system.</p></li>
+<li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – The truss structure for which to compute redundancy.</p></li>
 <li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (fully constrained nodes).</p></li>
 </ul>
 </dd>
@@ -3510,14 +3507,14 @@ where K_ff is the reduced stiffness matrix.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.FE.RigidityMatrix">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">RigidityMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Graph" title="gbsdr.model.Graph"><span class="pre">Graph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.FE.RigidityMatrix" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">RigidityMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gbsdr.FE.RigidityMatrix" title="Link to this definition"></a></dt>
 <dd><p>Compute the rigidity (compatibility) matrix of a truss structure.</p>
 <p>The rigidity matrix relates nodal displacements to axial member
 elongations. Each row corresponds to a bar (edge), and each column
 corresponds to a degree of freedom of a node.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>graph</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – The structural graph representing the truss system.</p>
+<dd class="field-odd"><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Truss" title="gbsdr.Truss"><em>Truss</em></a>) – The truss object representing the structural system.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Rigidity matrix of shape (n_bars, dof * n_nodes), where each row
