@@ -2993,7 +2993,7 @@ F[3*i + 2] = Fz</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalForceVectorTruss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GlobalForceVectorTruss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_node_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.GlobalForceVectorTruss" title="Link to this definition"></a></dt>
 <dd><p>Assemble the global force vector for a truss structure.</p>
 <p>This method constructs the nodal force vector by mapping externally
 applied loads to the corresponding degrees of freedom (DOFs) of each node.
@@ -3004,10 +3004,6 @@ to be constrained.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>truss</strong> (<a class="reference internal" href="#gbsdr.Graph" title="gbsdr.Graph"><em>Graph</em></a>) – Structural graph containing nodes and applied loads (<cite>LoadObjs</cite>).</p></li>
 <li><p><strong>support_node_ids</strong> (<em>list</em><em> of </em><em>int</em>) – Node IDs corresponding to supports (constrained nodes).</p></li>
-<li><p><strong>dof</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of degrees of freedom per node:
-- 2 → planar analysis (X, Z)
-- 3 → spatial analysis (X, Y, Z)
-Default is 2.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
