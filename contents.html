@@ -99,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Truss"><code class="docutils literal notranslate"><span class="pre">Truss</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.ElementClass"><code class="docutils literal notranslate"><span class="pre">Truss.ElementClass</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.CrossSectionAreas"><code class="docutils literal notranslate"><span class="pre">Truss.CrossSectionAreas</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.MaxCompressionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxCompressionForce</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Truss.MaxTensionForce"><code class="docutils literal notranslate"><span class="pre">Truss.MaxTensionForce</span></code></a></li>
@@ -141,13 +142,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.Length"><code class="docutils literal notranslate"><span class="pre">Edge.Length</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.MidPoint"><code class="docutils literal notranslate"><span class="pre">Edge.MidPoint</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.StartNode"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.StiffnessMatrix"><code class="docutils literal notranslate"><span class="pre">Edge.StiffnessMatrix</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.AreaCS"><code class="docutils literal notranslate"><span class="pre">Edge.AreaCS</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.BucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.BucklingLimit</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.ForceMagnitude"><code class="docutils literal notranslate"><span class="pre">Edge.ForceMagnitude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.StartNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode_AdjEdges()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.EndNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.EndNode_AdjEdges()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.EulerCriticalBucklingLimit"><code class="docutils literal notranslate"><span class="pre">Edge.EulerCriticalBucklingLimit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Edge.StartNode_AdjEdges"><code class="docutils literal notranslate"><span class="pre">Edge.StartNode_AdjEdges()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Vertex"><code class="docutils literal notranslate"><span class="pre">Vertex</span></code></a><ul>
@@ -1515,6 +1515,12 @@ dependent connectivity structures.</p>
 <dt class="sig sig-object py" id="gbsdr.Truss">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Truss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodal_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Truss" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuralModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gbsdr.Truss.ElementClass">
+<span class="sig-name descname"><span class="pre">ElementClass</span></span><a class="headerlink" href="#gbsdr.Truss.ElementClass" title="Link to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">TrussElement</span></code></p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="gbsdr.Truss.CrossSectionAreas">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">CrossSectionAreas</span></span><a class="headerlink" href="#gbsdr.Truss.CrossSectionAreas" title="Link to this definition"></a></dt>
@@ -2262,22 +2268,6 @@ of the start and end node coordinates.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="gbsdr.Edge.StiffnessMatrix">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StiffnessMatrix</span></span><a class="headerlink" href="#gbsdr.Edge.StiffnessMatrix" title="Link to this definition"></a></dt>
-<dd><p>Stiffness matrix of the edge element.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>6x6 stiffness matrix for a 3D truss element, computed based on the edge length and axial force. The matrix is defined in the local coordinate system of the edge.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>numpy.ndarray</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>The matrix must be multiplied with the stiffness coefficient (EA/L) to obtain the actual stiffness matrix for structural analysis. The current implementation assumes a unit stiffness coefficient for demonstration purposes.</p>
-</dd></dl>
-
-<dl class="py property">
 <dt class="sig sig-object py" id="gbsdr.Edge.AreaCS">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AreaCS</span></span><a class="headerlink" href="#gbsdr.Edge.AreaCS" title="Link to this definition"></a></dt>
 <dd><p>Cross-sectional area of the edge.</p>
@@ -2316,6 +2306,21 @@ by the edge element.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Edge.StartNode_AdjEdges">
+<span class="sig-name descname"><span class="pre">StartNode_AdjEdges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Edge.StartNode_AdjEdges" title="Link to this definition"></a></dt>
+<dd><p>Adjacent edges connected to the start node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of edge IDs incident to the start node, excluding the
+current edge itself.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2363,21 +2368,6 @@ the buckling limit is set to zero.</p>
 <div><p>P_cr = π² * E * I / (k * L)²</p>
 </div></blockquote>
 <p>where L is the edge length.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gbsdr.Edge.StartNode_AdjEdges">
-<span class="sig-name descname"><span class="pre">StartNode_AdjEdges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gbsdr.Edge.StartNode_AdjEdges" title="Link to this definition"></a></dt>
-<dd><p>Adjacent edges connected to the start node.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>List of edge IDs incident to the start node, excluding the
-current edge itself.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of int</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
