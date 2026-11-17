@@ -273,6 +273,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.GroundStructure"><code class="docutils literal notranslate"><span class="pre">GroundStructure</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gbsdr.Import"><code class="docutils literal notranslate"><span class="pre">Import</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gbsdr.Import.ReadIDsFromFilenames"><code class="docutils literal notranslate"><span class="pre">Import.ReadIDsFromFilenames()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Import.ByCSVpath"><code class="docutils literal notranslate"><span class="pre">Import.ByCSVpath()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Import.ByJSON"><code class="docutils literal notranslate"><span class="pre">Import.ByJSON()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gbsdr.Import.ByJSONpath"><code class="docutils literal notranslate"><span class="pre">Import.ByJSONpath()</span></code></a></li>
@@ -2728,11 +2729,11 @@ coordinate system.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.StructuralAnalysisUtils.DeterminacyCheck">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DeterminacyCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gbsdr.Truss" title="gbsdr.model.Truss"><span class="pre">Truss</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">BC</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.StructuralAnalysisUtils.DeterminacyCheck" title="Link to this definition"></a></dt>
-<dd><p>Count the states of self-stress and mechanisms of a supported truss.</p>
-<p>Assemble the equilibrium matrix of the members extended with one
-column per support reaction, compute its numerical rank from the
-singular values, and derive the number of independent states of
-self-stress and of inextensional mechanisms.</p>
+<dd><p>Count states of self-stress and mechanisms of a supported truss.</p>
+<p>Assemble the equilibrium matrix of the members, delete the rows of the
+restrained degrees of freedom, compute the numerical rank of the
+reduced matrix from its singular values, and derive the number of
+independent states of self-stress and of inextensional mechanisms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2744,53 +2745,62 @@ inferred from <code class="docutils literal notranslate"><span class="pre">truss
 <li><p><strong>BC</strong> (<em>list</em><em> of </em><em>str</em>) – Support type of each node in <code class="docutils literal notranslate"><span class="pre">truss.SupportNodeIds</span></code>, in the
 same order, as accepted by
 <code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.BuildSupports</span></code>.</p></li>
-<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>optional</em>) – Relative tolerance for the rank: singular values larger than
-<code class="docutils literal notranslate"><span class="pre">rtol</span></code> times the largest one are counted as nonzero. Default is
-1e-9.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>optional</em>) – Intended relative tolerance for the rank. Currently unused: the
+rank is computed with the default tolerance of
+<code class="docutils literal notranslate"><span class="pre">np.linalg.matrix_rank</span></code> (see Notes). Default is 1e-9.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>result</strong> – With the keys</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;s&quot;</span></code> (int): number of independent states of self-stress.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;m&quot;</span></code> (int): number of independent inextensional mechanisms,
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;s&quot;</span></code>: number of independent states of self-stress.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;m&quot;</span></code>: number of independent inextensional mechanisms,
 including rigid-body motions not prevented by the supports.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>: rank of the reduced equilibrium matrix.</p></li>
 </ul>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p>dict of {str: int}</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If the number of degrees of freedom per node is not 2 or 3.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<ul>
-<li><p>With <span class="math notranslate nohighlight">\(B\)</span> the equilibrium matrix of the <span class="math notranslate nohighlight">\(b\)</span> members,
+<p>Let <span class="math notranslate nohighlight">\(B\)</span> be the equilibrium matrix of the <span class="math notranslate nohighlight">\(b\)</span> members, of
 shape <span class="math notranslate nohighlight">\((d j, b)\)</span> for <span class="math notranslate nohighlight">\(j\)</span> nodes in <span class="math notranslate nohighlight">\(d\)</span> dimensions,
-and <span class="math notranslate nohighlight">\(E\)</span> the matrix of <span class="math notranslate nohighlight">\(c\)</span> unit columns, one per
-restrained degree of freedom, the extended equilibrium matrix and
-its rank are</p>
+with one row per nodal degree of freedom and one column per member,
+so that <span class="math notranslate nohighlight">\(B t = f\)</span> for member forces <span class="math notranslate nohighlight">\(t\)</span> and nodal loads
+<span class="math notranslate nohighlight">\(f\)</span>. Deleting the rows of the <span class="math notranslate nohighlight">\(c\)</span> restrained degrees of
+freedom gives the reduced matrix <span class="math notranslate nohighlight">\(B_r\)</span>, of shape
+<span class="math notranslate nohighlight">\((d j - c, b)\)</span>, and</p>
 <div class="math notranslate nohighlight">
-\[A = \begin{bmatrix} B &amp; E \end{bmatrix}, \qquad
-r = \operatorname{rank}(A),\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[s = b + c - r, \qquad m = d j - r,\]</div>
-<p>the dimensions of the null spaces of <span class="math notranslate nohighlight">\(A\)</span> and
-<span class="math notranslate nohighlight">\(A^{\mathsf{T}}\)</span> (Pellegrino and Calladine, 1986). They
+\[r = \operatorname{rank}(B_r), \qquad
+s = b - r, \qquad
+m = d j - c - r,\]</div>
+<p>the dimensions of the null spaces of <span class="math notranslate nohighlight">\(B_r\)</span> and
+<span class="math notranslate nohighlight">\(B_r^{\mathsf{T}}\)</span> (Pellegrino and Calladine, 1986). They
 satisfy the extended Maxwell rule <span class="math notranslate nohighlight">\(s - m = b + c - d j\)</span>
-(Calladine, 1978).</p>
-</li>
-<li><p>The truss is statically determinate if <span class="math notranslate nohighlight">\(s = 0\)</span> and
-kinematically determinate if <span class="math notranslate nohighlight">\(m = 0\)</span>.</p></li>
-<li><p>Reactions act along the global axes. A degree of freedom listed
-twice as restrained adds a duplicate column and one spurious state
-of self-stress.</p></li>
-<li><p>The mechanisms are infinitesimal (first-order); the method does not
-tell whether they are finite or stabilized by prestress.</p></li>
-</ul>
+(Calladine, 1978). The truss is statically determinate if
+<span class="math notranslate nohighlight">\(s = 0\)</span> and kinematically determinate if <span class="math notranslate nohighlight">\(m = 0\)</span>.</p>
+<p>Deleting the rows is equivalent to appending one unit reaction column
+per restrained degree of freedom to <span class="math notranslate nohighlight">\(B\)</span>: the extended matrix
+has rank <span class="math notranslate nohighlight">\(r + c\)</span> and gives the same <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GlobalEquilibriumMatrix</span></code> is assumed to
+order the rows of <span class="math notranslate nohighlight">\(B\)</span> in the same way as
+<code class="docutils literal notranslate"><span class="pre">StructuralAnalysisUtils.GetSupportDOF</span></code> numbers the degrees of
+freedom. Supports restrain displacements along the global axes, and
+<span class="math notranslate nohighlight">\(c\)</span> counts distinct restrained degrees of freedom, since
+<code class="docutils literal notranslate"><span class="pre">np.delete</span></code> removes a row listed twice only once.</p>
+<p>A singular value of <span class="math notranslate nohighlight">\(B_r\)</span> counts as nonzero if it exceeds
+<span class="math notranslate nohighlight">\(\sigma_{\max} \max(d j - c, b)\, \varepsilon\)</span>, with
+<span class="math notranslate nohighlight">\(\sigma_{\max}\)</span> the largest singular value and
+<span class="math notranslate nohighlight">\(\varepsilon\)</span> the float64 machine epsilon, which is the default
+tolerance of <code class="docutils literal notranslate"><span class="pre">np.linalg.matrix_rank</span></code>.</p>
+<p>The analysis is linear: <span class="math notranslate nohighlight">\(m\)</span> counts first-order (infinitesimal)
+mechanisms and does not distinguish finite mechanisms from mechanisms
+stabilized by a state of self-stress.</p>
 <p class="rubric">References</p>
 <p>C. R. Calladine, “Buckminster Fuller’s ‘tensegrity’ structures and
 Clerk Maxwell’s rules for the construction of stiff frames,”
@@ -4703,6 +4713,36 @@ x and y directions. All nodes lie in the XY plane (z = 0).</p>
 <dt class="sig sig-object py" id="gbsdr.Import">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gbsdr.</span></span><span class="sig-name descname"><span class="pre">Import</span></span><a class="headerlink" href="#gbsdr.Import" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gbsdr.Import.ReadIDsFromFilenames">
+<span class="sig-name descname"><span class="pre">ReadIDsFromFilenames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gbsdr.Import.ReadIDsFromFilenames" title="Link to this definition"></a></dt>
+<dd><p>Read the integer IDs from all graph_X.json filenames in a directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Directory that contains the <code class="docutils literal notranslate"><span class="pre">graph_X.json</span></code> files.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The X values, sorted in ascending numerical order.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The search is not recursive. Files whose X is not a non-negative
+integer (e.g., <code class="docutils literal notranslate"><span class="pre">graph_a.json</span></code>) are ignored.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"graph_10"</span><span class="p">,</span> <span class="s2">"graph_2"</span><span class="p">,</span> <span class="s2">"graph_1"</span><span class="p">,</span> <span class="s2">"graph_a"</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">".json"</span><span class="p">),</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="n">_</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="si">{}</span><span class="s2">"</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">read_graph_ids</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">[1, 2, 10]</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="gbsdr.Import.ByCSVpath">
 <span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ByCSVpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#gbsdr.Import.ByCSVpath" title="Link to this definition"></a></dt>
